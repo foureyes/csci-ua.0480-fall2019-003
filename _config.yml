@@ -28,8 +28,8 @@ vars:
   course_site_alt: http://cs.nyu.edu/~jversoza
   
   # office hours
-  office_hours: "Mon/Wed 11:25an - 12:25pm and Tues 12:15PM - 1:15PM at 60 5th Ave"
-  office_hours_room: WWH 422 
+  office_hours: "<br>Mon/Wed 11:25an - 12:25pm at WWH 422<br>Tues 12:15PM - 1:15PM at 60 5th Ave"
+  office_hours_room: WWH 422 on Mon/Wed... Lobby, 60 5th Ave on Tues
   
   # midterm
   midterm1_date: "N/A"
