@@ -1,0 +1,53 @@
+title: CSCI-UA.0480 Fall 2018, Section 007
+
+baseurl: ""
+resource_prefix: "resources/"
+github_username: jversoza
+slides_lib: "../../resources/lib"
+
+markdown: kramdown
+kramdown:
+  entity_output: numeric
+  smart_quotes: apos,apos,quot,quot
+permalink: none
+exclude: [bower_components, README.md, bower.json, gruntfile.js, node_modules]
+
+vars:
+  piazza: "https://piazza.com/class/jlpp9n1a1355yx"
+  email: "jversoza at cs dot nyu dot edu"
+  slides_img_prefix: "../../resources/img"
+  
+  # course
+  course_number: "CSCI-UA.0480"
+  course_section: "007"
+  course_name: "Data Management and Analysis"
+  course_semester: "Fall 2018"
+  course_time: "MW 3:30-4:45PM"
+  course_room: "WWH 102"
+  course_site: http://foureyes.github.io/csci-ua.0480-fall2018-007/
+  course_site_alt: http://cs.nyu.edu/~jversoza
+  
+  # office hours
+  office_hours: "9:25AM - 10:55AM, Monday and Tuesday"
+  office_hours_room: WWH 422 
+  
+  # midterm
+  midterm1_date: "N/A"
+  midterm1_time: "N/A"
+  
+  # finals
+  final_date: "N/A"
+  final_time: "N/A"
+  final_room: "N/A"
+  
+  book1: "PostgreSQL: Up and Running, 3rd Edition"
+  nbook1_link: "http://shop.oreilly.com/product/0636920052715.do"
+  book1_author:  "Regina Obe, Leo Hsu"
+  
+  book2: "Python for Data Analysis Book, 2nd Edition"
+  book2_link: "http://wesmckinney.com/pages/book.html"
+  book2_author: "Wes McKinney"
+  
+  book3: "Think Stats"
+  book3_link: "http://greenteapress.com/thinkstats/"
+  book3_author: "Allen B. Downey"
