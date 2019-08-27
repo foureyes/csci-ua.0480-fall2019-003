@@ -53,6 +53,8 @@ A platform will be provided for asking questions online as well as moderating di
 * [{{ site.vars.book1 }}]({{ site.vars.book1_link}}) by {{ site.vars.book1_author }}
 * [{{ site.vars.book2 }}]({{ site.vars.book2_link}}) by {{ site.vars.book2_author }}
 * [{{ site.vars.book3 }}]({{ site.vars.book3_link}}) by {{ site.vars.book3_author }}
+* [{{ site.vars.book4 }}]({{ site.vars.book3_link}}) by {{ site.vars.book4_author }}
+* [{{ site.vars.book5 }}]({{ site.vars.book3_link}}) by {{ site.vars.book5_author }}
 
 </div>
     </div>
