@@ -156,7 +156,7 @@ Topics
 * all work must be your own:
 	* don't copy (clone, download, etc.) anyone else's code
 	* don't distribute/publish your code (including publishing to a public git repository or posting in a forum)
-	* the Director of Undergraduate Studies will handle any instances of cheating or software plagiarism
+	* Please see the department's page on academic integrity for full policy and potential disciplinary action: [https://cs.nyu.edu/home/undergrad/policy.html](https://cs.nyu.edu/home/undergrad/policy.html)
 </div>
     </div>
   </div><!-- end col -->
