@@ -85,16 +85,15 @@ Functions and Functions as Objects
 * @functools.wraps
 -->
 
+Classes
+
+* [Named Tuples and Classes](slides/python/classes-objects.html)
+
 Type Annotations (optional)
 
 <!--
 * [Type Annotations](slides/python/type-annotations.html)
--->
-
-Classes
-
-* [Named Tuples and Classes](slides/python/classes-objects.html)
-","Python for Data Analysis
+-->","Python for Data Analysis
  
  * Ch 3: Built-in Data Structures, Functions and Files
  
