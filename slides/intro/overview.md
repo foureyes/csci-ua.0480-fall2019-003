@@ -71,15 +71,14 @@ __And then...__ &rarr;
 
 The semester will be broken down into <span class="hl">three parts</span>:
 
-1. {:.fragment} ___Sourcing_/scrubbing/transforming/visualizing data__
-  * {:.fragment} (Python 3.x, Jupyter, `numpy`, `pandas`, `matplotlib`, `requests`, `requests-html`, etc.)
-  * {:.fragment} {{ site.vars.book2 }}
+1. {:.fragment} __Using Python to manipulate data__
+  * {:.fragment} with Python 3.x, Jupyter notebook/lab, `numpy`, `pandas`, `matplotlib`, `requests`, `requests-html`, etc.
+  * {:.fragment} ([{{ site.vars.book1 }}]({{ site.vars.book1_link }}), [{{ site.vars.book3 }}]({{ site.vars.book3_link }}), and [{{ site.vars.book4 }}]({{ site.vars.book4_link }}))
 2. {:.fragment} __Designing a data model, storing data in a database, manipulating data in a database__
-  * {:.fragment} (with PostgreSQL, MongoDB, and Python 3.x as _glue_ sometimes)
-  * {:.fragment} {{ site.vars.book1 }}
+  * {:.fragment} with PostgreSQL, MongoDB, and Python 3.x as _glue_ sometimes
+  * {:.fragment} ([{{ site.vars.book2 }}]({{ site.vars.book2_link }}), [{{ site.vars.book5 }}]({{ site.vars.book5_link }}))
 3. {:.fragment} __Visualizing data (on the web this time), deploying _in the cloud_, working with large data sets__
-  * {:.fragment} (`flask`, `chalice` or `zappa`, s3, rds, Apache Spark or Hadoop)
-
+  * exact tech may vary, but stuff like firebase and d3
 </section>
 
 
@@ -112,7 +111,7 @@ __We'll touch on the following topics, but it'll only be introductory material__
 {:.fragment}
 
 * {:.fragment} Data visualization on the web 🤷‍
-* {:.fragment} Creating web APIs🤷‍
+* {:.fragment} Consuming web APIs🤷‍
 * {:.fragment} Big data 🤷‍
 * {:.fragment} Cloud computing 🤷‍
 </section>
@@ -141,6 +140,7 @@ __Hands up 🙌 if you__...
 * {:.fragment} went through Big Data Science or Predictive Analytics (grad classes and a 480)
 * {:.fragment} took AIT (specifically because there was some MongoDB in there)
 * {:.fragment} worked professionally in data analytics or data science
+* {:.fragment} ...are in the CS major? <span class="fragment">DS major?</span> <span class="fragment">other?</span>
 </section>
 
 
@@ -159,7 +159,6 @@ There may be __signficant overlap__ with the material in the __web minor databas
 {:.fragment}
 
 * {:.fragment} <span class="hl">you should give some thought as to whether or not you should stay enrolled</span> in this course
-* {:.fragment} since this is the first run of the course and you're already enrolled, I can't tell you to take another course instead (that's up to you!)
 </section>
 
 <section markdown="block">
@@ -175,6 +174,9 @@ __It's ok!__ 🙌
 
 * {:.fragment} we'll go over some __intermediate python features__
 * {:.fragment} and some __popular libraries__ you _may_ not be familiar with yet 
+
+(⚠️ the first couple of weeks will cover python _very_ quickly! 🐍⏩)
+{:.fragment}
 </section>
 
 <section markdown="block">
@@ -182,11 +184,11 @@ __It's ok!__ 🙌
 
 ### Joe Versoza
 
-* {:.fragment} I also teach __AIT__ (_perhaps u no of this?_), an __Intro to Programming__ course (in Python, of course), and sometimes __101__
+* {:.fragment} I also teach __AIT__ (_perhaps u no of this 🤔?_), an __Intro to Programming__ course (in Python, of course), and sometimes (er, _never_?)  __101__
 * {:.fragment} I'm a __Clinical Assistant Professor__ (you can find me at: {{ site.vars.office_hours_room }})
 * {:.fragment} In former a life, I worked with PostgreSQL and Python _a lot_
   * {:.fragment} (not-so-much now...)
-  * {:.fragment} for things like... <span class="fragment">data driven web sites</span> <span class="fragment">, compliance</span><span class="fragment">, and analytics</span>
+  * {:.fragment} for things like... <span class="fragment">data driven web sites</span><span class="fragment">, data in a regulated environment</span><span class="fragment">, and simple analytics</span>
 
 </section>
 
@@ -199,7 +201,7 @@ __It's ok!__ 🙌
   * {:.fragment} __Write your own code!__
   * {:.fragment} submit via git (fill out the survey!)
 * {:.fragment} <span class="hl">8 x [online quizzes](../../syllabus#quizzes)</span>, completed from home (maybe 1 or 2 more)
-* {:.fragment} <span class="hl">1 x small project</span> (this may just end up being essentially just a free-form homework assignment or two)
+* {:.fragment} <span class="hl">1 x small project</span> (this be a small research project of your choosing, approximately 2 weeks long)
 </section>
 
 
@@ -268,14 +270,30 @@ __Python 3.x and associated libraries__
   * or `pip` 
   * or `pipenv`, `poetry`, etc.
 * {:.fragment}  you're free to use any editor and os you want
-  * {:.fragment} I'd recommend [spyder](https://pythonhosted.org/spyder/)
+  * {:.fragment} I'd recommend [spyder](https://www.spyder-ide.org/) or [PyCharm](https://www.jetbrains.com/pycharm/)
   * {:.fragment} we'll also be using Jupyter Notebook / Lab _a lot_ early on
 
 __PostgreSQL__
 {:.fragment}
 
-* {:.fragment} a local install of PostgreSQL
+* {:.fragment} a local install of [PostgreSQL](https://www.postgresql.org/), maybe [DataGrip](https://www.jetbrains.com/datagrip/)
 
+</section>
+
+<section markdown="block">
+## Reading
+
+We'll be using these books:
+
+* [{{site.vars.book1}}]({{site.vars.book1_link}})
+* [{{site.vars.book2}}]({{site.vars.book2_link}})
+* [{{site.vars.book3}}]({{site.vars.book3_link}})
+* [{{site.vars.book4}}]({{site.vars.book4_link}})
+* [{{site.vars.book5}}]({{site.vars.book5_link}})
+
+They _should_ all be available from the library; I'd recommend browsing through them and then deciding which ones you'd like to own.
+
+The readings often list chapters that cover the same material, but from different books; it's adequate to just read one.
 </section>
 
 <section markdown="block">
@@ -285,6 +303,8 @@ __PostgreSQL__
 * use <span class="hl">arrow keys</span> to navigate ⬅️➡️
 * click on <span class="hl">print</span> to see a one page version 📄
 * probz does not work great on mobile (sry) 😅
+	* {:.fragment} (also, for those in AIT, u _still trust me_ to teach u abt the web? ... this site is _terrible_ 🤮)
+
 </section>
 
 <section markdown="block" data-background="#440000">

@@ -2,6 +2,7 @@
 layout: default
 nav-state: schedule
 ---
+
 <!--
 <script>
 document.addEventListener('DOMContentLoaded', init);
@@ -39,7 +40,7 @@ function init() {
 		<td markdown="block"></td>
 	{% else %}
 		{% if c.type == 'holiday' or c.type == 'exam' %}
-		<td class="noclass" colspan="4" markdown="block">{{ c.topics | remove: '__new__' | markdownify }}</td>
+		<td class="noclass" colspan="3" markdown="block">{{ c.slides | remove: '__new__' | markdownify }}</td>
 		{% else %}
 		<td markdown="block" class="topics">{{ c.slides | markdownify }}</td>
 		<td markdown="block">{{ c.readings | markdownify }}</td>

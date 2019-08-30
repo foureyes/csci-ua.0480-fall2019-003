@@ -26,7 +26,7 @@ All of this <span class="hl">without a database or SQL</span> (at least not yet!
 (we'll get to that in a month or so) 📅
 {:.fragment}
 
-Many <span class="hl">readings</span> for for this part of the semester will come from <span class="hl">{{site.vars.book2}}</span>
+Many <span class="hl">readings</span> for for this part of the semester will come from <span class="hl">{{site.vars.book1}}</span>
 {:.fragment}
 </section>
 
@@ -133,7 +133,7 @@ __You may occasionally see me use a combination of `pip` and `virtualenv` or may
 * {:.fragment} `pip` and `virtualenv` are pretty standard, especially when using Python for web development
 	* {:.fragment} Anaconda (and `conda`) is usually used heavily in the Python and data community, but not so much outside of that domain
 * {:.fragment} ...and there's usually __less friction when you just use one or the other, rather than mixing the two__
-	* {:.fragment} (note that you can and sometimes _have to_ use `pip` to install some things rather than `conda`, but best to fall back on that method rather than use it first
+	* {:.fragment} (note that you can and sometimes _have to_ use `pip` to install some things rather than `conda`, but best to fall back on that method rather than use it first)
 
 Since my background is firmly in web development, my default setup is using `pip` and `virtualenv`.
 {:.fragment}

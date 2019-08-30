@@ -1,36 +1,33 @@
-draft,type,num,date,day,slides,readings,OLD slides,OLD readings,assignments,
+draft,type,num,date,day,slides,readings,assignments,
 ,,1,03-Sep,Tue,"Introductions
 
 * [Course Overview](slides/intro/overview.html) 
-* [Fill out this survey!](https://docs.google.com/forms/d/e/1FAIpQLSf1jh4xLGK_16d_Z7uJlVU9fYIOjnRpkqZSt_APaQTJNqPMgA/viewform)
-  * GitHub username for homework
-  * consent form to use GitHub for homework submission
+* [Github Usage Form](https://docs.google.com/forms/d/e/1FAIpQLSf1jh4xLGK_16d_Z7uJlVU9fYIOjnRpkqZSt_APaQTJNqPMgA/viewform) (survey)
 
 Python 3 Ecosystem and Installation
 
 * [Python Development Environment](slides/python/tools.html)
 
-Python Basics and File I/O
+Python Basics 
 
-* [Python Overview](slides/python/overview.html)
-* [Running Python Programs](slides/python/running.html)
-* [Modules](slides/python/modules.html)
-
-<!--
 * See readings on Python Basics
 * Different Ways to Run Python (demo)
-  * running python on the commandline
-  * interactive shell
-  * IPython
-  * jupyter notebook / lab
+  *  running python on the commandline
+  * interactive shell, IPython
+  *  jupyter notebook / lab
 * Modules (demo)
-  * imports
-  * python path
--->
+  * using and creating modules
+  * variations on import and python path
+
+File I/O
+
+* [Working with Files](notebooks/py/file-io.ipynb) (notebook)
 
 Unicode and Strings
 
-* [Files, Encodings, Bytes and Strings](notebooks/files-unicode-bytes-strings.ipynb) (notebook)","Python for Data Analysis
+* [Encodings, Bytes and Strings](notebooks/py/unicode-bytes-strings.ipynb) (notebook)
+
+","Python for Data Analysis
  
  * Ch 1: Preliminaries
  * Ch 2: Python Language Basics, Ipython, Jupyter Notebooks
@@ -43,8 +40,7 @@ Unicode and Strings
  
  * [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
  * [What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text](http://kunststube.net/encoding/)
- * [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)",,,"__Quiz #01__ – due Thu __morning__ , 9/5, at 11am (just before class)
-
+ * [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)","__Quiz #01__ – due Wed, 9/5, at 11pm
 * find it on NYU Classes
 * check the Tests and Quizzes section 
 
@@ -64,36 +60,36 @@ __Homework #00__ – due Tue, 9/10, at 11am
 ",
 ,,2,5-Sep,Thu,"Types
 
+<!--
 * [Types](slides/python/types.html)
+-->
 
 Sequence Types, Mapping Types, Sets
 
+* [Sequences, Dictionaries and Sets](notebooks/py/sequences.ipynb) (notebook)
+
+<!--
 * [Sequence Types](slides/python/sequence-types.html)
 * [Mapping Types](slides/python/mapping-types.html)
 * [Sets](slides/python/sets.html)
-* [Sequences, Dictionaries and Sets](notebooks/sequences.ipynb) (notebook)
+-->
 
 Functions and Functions as Objects
 
-* [Functions](slides/python/functions.html)
+* [\* and \*\*, Keyword Arguments](notebooks/py/functions.ipynb) (notebook)
+* Functions as Objects,  sorted, max, etc.
+* Lambdas
 * [Decorators](slides/python/decorators.html)
-
 
 <!--
 * @functools.wraps
-* [\* and \*\*, Keyword Arguments](notebooks/functions.ipynb) (notebook)
-
-Functions as Objects
-
-* Functions as Objects
-* Keyword Arguments
-* Lambdas
 -->
 
 Type Annotations (optional)
 
+<!--
 * [Type Annotations](slides/python/type-annotations.html)
-
+-->
 
 Classes
 
@@ -108,7 +104,7 @@ Classes
  
  Online Resources
  
- * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)",,,"__Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
+ * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)","__Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
 
 * find it on NYU Classes
 * check the Tests and Quizzes section",
@@ -141,7 +137,7 @@ Distributions and Descriptive / Summary Statistics
  Think Stats
  
  * Ch 1: Exploratory Data Analysis
- * Ch 2: Distributions",,,"__Homework #01__ – due Wed 9/26 (extended from Mon, 9/24), at 11pm
+ * Ch 2: Distributions","__Homework #01__ – due Wed 9/26 (extended from Mon, 9/24), at 11pm
 
 1. [Homework #01 Instructions](assignments/01.html)
   * vector class
@@ -195,7 +191,7 @@ Vectors and Matrices (numpy)
  Python for Data Analysis
  
  * Ch 4: Numpy Basics: Arrays and Vectors
- * Ch 6. Data Loading, Storage, and File Formats (Skip Web Requests and Database)",,,,"DEMO:
+ * Ch 6. Data Loading, Storage, and File Formats (Skip Web Requests and Database)",,"DEMO:
  * load file with numeric data
  * use loops or comprehensions to calculate
  * vectorized operation
@@ -228,7 +224,7 @@ Plotting and Visualization
  
  Python for Data Analysis
  
- * Ch 9: Plotting and Visualization",,,"HW 02:
+ * Ch 9: Plotting and Visualization","HW 02:
  * Choose data set and visualize… motivate usage of numpy maybe?
  * Create data frame like library - no loops, only generator expressions 
  * Manual Cleaning
@@ -255,7 +251,7 @@ Correlation and Covariance
  
  Python for Data Analysis
  
- * Ch 5. Getting Started with pandas",,,,
+ * Ch 5. Getting Started with pandas",,
 y,,7,24-Sep,Tue,"Cleaning / Preparing Data, Loading Data Revisited (with pandas)
 
 * [Pandas for reading files, About APIs, cleaning / preparing data (and pandas basics review)](notebooks/pandas/basics-review-cleaning-regex-api.ipynb) (notebook)
@@ -285,15 +281,7 @@ Using APIs
  * Ch 6: Data Loading, Storage, and File Formats
  * Focus on Scraping
  * Focus on APIs
- * Ch 7: Data Cleaning and Preparation","Quick Review Pandas Basics
-
-
-Apply, Map, Unique
-
-
-Cleaning / Preparing Data, Loading Data, Data from the Web
-
-",,"__Homework #03__ – due Tue 10/9 at 11pm
+ * Ch 7: Data Cleaning and Preparation","__Homework #03__ – due Tue 10/9 at 11pm
 
 1. [Homework #03 Instructions](assignments/03.html)","HW 03 
 * use an API
@@ -330,19 +318,7 @@ Join Combine and Reshape
  
  Python for Data Analysis
  
- * Ch 8: Data Wrangling: Join, Combine and Reshape","Data from the Web
-
-
-
-Cleaning Data Revisited
-
-* [Global Surface Temperature Change](https://data.giss.nasa.gov/gistemp/tabledata_v3/GLB.Ts+dSST.txt)
- * without pandas
- * with pandas
-
-Curating Data
-
-* see data sets",,,"MATERIAL:
+ * Ch 8: Data Wrangling: Join, Combine and Reshape",,"MATERIAL:
  TODO - slides for join, combine
  TODO - slides for regular expressions
  TODO - data set for joins?"
@@ -361,7 +337,7 @@ Time Series
 * Windowing","Python for Data Analysis
  
  * Ch 10: Data Aggregation and Group Operations
- * Ch 11: Time Series",,,"HW 04:
+ * Ch 11: Time Series","HW 04:
  * time based data analysis with aggregation using pandas
  * use joins
  
@@ -400,7 +376,7 @@ Commandline Client, SQL, and Simple Queries
  
  * [creating tables](https://www.postgresql.org/docs/current/static/sql-createtable.html)
  * [INSERT](https://www.postgresql.org/docs/current/static/sql-insert.html)
- * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)",,,,
+ * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)",,
 y,,11,8-Oct,Tue,"Basic Postgres Administration
 
 Files
@@ -442,11 +418,11 @@ Queries Continued
  * [DISTINCT](http://www.postgresqltutorial.com/postgresql-select-distinct/)
  * [WHERE](http://www.postgresqltutorial.com/postgresql-where/)
  * [LIMIT](http://www.postgresqltutorial.com/postgresql-limit/)
- * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)",,,"__Homework #05__ – due Thu 10/18 at 11pm
+ * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","__Homework #05__ – due Thu 10/18 at 11pm
 
 1. [Homework #05 Instructions](assignments/05.html)
 
-* use earlier data set and import into database
+* use earlier data set and import into database
 * calculate some basic stats
 * compare with python?",
 y,,12,10-Oct,Thu,"Constraints
@@ -469,7 +445,7 @@ Sample Questions for Midterm and About Exam
 ","Practical SQL
  
  * Ch 6: Joining Tables in a Relational Database
- * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)",,,,"ADD QUIZ FOR THESE TOPICS!
+ * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)",,"ADD QUIZ FOR THESE TOPICS!
 
 MATERIAL:
 
@@ -478,8 +454,8 @@ TODO - add naming conventions"
 y,,13,17-Oct,Thu,"Review First Part of the Semester
 
 * [midterm review notebook](notebooks/midterm-review/review.ipynb)
-",,,,,
-y,exam,14,22-Oct,Tue,,,Exam 1,,,
+",,,
+y,exam,14,22-Oct,Tue,Exam #1,,,
 y,,15,24-Oct,Thu,"Multiple Tables (Joins) Continued
 
 
@@ -517,8 +493,6 @@ Diagrams","Relational Database Design and Implementation
  * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
  * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
  * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)","
-
-",,"
 HW 06:
 
 
@@ -543,7 +517,7 @@ Manipulating Text
 * TODO - text manipulation","Practical SQL
  
  * Ch 12. Advanced Query Techniques
- * Ch 13: Mining Text to Find Meaningful Data",,,,
+ * Ch 13: Mining Text to Find Meaningful Data",,
 y,,17,31-Oct,Thu,"TODO - move subqueries and / or CTE's up
 
 Normalization
@@ -567,7 +541,7 @@ Implementation
  
  * Ch 6. Normalization
  * Ch 8. Codd's Rules for Relational Database Design
- * Ch 9. Using SQL to Implement a Relational Design",,,"
+ * Ch 9. Using SQL to Implement a Relational Design","
 HW 07:
 
 * Database Design - ER Diagram
@@ -599,8 +573,7 @@ Dates and Times","Practical SQL
  postgrestutorial
  
  * [GROUP BY](http://www.postgresqltutorial.com/postgresql-group-by/)
- * [HAVING](http://www.postgresqltutorial.com/postgresql-having/)","
-",,,
+ * [HAVING](http://www.postgresqltutorial.com/postgresql-having/)",,
 y,,19,7-Nov,Thu,"Indexes, Query Planner
 
 * [EXPLAIN / ANALYZE](slides/db/indexes.html)
@@ -649,7 +622,7 @@ Index Online Resources
 * [Index-Only Scans from PostgreSQL Docs](https://www.postgresql.org/docs/current/indexes-index-only-scans.html)
 * [Tour of PostgreSQL Index Types](https://www.citusdata.com/blog/2017/10/17/tour-of-postgres-index-types/)
 * [Principles and Applications of the Index Types Supported by PostgreSQL
-](https://medium.com/@Alibaba_Cloud/principles-and-applications-of-the-index-types-supported-by-postgresql-481f59bab67d)",,,"__Homework #08__ – due Mon 11/19 at 11pm
+](https://medium.com/@Alibaba_Cloud/principles-and-applications-of-the-index-types-supported-by-postgresql-481f59bab67d)","__Homework #08__ – due Mon 11/19 at 11pm
 
 1. [Homework #08 Instructions](assignments/05.html)
 
@@ -657,7 +630,10 @@ Index Online Resources
 * cli inventory app maybe???
 * aggregates, time series, etc. on data set with multiple tables
 
-","MATERIAL:
+","
+
+MATERIAL:
+
 * TODO - SQL injection demo"""
 y,,20,12-Nov,Tue,"Security
 
@@ -696,7 +672,7 @@ Postgres and Python
 
 Documentation
 
-* [psycopg2 example usage from official documentation](http://initd.org/psycopg/docs/usage.html)",,,,
+* [psycopg2 example usage from official documentation](http://initd.org/psycopg/docs/usage.html)",,
 y,,21,14-Nov,Thu,"NoSQL (mongodb)
 
 * [MongoDB Intro](slides/mongo/intro.html)
@@ -707,22 +683,22 @@ y,,21,14-Nov,Thu,"NoSQL (mongodb)
 
 ","* [MongoDB Data Model Design](https://docs.mongodb.com/manual/core/data-model-design/)
  * [MongoDB Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
- * (see all sections under Model Relationships Between Documents)",,,"HW 09:
+ * (see all sections under Model Relationships Between Documents)","HW 09:
  
 * Python and postgres
 * MongoDB Assignment or Lab?",
-y,,22,19-Nov,Tue,NoSQL (mongodb) Continued,Same as Previous,,,,
+y,,22,19-Nov,Tue,NoSQL (mongodb) Continued,Same as Previous,,
 y,,23,21-Nov,Thu,"Geo-spatial Data (GIS with pandas, postgres, mongodb)","Practical SQL
  
- Ch 14: Analyzing Spatial Data with PostGIS",,,,
-y,,24,26-Nov,Tue,Cloud Storage,https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data),,,,
-,holiday,,28-Nov,Thu,Thanksgiving,,,,,
+ Ch 14: Analyzing Spatial Data with PostGIS",,
+y,,24,26-Nov,Tue,Cloud Storage,https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data),,
+y,holiday,,28-Nov,Thu,Thanksgiving Recess: No classes scheduled,,,
 y,,25,3-Dec,Tue,"Web Based Visualization (D3)
 
 * [svg + d3](d3/overview.html)
 ","https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
- https://bost.ocks.org/mike/bar/3/",,,,
-y,,26,5-Dec,Thu,Processing Large Data Sets (Spark or Hadoop),Reading TBD,,,,
-y,,27,10-Dec,Tue,Review,,,,,
-y,exam,28,12-Dec,Thu,EXAM,,,,,
+ https://bost.ocks.org/mike/bar/3/",,
+y,,26,5-Dec,Thu,Processing Large Data Sets (Spark or Hadoop),Reading TBD,,
+y,,27,10-Dec,Tue,Review,,,
+y,exam,28,12-Dec,Thu,Exam #2,,,

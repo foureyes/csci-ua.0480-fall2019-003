@@ -28,7 +28,7 @@ vars:
   course_site_alt: http://cs.nyu.edu/~jversoza
   
   # office hours
-  office_hours: "<br>Mon/Wed 11:25an - 12:25pm at WWH 422<br>Tues 12:15PM - 1:15PM at 60 5th Ave"
+  office_hours: "<br>Mon/Wed 11:25am - 12:25pm at WWH 422<br>Thurs 12:15pm - 1:15pm at 60 5th Ave lobby"
   office_hours_room: WWH 422 on Mon/Wed... Lobby, 60 5th Ave on Tues
   
   # midterm
@@ -42,11 +42,11 @@ vars:
   
   
   book1: "Python for Data Analysis Book, 2nd Edition"
-  book1_link: ""
+  book1_link: "https://learning-oreilly-com.proxy.library.nyu.edu/library/view/python-for-data/9781491957653/"
   book1_author: "Wes McKinney"
 
   book2: "Practical SQL"
-  book2_link: ""
+  book2_link: "https://learning-oreilly-com.proxy.library.nyu.edu/library/view/practical-sql/9781492067580/"
   book2_author:  "Anthony DeBarros"
   
   book3: "Think Stats"
@@ -54,9 +54,9 @@ vars:
   book3_author: "Allen B. Downey"
 
   book4: "Data Science from Scratch, 2nd Edition"
-  book4_link: ""
+  book4_link: "https://learning-oreilly-com.proxy.library.nyu.edu/library/view/data-science-from/9781492041122/"
   book4_author: "Joel Grus"
   
   book5: "Relational Database Design and Implementation, 3rd Edition"
-  book5_link: ""
+  book5_link: "https://learning-oreilly-com.proxy.library.nyu.edu/library/view/relational-database-design/9780123747303/"
   book5_author: "Jan L. Harrington"
