@@ -13,12 +13,13 @@ Python Basics
 
 * See readings on Python Basics
 * Different Ways to Run Python (demo)
-  *  running python on the commandline
+  * running python on the commandline
   * interactive shell, IPython
-  *  jupyter notebook / lab
+  * jupyter notebook / lab
 * Modules (demo)
-  * using and creating modules
-  * variations on import and python path
+  * [creating modules screencast](https://www.youtube.com/watch?v=1lrsLvwACPc&feature=youtu.be) 
+  * pro tip: set to 2x speed
+  * (I talk too slowly)
 
 File I/O
 
