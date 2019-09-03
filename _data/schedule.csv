@@ -3,6 +3,7 @@ draft,type,num,date,day,slides,readings,assignments,
 
 * [Course Overview](slides/intro/overview.html) 
 * [Github Usage Form](https://docs.google.com/forms/d/e/1FAIpQLSf1jh4xLGK_16d_Z7uJlVU9fYIOjnRpkqZSt_APaQTJNqPMgA/viewform) (survey)
+* Discuss Quiz
 
 Python 3 Ecosystem and Installation
 
@@ -103,10 +104,15 @@ Type Annotations (optional)
  
  Online Resources
  
- * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)","__Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
+ * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)","Quizzes to be posted
+
+<!-- 
+__Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
 
 * find it on NYU Classes
-* check the Tests and Quizzes section",
+* check the Tests and Quizzes section
+
+-->",
 y,,3,10-Sep,Tue,"Classes Continued (protocols / double underscore)
 
 * TODO - Double Underscore Methods

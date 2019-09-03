@@ -161,6 +161,7 @@ __A quick reference for creating environments once Anaconda is installed__ (and 
 
 </section>
 
+<!--
 <section markdown="block">
 ## Demo
 
@@ -172,6 +173,7 @@ Let's try using Anaconda / conda to:
 4. {:.fragment} see what `pillow` installs (even though it already comes in _base_)
 
 </section>
+-->
 
 {% comment %}
 <section markdown="block">

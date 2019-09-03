@@ -291,9 +291,11 @@ We'll be using these books:
 * [{{site.vars.book4}}]({{site.vars.book4_link}})
 * [{{site.vars.book5}}]({{site.vars.book5_link}})
 
-They _should_ all be available from the library; I'd recommend browsing through them and then deciding which ones you'd like to own.
+They _should_ all be available from the library (__DEMO TIME!__); I'd recommend browsing through them and then deciding which ones you'd like to own.
 
-The readings often list chapters that cover the same material, but from different books; it's adequate to just read one.
+The readings often list chapters that cover the same material, but from different books; it's adequate to just read one (er... minimally _enough to do the quizzes?_).
+
+
 </section>
 
 <section markdown="block">
