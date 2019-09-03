@@ -3,7 +3,7 @@ draft,type,num,date,day,slides,readings,assignments,
 
 * [Course Overview](slides/intro/overview.html) 
 * [Github Usage Form](https://docs.google.com/forms/d/e/1FAIpQLSf1jh4xLGK_16d_Z7uJlVU9fYIOjnRpkqZSt_APaQTJNqPMgA/viewform) (survey)
-* Discuss Quiz
+* Discuss Quizzes/Readings (one class ahead)
 
 Python 3 Ecosystem and Installation
 
@@ -42,6 +42,7 @@ Unicode and Strings
  * [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
  * [What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text](http://kunststube.net/encoding/)
  * [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)","__Quiz #01__ – due Thur, 9/5, at 11am (before class)
+
 * find it on NYU Classes
 * check the Tests and Quizzes section 
 
@@ -52,8 +53,9 @@ __Homework #00__ – due Thur, 9/5, at 11am (before class)
   * use [Anaconda](https://conda.io/docs/user-guide/install/index.html)
   * if you’re already familiar with Python, you can manually install:
   * Python 3 (using `apt`, `homebrew`, etc.)
-  * `matplotlib`, `jupyter-notebook` (or lab), `pandas`, `numpy` (using `easy-install`, `pip`, etc.)
-2. Go over readings
+  * `matplotlib`, `jupyterlab` (or notebook), `pandas`, `numpy` (using `easy-install`, `pip`, etc.)
+2. Try to view class note by downloading notebooks and using `jupyter-lab`
+3. Go over readings for class 1 and 2
 
 <!--
 3. [Homework #00 Instructions](assignments/00.html)
