@@ -116,7 +116,7 @@ __Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
 * check the Tests and Quizzes section
 
 -->",
-y,,3,10-Sep,Tue,"Classes Continued (protocols / double underscore)
+,,3,10-Sep,Tue,"Classes Continued (protocols / double underscore)
 
 * TODO - Double Underscore Methods
 * Data Classes
@@ -181,7 +181,7 @@ __Quiz #03__ – due Wed, 9/26, at 11pm
  * create csv class, allow delimiter change, watch out for commas in data
  * write tests?
  * text analysis"
-y,,4,12-Sep,Thu,"Iterators and Generators
+,,4,12-Sep,Thu,"Iterators and Generators
 
 * [Classes, Iterators, Generators](notebooks/classes-review.ipynb) (notebook)
 
