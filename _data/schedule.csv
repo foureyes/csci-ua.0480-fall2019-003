@@ -71,6 +71,8 @@ __Homework #00__ – due Thur, 9/5, at 11am (before class)
 Sequence Types, Mapping Types, Sets
 
 * [Sequences, Dictionaries and Sets](notebooks/py/sequences.ipynb) (notebook)
+* [Slides from Prof. Bloomberg](https://nyu-computer-science.github.io/data-management-and-analysis/useful-types/)
+* [Addendum to Sequences from Prof. Bloomberg](https://raw.githubusercontent.com/nyu-computer-science/data-management-and-analysis/master/notebooks/sequences.ipynb) (notebook)
 
 <!--
 * [Sequence Types](slides/python/sequence-types.html)
@@ -107,37 +109,37 @@ Type Annotations (optional)
  
  Online Resources
  
- * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)","Quizzes to be posted
-
-<!-- 
+ * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)","
 __Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
 
 * find it on NYU Classes
 * check the Tests and Quizzes section
 
--->",
-y,,3,10-Sep,Tue,"Classes Continued (protocols / double underscore)
+(Quiz #01 was reopened)",
+,,3,10-Sep,Tue,"Classes Continued (protocols / double underscore)
 
-* TODO - Double Underscore Methods
-* Data Classes
-* Iterators and __iter__
-* generators
+* Double Underscore Methods
+* Inheritance
+
 
 List/Dictionary/Set Comprehension
 
-* TODO - Comprehensions
-* sorted
+* sorted, max, min, etc. 
 * list comprehensions
 * set comprehensions
 * dictionary comprehensions
 
 Manual Data Extraction and Transformation
 
-* TODO - Manual Data Extraction
+* Manual Data Extraction
 
 Distributions and Descriptive / Summary Statistics
 
-* TODO - Descriptive Statistics","Data Science from Scratch
+* Descriptive Statistics","Online Articles
+
+[Operator Overloading from Real Python](https://realpython.com/operator-function-overloading/)
+
+Data Science from Scratch
  
  * Ch 2: A Crash Course in Python (Sorting and List Comprehensions)
  * Ch 5: Statistics (Describing a Single Set of Data)
@@ -145,7 +147,7 @@ Distributions and Descriptive / Summary Statistics
  Think Stats
  
  * Ch 1: Exploratory Data Analysis
- * Ch 2: Distributions","__Homework #01__ – due Wed 9/26 (extended from Mon, 9/24), at 11pm
+ * Ch 2: Distributions","<!--__Homework #01__ – due Wed 9/26 (extended from Mon, 9/24), at 11pm
 
 1. [Homework #01 Instructions](assignments/01.html)
   * vector class
@@ -162,7 +164,8 @@ Distributions and Descriptive / Summary Statistics
 
 __Quiz #03__ – due Wed, 9/26, at 11pm
 
-* (see NYU Classes)","LECTURE:
+* (see NYU Classes)
+-->","LECTURE:
  * central tendency (mean, average)
  * dispersion (spread, min, max, standard * deviation std dev pop)
  * other (mode, frequency, skewedness)
