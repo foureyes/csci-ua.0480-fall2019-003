@@ -73,7 +73,7 @@ Working with tabular data as a two-dimensional `Array` is pretty common, but as 
 
 In this homework, we'll being creating (a _maybe over-engineered_) module for reading in csvs and filtering rows based on column values. You'll have to use some Python features in your implementation, like `__iter__`, list comprehensions, etc.
 
-For example, imagine we had a csv containing peopel's names, the number of fruits they eat weekly, and their favorite color (um... idk?). This data is in a csv called `fruitarians.csv`, and can be visualized as a table (note that row # is not in the csv):
+For example, imagine we had a csv containing people's names, the number of fruits they eat weekly, and their favorite color (um... idk?). This data is in a csv called `fruitarians.csv`, and can be visualized as a table (note that row # is not in the csv):
 
 ```
  row #    first        last   weekly_fruits_eaten  fav_color
@@ -349,6 +349,8 @@ isinstance(key_list, list)
 
 <hr>
 
+<!--
+
 #### `__setitem__(self, key, value)`
 
 Like assignment for `dict`, but if duplicate keys exist all of those values change:
@@ -364,6 +366,7 @@ CCC   4
   D   5
 """
 ```
+-->
 
 <hr>
 
@@ -428,7 +431,7 @@ tt.LabeledList([5, 6, 7]).map(squared)
 
 <hr>
 
-### `Table` (DRAFT - More `Table` Specs to be Added!) 
+### `Table` 
 
 A `Table` represents tabular data with row labels (`index`) and column names (`columns`)... along with 2 dimensional grid of data (`data`).
 
@@ -569,6 +572,7 @@ t['a']
 ```
 
 
+<!--
 #### `__eq__(self, other)` and `__ne__(self, other)`
 
 Only implement for `other` as a `Table` (you do not have to implement this for vectorized comparisons / arithmetic). Determines if two `Table` objects are equal by comparing the values in `values`, `index` and `columns`:
@@ -592,6 +596,7 @@ t1 == t4
 False
 ```
 (Note return value is _just_ a single boolean)
+-->
 
 #### `head(self, n)` and `tail(self, n)`
 
