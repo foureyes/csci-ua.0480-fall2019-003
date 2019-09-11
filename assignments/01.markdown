@@ -2,6 +2,7 @@
 layout: homework
 title: "Assignment #1"
 ---
+
 <style>
 img {
     border: 1px solid #000;
@@ -71,8 +72,8 @@ Clone the homework #1 repository when it is created for you.
 ## Requirements
 
 * 2 x notebooks:
-	* homework01-warmup.py
-	* homework01-again.py
+	* homework01-warmup.ipynb
+	* homework01-again.ipynb
 * 1 x module:
 	* `tabletools.py`
 * 4 x list comprehensions (documented in `README.md`)
@@ -771,7 +772,7 @@ To test your code, you can try to open a csv from your `tabletools.py` module. O
 
 ## Part 3 - Again Again ♻️
 
-#### Repeat the coding section in part 1, but use your `tabletools.py` module
+#### Repeat the coding section in part 1, but do so in a new file, `homework01-again.ipynb`. Use your `tabletools.py` to do this
 
 
 1. first 5 rows of the data set including column headers
