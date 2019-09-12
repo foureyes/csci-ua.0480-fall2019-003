@@ -118,21 +118,21 @@ __Quiz #02__ – due Tue __morning__, 9/10, at 11am (just before class)
 (Quiz #01 was reopened)",
 ,,3,10-Sep,Tue,"Classes Continued (protocols / double underscore)
 
-* [Double Underscore Methods](notebooks/py/classes.ipynb)
+* [Double Underscore Methods](notebooks/py/classes.ipynb) (notebook)
 
 
 List/Dictionary/Set Comprehension, Iterables
 
-* [Tuples, Enumerate, and Items]](notebooks/py/tuples-enumerate-items.ipynb)
-* [Iter and List, Set, Dict Comprehensions](notebooks/py/iter-comprehensions.ipynb)
+* [Tuples, Enumerate, and Items](notebooks/py/tuples-enumerate-items.ipynb)  (notebook)
+* [Iter and List, Set, Dict Comprehensions](notebooks/py/iter-comprehensions.ipynb)  (notebook)
 
 Functions Revisited (Variadic, As Arguments/Return Values)
 
-* [Using \*, Functions as Objects](notebooks/py/functons-args.ipynb)
+* [Using \*, Functions as Objects](notebooks/py/functions-args.ipynb)  (notebook)
 
 Manual Data Extraction and Transformation
 
-* [Using \*, Functions as Objects](notebooks/etl/parse-csv.ipynb)
+* [Quick CSV Parse Example](notebooks/etl/parse-csv.ipynb)  (notebook)
 
 ","Online Articles
 
