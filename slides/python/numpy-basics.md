@@ -102,7 +102,13 @@ What is the resulting `.shape` `tuple` for the following; describe what the `tup
 	* {:.fragment} `(3,)` - 3 columns
 * {:.fragment} `np.array([[1, 2, 3], [1, 2, 3]])`
 	* {:.fragment} `(2, 3)` - 2 rows, 3 columns
-* {:.fragment} `np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])`
+* {:.fragment} ...lastly
+	```
+np.array([
+	[[1, 2], [3, 4],  [5, 6]], 
+	[[7, 8], [9, 10], [11, 12]]
+])
+```
 	* {:.fragment} `(2, 3, 2)` - 2 "tables", each with 3 rows, and 2 columns
 
 </section>
