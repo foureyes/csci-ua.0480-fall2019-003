@@ -189,6 +189,10 @@ __Quiz #03__ – due Wed, 9/26, at 11pm
 
 * [Iterators, Generators](notebooks/py/generators.ipynb) (notebook)
 
+Descriptive Statistics – Central Tendency
+
+* [Max, Min, Length, Median](notebooks/stats/descriptive-statistics-central.ipynb) (notebook)
+
 File Formats
 
 * [Data File Formats](slides/python/file-types.html) (slides)
@@ -241,6 +245,10 @@ Plotting and Visualization
  Python for Data Analysis
  
  * Ch 9: Plotting and Visualization","HW 02:
+
+* Use data from previous homework, and focus on a column
+* Get some descriptive statistics
+  * Implement stddev
  * Choose data set and visualize… motivate usage of numpy maybe?
  * Create data frame like library - no loops, only generator expressions 
  * Manual Cleaning
