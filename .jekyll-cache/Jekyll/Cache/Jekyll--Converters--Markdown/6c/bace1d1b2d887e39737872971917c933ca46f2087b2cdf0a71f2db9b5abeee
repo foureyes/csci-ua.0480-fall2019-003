@@ -1,0 +1,844 @@
+I"E�<section class="intro-slide">
+  <h1 id="numpy-arrays">NumPy Arrays!</h1>
+
+  <h3 id="csci-ua0480-003">CSCI-UA.0480-003</h3>
+
+</section>
+
+<section>
+  <h2 id="creating-arrays">Creating Arrays</h2>
+
+  <p><strong><code class="highlighter-rouge">numpy</code> provides a multidimensional container for homogeneous (same type and size in memory) types: <code class="highlighter-rouge">ndarray</code> (n-dimenional array</strong></p>
+
+  <p>You can create an array by &#8594;</p>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">array</code> called with a sequence (like a <code class="highlighter-rouge">list</code>, <code class="highlighter-rouge">tuple</code>, etc.)</li>
+    <li class="fragment"><code class="highlighter-rouge">ones</code>, <code class="highlighter-rouge">zeros</code> called with an integer or tuple of ints (dimensions )</li>
+    <li class="fragment"><code class="highlighter-rouge">arange</code> called with a start, stop and step</li>
+    <li class="fragment"><code class="highlighter-rouge">random.randn</code> called with arbitrary number of args as dimensions</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="creating-arrays-examples">Creating Arrays Examples</h2>
+
+  <pre><code data-trim="" contenteditable="">
+# both of these sequences results equivalent arrays
+np.array([[1, 1], [2, 2]])
+np.array(((1, 1), (2, 2)))
+# array([[1, 1],
+#        [2, 2]])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+np.zeros((2, 5)) # array([[0., 0., 0., 0., 0.],
+                          [0., 0., 0., 0., 0.]])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+np.arange(4, 12, 2) # array([ 4,  6,  8, 10])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+np.random.randn(2, 3)
+# array([[-0.41478999, -0.87304136, -0.23290474],
+#       [ 0.30277282,  0.44985592,  1.06013982]])
+</code></pre>
+</section>
+
+<section>
+  <h2 id="describing-an-array">Describing an Array</h2>
+
+  <p><strong>The following properties can be used to get some information about <em>your shiny, new array</em>&#8230;</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">ndim</code> - number of dimensions</li>
+    <li class="fragment"><code class="highlighter-rouge">shape</code> - a tuple containing the size of each dimension
+      <ul>
+        <li class="fragment">think of this like nested lists&#8230;</li>
+        <li class="fragment">1st element is outermost dimension</li>
+        <li class="fragment">last element is the innermost: <code class="highlighter-rouge">[[77], [88]]</code> &#8594; <code class="highlighter-rouge">(2, 1)</code></li>
+        <li class="fragment">(can also be assigned a value to reshape)</li>
+      </ul>
+    </li>
+    <li class="fragment"><code class="highlighter-rouge">dtype</code> - the data type of the array
+      <ul>
+        <li>(inferred from values, or set explicitly via keyword arg, `dtype=&quot;type name&quot;)</li>
+        <li class="fragment">ex: <code class="highlighter-rouge">int64</code> (signed 64-bit int), <code class="highlighter-rouge">float64</code> (a &quot;double&quot;), <code class="highlighter-rouge">unicode_</code>, etc.</li>
+        <li class="fragment">can convert type with <code class="highlighter-rouge">astype</code></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="describing-an-array-examples">Describing an Array Examples</h2>
+
+  <p><strong>Given the following array, what will the <code class="highlighter-rouge">ndim</code>, <code class="highlighter-rouge">shape</code> and <code class="highlighter-rouge">dtype</code> properties be?</strong> &#8594;</p>
+
+  <pre><code data-trim="" contenteditable="">
+arr = np.array([[[1, 1], [2, 2], [3, 3]],
+                [[4, 4], [5, 5], [6, 6]],
+                [[7, 7], [8, 8], [9, 9]]])
+</code></pre>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">arr.ndim</code> &#8594; <code class="highlighter-rouge">3</code></li>
+    <li class="fragment"><code class="highlighter-rouge">arr.shape</code> &#8594; <code class="highlighter-rouge">(3, 3, 2)</code></li>
+    <li class="fragment"><code class="highlighter-rouge">arr.dtype</code> &#8594; <code class="highlighter-rouge">dtype('int64')</code></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="shape-again">Shape Again</h2>
+
+  <p><strong>Remember, shape 🔺🔵■ gives us the size of each dimension as a tuple, starting from the outermost dimension</strong></p>
+
+  <p>What is the resulting <code class="highlighter-rouge">.shape</code> <code class="highlighter-rouge">tuple</code> for the following; describe what the <code class="highlighter-rouge">tuple</code> represents in <em>natural language</em> 🤷 &#8594;</p>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">np.array([1, 2, 3])</code>
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">(3,)</code> - 3 columns</li>
+      </ul>
+    </li>
+    <li class="fragment"><code class="highlighter-rouge">np.array([[1, 2, 3], [1, 2, 3]])</code>
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">(2, 3)</code> - 2 rows, 3 columns</li>
+      </ul>
+    </li>
+    <li class="fragment">&#8230;lastly
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>np.array([
+  [[1, 2], [3, 4],  [5, 6]], 
+  [[7, 8], [9, 10], [11, 12]]
+])
+</code></pre></div>      </div>
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">(2, 3, 2)</code> - 2 &quot;tables&quot;, each with 3 rows, and 2 columns</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="axis">Axis</h2>
+
+  <p><strong>You&#39;ll often see the term <span class="hl">axis</span>, followed by a number, to address a specific dimension</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><strong>axis 0</strong>, <strong>axis 1</strong>, etc.</li>
+    <li class="fragment">this describes the position of the dimension as given by <code class="highlighter-rouge">.shape</code></li>
+    <li class="fragment">for example, <code class="highlighter-rouge">[[1, 2, 3], [4, 5, 6]]</code>
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">.shape</code> is <code class="highlighter-rouge">(2, 3)</code>, so&#8230;.</li>
+        <li class="fragment"><strong>axis 0</strong>, rows, is 2</li>
+        <li class="fragment"><strong>axis 1</strong>, columns,  is 3</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p class="fragment">In higher dimensions, row and column is not going to be 0 and 1 (likely last 2, instead!)</p>
+
+  <p class="fragment">In lower dimension, only columns, so <strong>axis 0</strong> is columns, not rows! 😮</p>
+</section>
+
+<section>
+  <h2 id="d-4-me-">2D-4-ME 📈</h2>
+
+  <p>Yeah, so with that said&#8230;. <strong>We&#39;ll be working with tabular data, so we&#39;ll be sticking to <span class="hl">2 dimensions</span> mostly.</strong></p>
+
+  <p class="fragment"><strong>When might higher dimensional data be needed, though (lets think through some scenarios)?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">keeping track of <span class="hl">historical tabular data</span> (for example, people responding to the same survey questions over time)</li>
+    <li class="fragment"><span class="hl">image data as separate channels</span> (a grid of red, grid for green, blue &#8230;)</li>
+    <li class="fragment">&#8230;and of course, <span class="hl">video</span> (several images over time)</li>
+    <li class="fragment">dealing with a <span class="hl">large feature set for machine learning </span></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="about-that-reshaping">About That Reshaping</h2>
+
+  <p><strong>You can change the dimensions and shape of an array by:</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">assigning a tuple to the <code class="highlighter-rouge">shape</code> property
+      <ul>
+        <li class="fragment">changes <code class="highlighter-rouge">ndarray</code> in place</li>
+      </ul>
+    </li>
+    <li class="fragment">&#8230;or calling <code class="highlighter-rouge">reshape</code>
+      <ul>
+        <li class="fragment">accepts tuple as argument</li>
+        <li class="fragment">returns new <code class="highlighter-rouge">ndarray</code> with specified shape</li>
+      </ul>
+    </li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(9)
+a.reshape((3, 3))
+# gives back:
+# array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+# (but a stays the same)
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a.shape = (3, 3)
+# changes a itself!
+</code></pre>
+
+</section>
+<section>
+
+  <h2 id="array-arithmetic">Array Arithmetic</h2>
+
+  <p><strong>Arithmetic operations behave differently based on the type of the <em>other</em> operand. For example.</strong></p>
+
+  <p>If the other operand is a scalar (<em>single value types</em> like <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">boolean</code>, <code class="highlighter-rouge">string</code>, etc.), then the operation is performed on every element using the same scalar as the second operand (<span class="hl">vectorization</span>):</p>
+
+  <pre><code data-trim="" contenteditable="">
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr * 10)
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+[[10 20 30]
+ [40 50 60]]
+</code></pre>
+</section>
+
+<section>
+  <h2 id="broadcasting">Broadcasting</h2>
+
+  <p>Multiplying an <code class="highlighter-rouge">ndarray</code> with a scalar is the most simple case of <span class="hl">broadcasting</span>.</p>
+
+  <ul>
+    <li class="fragment"><strong>Broadcasting</strong> is a <em>fancy</em> term for <strong>how <code class="highlighter-rouge">numpy</code> deals with arrays with different shapes.</strong></li>
+    <li class="fragment">only works when the arrays being used are <em>compatible</em> (more on that later)</li>
+    <li class="fragment">provides a mechanism for <span class="hl">vectorizing</span> array operations by&#8230;</li>
+    <li class="fragment"><em>stretching</em> out dimensions / shapes to make two arrays the same shape
+      <ul>
+        <li class="fragment"><span class="hl">no loops</span> have to be written to <span class="hl">apply operations to every array element</span> 👍</li>
+        <li class="fragment">looping occurs in C instead of Python ⏩</li>
+        <li class="fragment">no extra copies 👯 of data have to made to do this</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="simple-broadcasting">Simple Broadcasting</h2>
+
+  <p><strong>Same <code class="highlighter-rouge">shape</code> or w/ scalar.</strong> What are the resulting arrays? &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+# same shape: perform operation on elements in same positions
+np.ones((2, 3)) + np.array([[1, 2, 3], [4, 5, 6]])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[2., 3., 4.],
+       [5., 6., 7.]])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+# stretch scalar value out over all dimensions needed to
+# to create array of same dimensions ([[5, 5, 5], [5, 5, 5]])
+np.ones((2, 3)) * 5
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[5., 5., 5.],
+       [5., 5., 5.]])
+</code></pre>
+</section>
+
+<section>
+  <h2 id="not-so-simple-broadcasting">Not So Simple Broadcasting</h2>
+
+  <p>That was easy.😎 <strong>&#8230;but what about different shapes? 😅</strong> &#8594;</p>
+
+  <p><strong>Broadcasting can only be performed if the dimensions, starting from the end, either</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">equal</li>
+    <li class="fragment">or&#8230; one of them is 1</li>
+  </ul>
+
+  <p class="fragment"><span class="hl">If different dimensions, left pad with 1, and follow rules above</span></p>
+
+  <p class="fragment"><strong>Can the following shapes be made compatible?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">(2, 3, 2)</code>, <code class="highlighter-rouge">(2, 1, 2)</code><span class="fragment">✅</span></li>
+    <li class="fragment"><code class="highlighter-rouge">(2, 2, 3)</code> and <code class="highlighter-rouge">(3, 2)</code> <span class="fragment">🙅</span></li>
+    <li class="fragment"><code class="highlighter-rouge">(3,)</code> and <code class="highlighter-rouge">(4, 3)</code> <span class="fragment">✅</span></li>
+  </ul>
+
+</section>
+<section>
+  <h2 id="compatible--now-what">Compatible ❤️, Now What?</h2>
+
+  <p><strong>If two Arrays are compatible, how do we make the <code class="highlighter-rouge">shape</code> of both arrays match</strong>? &#8594;</p>
+
+  <ul>
+    <li class="fragment">left pad with 1 to make equal <code class="highlighter-rouge">ndim</code></li>
+    <li class="fragment">stretch out dimensions with size 1 by repeating elements</li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a1 = np.ones((3, 3)); a2 = np.array([1, 2, 3])
+</code></pre>
+
+  <ul>
+    <li class="fragment">change shape of <code class="highlighter-rouge">a2</code> from <code class="highlighter-rouge">(3, )</code> to <code class="highlighter-rouge">(1, 3)</code>: <code class="highlighter-rouge">[[1, 2, 3]]</code></li>
+    <li class="fragment">repeat along new axis / dimension until size matches (repeat 3 times)
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">[[1, 2, 3], [1, 2, 3], [1, 2, 3]]</code></li>
+      </ul>
+    </li>
+    <li class="fragment"><code class="highlighter-rouge">a1 + a2</code> &#8594; <code class="highlighter-rouge">[[2, 3, 4], [2, 3, 4], [2, 3, 4]]</code></li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="and-another-one-">And Another One 🔑</h2>
+
+  <p><strong>What are the <code class="highlighter-rouge">shape</code> properties of <code class="highlighter-rouge">a1</code> and <code class="highlighter-rouge">a2</code>? How is <code class="highlighter-rouge">a2</code> stretched?</strong></p>
+
+  <pre><code data-trim="" contenteditable="">
+a1 = np.ones((2, 3, 2)) 
+a2 = np.array([[[8, 9]], [[88, 99]]])
+a1 + a2 # ????
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a1.shape # 2, 3, 2
+a2.shape # 2, 1, 2
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+# stretching a2 along axis 1
+np.array([[[8, 9],     [8, 9],   [8, 9]],
+          [[88, 99], [88, 99], [88, 99]]])
+</code></pre>
+
+</section>
+<section>
+  <h2 id="some-more-examples">Some More Examples</h2>
+
+  <p><strong>Want some more practice&#8230;?</strong> &#8594;</p>
+
+  <pre><code data-trim="" contenteditable="">
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+arr + arr
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[ 2,  4,  6],
+       [ 8, 10, 12]])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+arr + np.array([1, 2, 3])
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[2, 4, 6],
+       [5, 7, 9]])
+</code></pre>
+</section>
+
+<section>
+  <h2 id="now-for-some-indexing-">Now for Some Indexing 👆</h2>
+
+  <p>Works like you&#39;d expect (again, think of nested lists):</p>
+
+  <pre><code data-trim="" contenteditable="">
+a =  np.array([[10, 11, 12], [13, 14, 15]])
+</code></pre>
+
+  <p>Get the first element of <code class="highlighter-rouge">a</code>:</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a[0] # array([10, 11, 12])
+</code></pre>
+
+  <p class="fragment">Now get the last item of the first sub array of <code class="highlighter-rouge">a</code></p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a[0][2] # 12 (also a[0][-1]
+</code></pre>
+
+  <p class="fragment">Alternatively, use tuple <code class="highlighter-rouge">a[0, 2]</code> or <code class="highlighter-rouge">a[(0, 2)]</code>:</p>
+
+</section>
+
+<section>
+  <h2 id="reduced-dimensions">Reduced Dimensions</h2>
+
+  <p><strong>Note that when you index with a value containing less dimensions, you get an array with less dimensions consisting of only the data in the higher dimensions</strong> &#8594;</p>
+
+  <pre><code data-trim="" contenteditable="">
+a = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+</code></pre>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">a[1]</code><span class="fragment"> - only axis 0 is given, so resulting array is data from axis 1 and 2 <code class="highlighter-rouge">array([[5, 6], [7, 8]])</code></span></li>
+    <li class="fragment"><code class="highlighter-rouge">a[1, 0]</code><span class="fragment"> - both axis 0 and 1 are given, so resulting array is data from axis 2 only  <code class="highlighter-rouge">array([5, 6])</code> </span></li>
+  </ul>
+
+  <p class="fragment">(we already <em>sort of do this intuitively</em>)</p>
+
+</section>
+
+<section>
+  <h2 id="assignment">Assignment</h2>
+
+  <p><strong>We can use indexing to perform assignment, as with regular lists&#8230; but with some magic!</strong>✨  &#8594;</p>
+  <pre><code data-trim="" contenteditable="">
+a = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+</code></pre>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">a[0][0][0] = 135</code> - 🆗</li>
+    <li class="fragment"><code class="highlighter-rouge">a[0][0] = 135</code> <span class="fragment"></span>
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">[[[135, 135], [3, 4]], [[4, 6], [5, 8]]]</code></li>
+        <li class="fragment">both elements in <code class="highlighter-rouge">a[0][0]</code> set to 135</li>
+        <li class="fragment">(repeat <code class="highlighter-rouge">135</code> along axis 2 at <code class="highlighter-rouge">a[0][0]</code>)</li>
+      </ul>
+    </li>
+    <li class="fragment"><code class="highlighter-rouge">a[0][0] = [99, 135]</code> - 🆗 <code class="highlighter-rouge">[[[ 99, 135], [3, 4]], ...]</code></li>
+    <li class="fragment"><code class="highlighter-rouge">a[0] = [987, 987]</code>
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">[[[987, 987], [987, 987]], [[ 4, 6], ...]</code></li>
+        <li class="fragment">(repeat <code class="highlighter-rouge">[987, 987]</code> along axis 1 at <code class="highlighter-rouge">a[0]</code>)</li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="views-">Views 👀</h2>
+
+  <p><strong>Again, <em>kind of</em> like working with lists&#8230; indexing into an array gives you a <span class="hl">view</span> into the array, not a new sub array</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">consequently, you&#39;re not getting a copy back if you index</li>
+    <li class="fragment">so if you perform assignment on the value that you get back after indexing, it <span class="hl">changes the original array</span></li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.ones((2, 3))
+last_row = a[-1]
+last_row[-1] = 456
+#...what does a look like???
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+# a is now... array([[  1.,   1.,   1.],
+#                    [  1.,   1., 456.]])
+</code></pre>
+</section>
+<section>
+  <h2 id="slicing-">Slicing 🔪</h2>
+
+  <p><strong>Same, but different&#8230; <em>as usual</em>.</strong> This should be familiar&#8230; <code class="highlighter-rouge">np.ones(5)[:2]</code> &#8594; <span class="hl"><code class="highlighter-rouge">[1., 1.]</code></span></p>
+
+  <ul>
+    <li class="fragment">slices grab a range of elements along an axis</li>
+    <li class="fragment">&#8230;but the <em>crazy</em> 🙃 part is that you can have multiple slices in a single expression</li>
+  </ul>
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(36).reshape((4, 3, 3))
+a[1:3,:2,1:]
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[[10, 11], [13, 14]],
+       [[19, 20], [22, 23]]])
+</code></pre>
+</section>
+
+<section>
+  <h2 id="for-reference">For Reference</h2>
+
+  <p><strong>Here&#39;s a view of our array, <code class="highlighter-rouge">a</code></strong> &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[[ 0,  1,  2],
+        [ 3,  4,  5],
+        [ 6,  7,  8]],
+
+       [[ 9, 10, 11],
+        [12, 13, 14],
+        [15, 16, 17]],
+
+       [[18, 19, 20],
+        [21, 22, 23],
+        [24, 25, 26]],
+
+       [[27, 28, 29],
+        [30, 31, 32],
+        [33, 34, 35]]])
+</code></pre>
+</section>
+
+<section>
+  <h2 id="and-">And <code class="highlighter-rouge">:</code></h2>
+
+  <p><strong>What are the rules for slicing syntax again?</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">leave out value before colon <code class="highlighter-rouge">:m</code>
+      <ul>
+        <li class="fragment"><span class="hl">start at beginning</span> (<code class="highlighter-rouge">0</code>)</li>
+      </ul>
+    </li>
+    <li class="fragment">leave out value after colon <code class="highlighter-rouge">n:</code>
+      <ul>
+        <li class="fragment"><span class="hl">end at end</span></li>
+      </ul>
+    </li>
+    <li class="fragment">leave out both <code class="highlighter-rouge">:</code>
+      <ul>
+        <li class="fragment"><span class="hl">beginning to end</span></li>
+      </ul>
+    </li>
+  </ul>
+
+</section>
+<section>
+  <h2 id="howd-we-slice-that">How&#39;d We Slice That?</h2>
+
+  <p><strong>Let&#39;s take a look at the slice in more detail.</strong></p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(36).reshape((4, 3, 3))
+a[1:3,:2,1:]
+</code></pre>
+
+  <ul>
+    <li class="fragment">first&#8230;we can think of axis 0 as &quot;table/panel&quot;, axis 1 as row and axis 2 as col</li>
+    <li class="fragment">so this says, only give me <span class="hl">tables 1 and 2</span></li>
+    <li class="fragment">and from those tables, I want the <span class="hl">first 2 rows, and the last 2 columns</span></li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[[10, 11],
+        [13, 14]],
+
+       [[19, 20],
+        [22, 23]]])
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="slice-and-assign">Slice and Assign</h2>
+
+  <p><strong>Based on what we&#39;ve seen before, what will happen here?</strong> &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(36).reshape((4, 3, 3))
+a[1:3,:2,1:] = 0
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[[ 0,  1,  2],...
+
+       [[ 9,  0,  0],
+        [12,  0,  0],
+        [15, 16, 17]],
+
+       [[18,  0,  0],
+        [21,  0,  0],
+        [24, 25, 26]], ...]])
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="slicing-also-a-view">Slicing Also a View</h2>
+
+  <p>🔪🔭 &#8230; <strong>ok, so here&#39;s where <code class="highlighter-rouge">numpy</code> <code class="highlighter-rouge">ndarray</code> differs from <code class="highlighter-rouge">list</code> and other sequence types.</strong></p>
+
+  <ul>
+    <li>unlike sequences, <code class="highlighter-rouge">ndarray</code> slices give a view (rather than a new <code class="highlighter-rouge">array</code>)</li>
+    <li>so assignment changes the original array!</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2 id="slicing--indexing-practice">Slicing / Indexing Practice</h2>
+
+  <p><strong>Give me multiple ways to retrieve the X&#39;s form the following <code class="highlighter-rouge">3, 3</code> arrays</strong> &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+ 1. X X _    2. _ _ X     3. _ _ _     4. _ _ _
+    X X _       _ _ X        X X X        _ X X
+    _ _ _       _ _ X        X X X        _ _ _
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a[:2, :2] # 1
+a[:, 2:]  # 2
+a[1:, :]  # 3
+a[1, 1:]  # 4
+</code></pre>
+
+  <p class="fragment">(there are multiple ways to do each, and dimensions of the returned array may differ)</p>
+</section>
+
+<section>
+  <h2 id="boolean-selections">Boolean Selections</h2>
+
+  <p><strong>You can use a boolean list / array as an index as well!</strong></p>
+
+  <ul>
+    <li class="fragment">for the axis that it&#39;s used as an index on, it will include, positionally, everything that&#39;s <code class="highlighter-rouge">True</code>, and exclude <code class="highlighter-rouge">False</code></li>
+    <li class="fragment">given <code class="highlighter-rouge">a = np.arange(15).reshape(5, 3)</code>&#8230;</li>
+    <li class="fragment">and <code class="highlighter-rouge">rows = [False, True, False, True, False]</code></li>
+    <li class="fragment">using <code class="highlighter-rouge">rows</code> as the index for axis 0, only the rows in positions where there is a <code class="highlighter-rouge">True</code> value will be included</li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a[rows]
+array([[ 3,  4,  5],
+       [ 9, 10, 11]])
+</code></pre>
+
+  <p class="fragment"><span class="hl">The number of elements in the boolean list / array must be the same as the size of the axis you&#39;re indexing</span></p>
+</section>
+
+<section>
+  <h2 id="mix--and-match-">Mix 🌀 and Match 🔷🔷</h2>
+
+  <p><strong>Given this monstrosity 🙈 (what&#39;s it look like?)</strong> &#8230; &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(24).reshape((3, 4, 2))
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[[ 0,  1],
+        [ 2,  3],
+        [ 4,  5],
+        [ 6,  7]],
+
+       [[ 8,  9],
+        [10, 11],
+        [12, 13],
+        [14, 15]],
+
+       [[16, 17],
+        [18, 19],
+        [20, 21],
+        [22, 23]]])
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="slicing-and-boolean-selection">Slicing and Boolean Selection</h2>
+
+  <p><strong>Using the previous slide and at least one boolean list to index, give back &#8230;</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">the first two tables,</li>
+    <li class="fragment">the 2nd and last row of both of those tables</li>
+    <li class="fragment">the last element of each row</li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a[:2, [False, True, False, True], 1:]
+a[:2, [False, True, False, True], -1] # (less dims)
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="fancier-">Fancier 💃</h2>
+
+  <p><strong>Not only can you use booleans, you can also use a list of integers as an index</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">the integers specify which elements to include</li>
+    <li class="fragment">and their order specifies the order to include the elements n</li>
+    <li class="fragment">passing in multiple lists allows you to essentially pick and choose specific elements!</li>
+  </ul>
+
+  <p class="fragment">For example, given a single column, <code class="highlighter-rouge">a</code> as <code class="highlighter-rouge">[[0], [1], [2], [3]]</code> &#8230; to select just the last row twice, then the first row:</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a[[-1, -1, 0]]
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="section">💃[[0, 0], [1, 1]]</h2>
+
+  <p><strong>Try these examples of fancy indexing&#8230;</strong> &#8594;</p>
+
+  <pre><code data-trim="" contenteditable="">
+a = np.arange(9).reshape(3, 3) # [[0, 1, 2],
+                               #  [3, 4, 5],
+                               #  [6, 7, 8]]
+
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+# what do we get with these indexes????
+a[[2, 1]]
+a[[0, 1, 2], [2, 1, 0]]
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([[6, 7, 8],
+       [3, 4, 5]])
+
+array([2, 4, 6])
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="transpose--matrix-operations">Transpose / Matrix Operations</h2>
+
+  <p><strong>Turn columns into rows or find the dot product</strong> &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(12).reshape((3, 4))
+a.T # rows into columns (transpose)
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+m1 = np.arange(6).reshape(2, 3)
+m2 = np.arange(6, 12).reshape(3, 2)
+m1.dot(m2) # matrix dot product
+# (sum or products of elements of rows from m1
+# ...and columns of m2)
+</code></pre>
+
+</section>
+
+<section>
+  <h2 id="functions-on-array-elements">Functions on Array Elements</h2>
+
+  <p><strong><code class="highlighter-rouge">numpy</code> comes with built-in functions that work on every element in an <code class="highlighter-rouge">array</code> &#8230; some examples include:</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">unary functions
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">sqrt</code> and <code class="highlighter-rouge">square</code></li>
+        <li class="fragment"><code class="highlighter-rouge">floor</code> and <code class="highlighter-rouge">ceil</code></li>
+        <li class="fragment"><code class="highlighter-rouge">sum</code> and <code class="highlighter-rouge">mean</code> *</li>
+        <li class="fragment">etc.</li>
+      </ul>
+    </li>
+    <li class="fragment">binary functions
+      <ul>
+        <li class="fragment"><code class="highlighter-rouge">add</code></li>
+        <li class="fragment"><code class="highlighter-rouge">floor_divide</code></li>
+        <li class="fragment">etc.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p class="fragment">Check out the table in the book for others&#8230;</p>
+
+  <p>Note that <span class="hl">these are all functions called from the <code class="highlighter-rouge">numpy</code> module</span> &#8230; and they either take on or two arguments.</p>
+</section>
+
+<section>
+  <h2 id="sum-mean-std"><code class="highlighter-rouge">sum</code>, <code class="highlighter-rouge">mean</code>, <code class="highlighter-rouge">std</code></h2>
+
+  <p><strong>These functions are a little different from the other functions in the previous slides</strong> &#8594;</p>
+
+  <ul>
+    <li class="fragment">these functions can be called on instance of <code class="highlighter-rouge">array</code> as well as<code class="highlighter-rouge">numpy</code></li>
+    <li class="fragment">they&#39;ll give back a single value</li>
+    <li class="fragment">OR&#8230; they can take an <code class="highlighter-rouge">axis</code> keyword argument specifying which column to aggregate on</li>
+  </ul>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(9).reshape(3, 3)
+a.mean()
+a.mean(axis=0)
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+4.0
+array([3., 4., 5.])
+</code></pre>
+</section>
+
+<section>
+  <h2 id="ternary-with-where">Ternary With <code class="highlighter-rouge">where</code></h2>
+
+  <p><strong>Remember the ternary / one-line if-else?</strong> &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+val1 if cond else val2
+# in other languages cond ? val1 : val2
+</code></pre>
+
+  <p class="fragment"><span class="hl">The <code class="highlighter-rouge">numpy</code> equivalent of a ternary operator is a function called <code class="highlighter-rouge">where</code></span></p>
+
+  <ul>
+    <li class="fragment">argument 1 is <code class="highlighter-rouge">condition</code></li>
+    <li class="fragment">argument 2 is value to return if <code class="highlighter-rouge">condition</code> is <code class="highlighter-rouge">True</code></li>
+    <li class="fragment">argument 3 is value to return if <code class="highlighter-rouge">condition</code> is <code class="highlighter-rouge">False</code></li>
+  </ul>
+
+  <p class="fragment"><strong>It gives back a new array with the values specified above.</strong></p>
+
+</section>
+
+<section>
+  <h2 id="where">Where⁉️</h2>
+
+  <p><strong>What do you think this will give back</strong> &#8594;</p>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+a = np.arange(9).reshape(3, 3)
+np.where(a &lt; 5, 'YAS', 'OH NO')
+</code></pre>
+
+  <pre class="fragment"><code data-trim="" contenteditable="">
+array([['YAS', 'YAS', 'YAS'],
+       ['YAS', 'YAS', 'OH NO'],
+       ['OH NO', 'OH NO', 'OH NO']], dtype='&lt;U5')
+</code></pre>
+</section>
+
+<section>
+  <h2 id="miscellaneous-methods-and-functions">Miscellaneous Methods and Functions</h2>
+
+  <p class="fragment"><strong>Methods on boolean arrays</strong></p>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">any</code> - <code class="highlighter-rouge">True</code> if any element is <code class="highlighter-rouge">True</code></li>
+    <li class="fragment"><code class="highlighter-rouge">all</code> - <code class="highlighter-rouge">True</code> if all elements are <code class="highlighter-rouge">True</code></li>
+  </ul>
+
+  <p class="fragment"><strong>Sorting (method),  Unique (function) and Membership (function</strong></p>
+
+  <ul>
+    <li class="fragment"><code class="highlighter-rouge">sort</code> - sort (along an optional axis) 📶</li>
+    <li class="fragment"><code class="highlighter-rouge">unique</code> - <code class="highlighter-rouge">numpy</code> function that gives back unique elements in array as an array</li>
+    <li class="fragment"><code class="highlighter-rouge">in1d</code> - <code class="highlighter-rouge">numpy</code> function that gives back booleans based on whether or not values in first array exist in values in second array</li>
+  </ul>
+
+</section>
+
+:ET

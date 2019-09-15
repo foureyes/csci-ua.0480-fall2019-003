@@ -1,0 +1,47 @@
+I"Ä<p>Introductions</p>
+
+<ul>
+  <li><a href="slides/intro/overview.html">Course Overview</a></li>
+  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf1jh4xLGK_16d_Z7uJlVU9fYIOjnRpkqZSt_APaQTJNqPMgA/viewform">Github Usage Form</a> (survey)</li>
+  <li>Discuss Quizzes/Readings (one class ahead)</li>
+</ul>
+
+<p>Python 3 Ecosystem and Installation</p>
+
+<ul>
+  <li><a href="slides/python/tools.html">Python Development Environment</a></li>
+</ul>
+
+<p>Python Basics</p>
+
+<ul>
+  <li>See readings on Python Basics</li>
+  <li>Different Ways to Run Python (demo)
+    <ul>
+      <li>running python on the commandline</li>
+      <li>interactive shell, IPython</li>
+      <li>jupyter notebook / lab</li>
+    </ul>
+  </li>
+  <li>Modules (demo)
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=1lrsLvwACPc&amp;feature=youtu.be">creating modules screencast</a></li>
+      <li>pro tip: set to 2x speed</li>
+      <li>(I talk too slowly)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>File I/O</p>
+
+<ul>
+  <li><a href="notebooks/py/file-io.ipynb">Working with Files</a> (notebook)</li>
+</ul>
+
+<p>Unicode and Strings</p>
+
+<ul>
+  <li><a href="notebooks/py/unicode-bytes-strings.ipynb">Encodings, Bytes and Strings</a> (notebook)</li>
+</ul>
+
+:ET

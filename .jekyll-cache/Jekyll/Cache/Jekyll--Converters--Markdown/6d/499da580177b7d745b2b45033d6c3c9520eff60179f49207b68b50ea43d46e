@@ -1,0 +1,26 @@
+I"<p>TODO - move subqueries and / or CTE&#39;s up</p>
+
+<p>Normalization</p>
+
+<ul>
+  <li>TODO - normalization slides</li>
+</ul>
+
+<p>Relational Database Design Rules / Tips</p>
+
+<ul>
+  <li>Database Design Review (News Site?)</li>
+  <li><a href="https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset">IMDB Horror Movie Dataset</a></li>
+  <li><a href="sql/design/class17-movies.sql">In class</a></li>
+</ul>
+
+<p>Implementation</p>
+
+<ul>
+  <li>(Again) <a href="https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset">IMDB Horror Movie Dataset</a></li>
+  <li><a href="sql/design/staging.sql">Database and Schema</a></li>
+  <li><a href="sql/design/movies-schema-draft-2.sql">Tables</a></li>
+  <li><a href="sql/design/movies.sql">Annotated / Complete</a></li>
+</ul>
+
+:ET

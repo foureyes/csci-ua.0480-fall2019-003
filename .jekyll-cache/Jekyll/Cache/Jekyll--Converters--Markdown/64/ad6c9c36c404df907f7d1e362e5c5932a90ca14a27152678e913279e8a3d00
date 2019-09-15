@@ -1,0 +1,32 @@
+I"þ<p>Multiple Tables (Joins) Continued</p>
+
+<ul>
+  <li><a href="sql/joins/movies.sql">Movies Revisited</a></li>
+  <li>Foreign Key (REFERENCES table (col))</li>
+  <li><a href="slides/db/joins.html">Joins</a></li>
+</ul>
+
+<p>Database Design</p>
+
+<ul>
+  <li><a href="slides/db/design.html">Database Design</a></li>
+  <li>See previous slides on Joins</li>
+</ul>
+
+<p>Entities and Relationships</p>
+
+<ul>
+  <li><a href="https://wiki.postgresql.org/wiki/Sample_Databases">Sample Databases for Postgres</a></li>
+  <li><a href="https://pgmodeler.io/">pgmodeler for Data Modeling and Reverse Engineering</a></li>
+  <li>ER Diagrams</li>
+</ul>
+
+<p>The Relational Data Model</p>
+
+<ul>
+  <li>Relational Model / Relational Algebra</li>
+  <li>Normalization</li>
+</ul>
+
+<p>Diagrams</p>
+:ET

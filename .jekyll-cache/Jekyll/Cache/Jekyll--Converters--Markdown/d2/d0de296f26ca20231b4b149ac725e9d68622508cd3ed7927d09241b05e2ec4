@@ -1,0 +1,18 @@
+I"A<p>Data Aggregation</p>
+
+<ul>
+  <li>TODO - data aggregation</li>
+  <li>Group By</li>
+  <li>Aggregations (sum, count, etc.)</li>
+</ul>
+
+<p>Time Series</p>
+
+<ul>
+  <li>TODO - time series, top things you get wrong about times!</li>
+  <li>datetime</li>
+  <li>Time Zones</li>
+  <li>Time Series</li>
+  <li>Windowing</li>
+</ul>
+:ET

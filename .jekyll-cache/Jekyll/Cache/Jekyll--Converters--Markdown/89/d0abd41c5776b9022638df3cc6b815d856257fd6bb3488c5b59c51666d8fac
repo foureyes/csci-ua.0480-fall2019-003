@@ -1,0 +1,30 @@
+I"<p>Regular Expressions</p>
+
+<ul>
+  <li>TODO - regular expressions</li>
+</ul>
+
+<p>Curating Data</p>
+
+<ul>
+  <li>TODO - bad data?</li>
+</ul>
+
+<p>Screen Scraping</p>
+
+<ul>
+  <li>see above for scraping</li>
+  <li><a href="https://www.imdb.com/title/tt0108778/fullcredits?ref_=tt_cl_sm#cast">What happened to my F.R.I.E.N.D.S? (imdb scrape)</a>
+    <ul>
+      <li>requests + beautiful soup</li>
+      <li>re.find, match object</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Join Combine and Reshape</p>
+
+<ul>
+  <li>TODO - join combine and reshape</li>
+</ul>
+:ET

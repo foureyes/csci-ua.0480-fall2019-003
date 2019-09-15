@@ -1,0 +1,19 @@
+I"Õ<p>Iterators and Generators</p>
+
+<ul>
+  <li><a href="notebooks/py/generators.ipynb">Iterators, Generators</a> (notebook)</li>
+</ul>
+
+<p>File Formats</p>
+
+<ul>
+  <li><a href="slides/python/file-types.html">Data File Formats</a> (slides)</li>
+</ul>
+
+<p>Vectors and Matrices (numpy)</p>
+
+<ul>
+  <li><a href="slides/python/numpy-basics.html">Numpy Array Basics</a> (slides)</li>
+  <li><a href="notebooks/numpy/numpy-basics.ipynb">quick numpy demo</a> (notebook)</li>
+</ul>
+:ET

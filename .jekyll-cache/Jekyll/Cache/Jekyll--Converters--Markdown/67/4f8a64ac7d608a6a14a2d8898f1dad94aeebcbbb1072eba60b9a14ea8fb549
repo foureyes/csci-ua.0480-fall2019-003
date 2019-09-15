@@ -1,0 +1,21 @@
+I"r<p>Python for Data Analysis</p>
+
+<ul>
+  <li>Ch 1: Preliminaries</li>
+  <li>Ch 2: Python Language Basics, Ipython, Jupyter Notebooks</li>
+</ul>
+
+<p>Data Science from Scratch</p>
+
+<ul>
+  <li>Ch 2: A Crash Course in Python (The Zen of Python to Modules, Control Flow)</li>
+</ul>
+
+<p>Online Resources</p>
+
+<ul>
+  <li><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></li>
+  <li><a href="http://kunststube.net/encoding/">What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text</a></li>
+  <li><a href="https://docs.python.org/3/howto/unicode.html">Unicode HOWTO</a></li>
+</ul>
+:ET
