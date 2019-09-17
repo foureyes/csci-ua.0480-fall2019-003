@@ -216,43 +216,47 @@ Vectors and Matrices (numpy)
  MATERIAL
  * TODO - add linear algebra
  * motivation for linear algebra… some example? Maybe https://www.youtube.com/watch?v=Qz58vTa8-SY"
-y,,5,17-Sep,Tue,"Vectors and Matrices (numpy) continued
+,,5,17-Sep,Tue,"Vectors and Matrices (numpy) continued
 
+<!--
 * [Companion In-Class NumPy Basics Notebook](notebooks/numpy/numpy-basics-in-class-notebook.ipynb) (notebook)
+-->
 
 Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
 
+<!--
 * TODO - moar data munging
+-->
 
 Distributions and Descriptive / Summary Statistics
 
+<!--
 * Descriptive Statistics
+-->
 
 Plotting and Visualization
 
 * [Matplotlib pt 1](slides/viz/matplotlib-review.html)
 * [Matplotlib pt 2](slides/viz/matplotlib-extras.html)
+
+<!--
 * figure, add_subplot, oop
 * [What is this .txt file?](notebooks/viz/files/enc.txt)
  * clue: etaonisrhdlumcfwgpybvkxjqz
 * [Y U Grow So Fast?](https://catalog.data.gov/dataset/population-by-country-1980-2010)
 * [Pandas Pops (same as above) or Hot pandas (Global Surface Temperature Change)](https://data.giss.nasa.gov/gistemp/tabledata_v3/GLB.Ts+dSST.txt)
-* [Matplotlib Basics Class Notes](notebooks/viz/matplotlib-basics.ipynb) (notebook)","Data Science from Scratch
+* [Matplotlib Basics Class Notes](notebooks/viz/matplotlib-basics.ipynb) (notebook)
+-->","Data Science from Scratch
  
  * Ch 3: Visualizing Data
  * Ch 10: Working with Data
  
  Python for Data Analysis
  
- * Ch 9: Plotting and Visualization","HW 02:
-
+ * Ch 9: Plotting and Visualization",Homework #02 to be posted ,"
 * Use data from previous homework, and focus on a column
 * Get some descriptive statistics
   * Implement stddev
- * Choose data set and visualize… motivate usage of numpy maybe?
- * Create data frame like library - no loops, only generator expressions 
- * Manual Cleaning
- * music generator (numpy) no loops only vector operations","HW 02:
  * Choose data set and visualize… motivate usage of numpy maybe?
  * Create data frame like library - no loops, only generator expressions 
  * Manual Cleaning
@@ -275,7 +279,13 @@ Correlation and Covariance
  
  Python for Data Analysis
  
- * Ch 5. Getting Started with pandas",,
+ * Ch 5. Getting Started with pandas",,"<!-- 
+HW 02:
+ * Choose data set and visualize… motivate usage of numpy maybe?
+ * Create data frame like library - no loops, only generator expressions 
+ * Manual Cleaning
+ * music generator (numpy) no loops only vector operations
+-->"
 y,,7,24-Sep,Tue,"Cleaning / Preparing Data, Loading Data Revisited (with pandas)
 
 * [Pandas for reading files, About APIs, cleaning / preparing data (and pandas basics review)](notebooks/pandas/basics-review-cleaning-regex-api.ipynb) (notebook)
