@@ -189,7 +189,7 @@ __Quiz #03__ – due Wed, 9/26, at 11pm
 
 * [Iterators, Generators](notebooks/py/generators.ipynb) (notebook)
 
-Descriptive Statistics – Central Tendency
+Descriptive Statistics Preview
 
 * [Max, Min, Length, Mean, Median](notebooks/stats/descriptive-statistics-central.ipynb) (notebook)
 
@@ -218,21 +218,11 @@ Vectors and Matrices (numpy)
  * motivation for linear algebra… some example? Maybe https://www.youtube.com/watch?v=Qz58vTa8-SY"
 ,,5,17-Sep,Tue,"Vectors and Matrices (numpy) continued
 
-<!--
-* [Companion In-Class NumPy Basics Notebook](notebooks/numpy/numpy-basics-in-class-notebook.ipynb) (notebook)
--->
-
-Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
-
-<!--
-* TODO - moar data munging
--->
+* See slides from previous class
 
 Distributions and Descriptive / Summary Statistics
 
-<!--
-* Descriptive Statistics
--->
+* [Central Tendency, Dispersion](notebooks/stats/central-tendency-and-dispersion.ipynb)
 
 Plotting and Visualization
 
@@ -266,6 +256,12 @@ y,,6,19-Sep,Thu,"Tabular Data (pandas)
 * [Pandas Basics](slides/python/pandas-basics.html) (slides)
 * [Arithmetic, Basic Selection, Indexing, etc.](slides/python/pandas-review-arithmetic-index.html) (slides)
 * [Pandas Functions, Function Application](slides/python/pandas-func-ops.html) (slides)
+
+Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
+
+<!--
+* TODO - moar data munging
+-→
 
 Descriptive Statistics Revisited
 
