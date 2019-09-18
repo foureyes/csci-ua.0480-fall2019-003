@@ -251,17 +251,21 @@ Plotting and Visualization
  * Create data frame like library - no loops, only generator expressions 
  * Manual Cleaning
  * music generator (numpy) no loops only vector operations"
-y,,6,19-Sep,Thu,"Tabular Data (pandas)
+y,,6,19-Sep,Thu,"See Previous Slides on Matplotlib
+
+Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
+
+Tabular Data (pandas)
 
 * [Pandas Basics](slides/python/pandas-basics.html) (slides)
 * [Arithmetic, Basic Selection, Indexing, etc.](slides/python/pandas-review-arithmetic-index.html) (slides)
 * [Pandas Functions, Function Application](slides/python/pandas-func-ops.html) (slides)
 
-Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
+
 
 <!--
 * TODO - moar data munging
--→
+-->
 
 Descriptive Statistics Revisited
 
