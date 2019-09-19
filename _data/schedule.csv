@@ -253,6 +253,9 @@ Plotting and Visualization
  * music generator (numpy) no loops only vector operations"
 y,,6,19-Sep,Thu,"See Previous Slides on Matplotlib
 
+* [What is this .txt file?](notebooks/viz/files/enc.txt)
+ * clue: etaonisrhdlumcfwgpybvkxjqz
+
 Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
 
 Tabular Data (pandas)
