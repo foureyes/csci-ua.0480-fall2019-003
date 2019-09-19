@@ -251,10 +251,10 @@ Plotting and Visualization
  * Create data frame like library - no loops, only generator expressions 
  * Manual Cleaning
  * music generator (numpy) no loops only vector operations"
-y,,6,19-Sep,Thu,"See Previous Slides on Matplotlib
+,,6,19-Sep,Thu,"See Previous Slides on Matplotlib
 
 * [What is this .txt file?](notebooks/viz/files/enc.txt)
- * clue: etaonisrhdlumcfwgpybvkxjqz
+* clue: etaonisrhdlumcfwgpybvkxjqz
 
 Data ""Munging"" (Cleaning and Prepping Data with Pure Python)
 
@@ -265,18 +265,15 @@ Tabular Data (pandas)
 * [Pandas Functions, Function Application](slides/python/pandas-func-ops.html) (slides)
 
 
-
 <!--
 * TODO - moar data munging
 -->
 
 Descriptive Statistics Revisited
 
-* TODO - descriptive statistics revisited
 
 Correlation and Covariance
-
-* TODO - Correlation and Covariance","Data Science from Scratch
+","Data Science from Scratch
  
  * Ch 5: Statistics (Correlation, Correlation and Causation)
  
