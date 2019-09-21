@@ -3,8 +3,6 @@ layout: default
 nav-state: schedule
 ---
 
-
-
 <!--
 
 

@@ -279,7 +279,11 @@ Correlation and Covariance
  
  Python for Data Analysis
  
- * Ch 5. Getting Started with pandas",,"<!-- 
+ * Ch 5. Getting Started with pandas","__Homework #02__ – due Fri 9/27 at 11pm
+
+1. [Homework #02 Instructions](assignments/02.html)
+
+","<!-- 
 HW 02:
  * Choose data set and visualize… motivate usage of numpy maybe?
  * Create data frame like library - no loops, only generator expressions 
