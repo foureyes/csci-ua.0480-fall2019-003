@@ -253,6 +253,7 @@ Plotting and Visualization
  * music generator (numpy) no loops only vector operations"
 ,,6,19-Sep,Thu,"See Previous Slides on Matplotlib
 
+* [matplotlib – charts and graphs](notebooks/viz/charts-graphs-decode.ipynb) (notebook)
 * [What is this .txt file?](notebooks/viz/files/enc.txt)
 * clue: etaonisrhdlumcfwgpybvkxjqz
 
