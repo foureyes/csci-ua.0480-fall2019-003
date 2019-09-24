@@ -64,7 +64,7 @@ d = [["$229.2", 2017, 123000, "$1100", "Cupertino, US"],
 comps = ["apple", "samsung", "amazon", "foxconn", "alphabet"]
 cols = ["revenue", "fy", "employees", "mcap", "location"]
 
-c = pd.DataFrame(data, index=comps, columns=cols)
+c = pd.DataFrame(d, index=comps, columns=cols)
 
 </code></pre>
 </section>
@@ -255,7 +255,7 @@ c['revenue'] = c['revenue'].map(lambda rev: float(rev[1:]))
 </code></pre>
 	<pre class="fragment"><code data-trim contenteditable>
 # create a new column for revenue per employee
-c['rev_emp'] = c['revenue'] * 1000000 / c['employees'
+c['rev_emp'] = c['revenue'] * 1000000000 / c['employees'
 </code></pre>
 	<pre class="fragment"><code data-trim contenteditable>
 # sort descending by rev_emp
@@ -267,7 +267,7 @@ c.sort_values(by='rev_emp', ascending=False)
 <section markdown="block">
 ## Summary Statistics, Unique, Counts
 
-__Calling `describe` on your `DataFrame` yields some descriptive statistics for__ &arr;
+__Calling `describe` on your `DataFrame` yields some descriptive statistics for__ &rarr;
 
 * {:.fragment} count (number of rows), min, max, mean, etc.
 * {:.fragment} `rain.describe()` ... `c.describe()`

@@ -47,7 +47,7 @@ d = [["$229.2", 2017, 123000, "$1100", "Cupertino, US"],
 comps = ["apple", "samsung", "amazon", "foxconn", "alphabet"]
 cols = ["revenue", "fy", "employees", "mcap", "location"]
 
-c = pd.DataFrame(data, index=comps, columns=cols)
+c = pd.DataFrame(d, index=comps, columns=cols)
 
 </code></pre>
 </section>
