@@ -4,6 +4,7 @@ nav-state: schedule
 ---
 
 <!--
+
 <script>
 document.addEventListener('DOMContentLoaded', init);
 function init() {
@@ -16,7 +17,9 @@ function init() {
 		});
 	}
 }
+
 </script>
+
 -->
 <div id="quick-links">
 <h3 style="text-align: center;"><a href="syllabus.html">Homework and Quiz Policy</a> | <a href="{{site.vars.piazza}}">Piazza and Tutoring</a> | <a href="data-sets.html">Data Sets</a></h3>
