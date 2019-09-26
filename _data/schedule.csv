@@ -624,7 +624,28 @@ Queries Continued
  
  * Ch 6: Joining Tables in a Relational Database
  * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)"
-y,,13,17-Oct,Thu,"Constraints
+y,,13,17-Oct,Thu,"Review First Part of the Semester
+
+* [midterm review notebook](notebooks/midterm-review/review.ipynb)
+",,,,"Review First Part of the Semester
+
+* [midterm review notebook](notebooks/midterm-review/review.ipynb)
+",
+y,exam,14,22-Oct,Tue,Exam #1,,,,Exam #1,"Relational Database Design and Implementation
+ 
+ Ch 3: Why Good Design Matters
+ Ch 4: Entities and Relationships
+ Ch 5: The Relational Data Model
+ 
+ Online Resources
+ 
+ * [Normalization (from MariaDB docs)](https://mariadb.com/kb/en/library/database-normalization/)
+ * [Foreign key constraint](http://www.postgresqltutorial.com/postgresql-foreign-key/)
+ * [Inner join](http://www.postgresqltutorial.com/postgresql-inner-join/)
+ * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
+ * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
+ * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)"
+y,,15,24-Oct,Thu,"Constraints
 
 * TODO - Constraints
 
@@ -667,27 +688,6 @@ Sample Questions for Midterm and About Exam
 * The reference is still a draft!
 * [Notes from class re: exam topics / format](slides/midterm.html)
 ",
-y,exam,14,22-Oct,Tue,"Review First Part of the Semester
-
-* [midterm review notebook](notebooks/midterm-review/review.ipynb)
-",,,,"Review First Part of the Semester
-
-* [midterm review notebook](notebooks/midterm-review/review.ipynb)
-",
-y,,15,24-Oct,Thu,Exam #1,,,,Exam #1,"Relational Database Design and Implementation
- 
- Ch 3: Why Good Design Matters
- Ch 4: Entities and Relationships
- Ch 5: The Relational Data Model
- 
- Online Resources
- 
- * [Normalization (from MariaDB docs)](https://mariadb.com/kb/en/library/database-normalization/)
- * [Foreign key constraint](http://www.postgresqltutorial.com/postgresql-foreign-key/)
- * [Inner join](http://www.postgresqltutorial.com/postgresql-inner-join/)
- * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
- * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
- * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)"
 y,,16,29-Oct,Tue,"Multiple Tables (Joins) Continued
 
 
