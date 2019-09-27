@@ -307,6 +307,7 @@ HW 02:
 ,,8,26-Sep,Thu,"Cleaning / Preparing Data, Loading Data With Pandas
 
 * [Missing Data, Basic Transformations](slides/python/pandas-clean.html)
+* [Cleaning Data with Pandas](notebooks/pandas/cleaning-data-pandas.ipynb) (notebook)
 * Sample Data
   * [DOHMH Dog Bite Data](https://data.cityofnewyork.us/Health/DOHMH-Dog-Bite-Data/rsgh-akpg)
     * ([Direct Download](https://data.cityofnewyork.us/api/views/rsgh-akpg/rows.csv?accessType=DOWNLOAD))
