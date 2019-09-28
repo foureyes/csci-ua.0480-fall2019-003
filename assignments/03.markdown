@@ -50,56 +50,40 @@ function onClick(evt) {
 }
 </script>
 
-# Assignment #3 - Cleaning and Preparing Data - Due Tue, Oct 9th  at 11pm
+# Assignment #3 - Cleaning and Preparing Data - Due Friday, Oct 4th at 11pm
 
-In this assignment, you'll create two notebooks (`ipynb`) that contain documentation and code for the following.
+In this assignment, you'll create a single notebook (`ipynb`) that contains documentation and code. In the notebook, you should:
 
-1. find a data set that you're interested in from a _reputable_ source 
-	* describe the data set
-	* come up with some questions that this data may help answer
-2. clean/prepare/transform the data
-	* if your data set is mostly clean, then transform the data in meaningful ways to help answer your questions above
-3. calculate some descriptive statistics and use your data to answer the questions that you documented earlier
-4. export and validate calculations
-	* export a csv
-	* ...then import the csv into a spreadsheet 
-	* confirm that your descriptive statistics match
-	* save or export the spreadsheet as an Open Office (`.ods`) or Excel File (`.xls`)
-5. create a second notebook and repeat steps 2 and 3
-	* if you used `pandas` previously, do this in regular python
-	* if you didn't use `pandas` previously, use `pandas`
+https://opendata.cityofnewyork.us
 
-## Part 0 - Extra Credit
+1. find a data set that requires some cleaning and transformation
+2. explore and document the data set
+3. clean / prepare the data
+4. run summary statistics
+5. create visualizations
+6. answer the questions that you documented earlier
 
-As you work through parts 1 - 5, keep in mind that you will receive extra credit by doing __any two of the following__:
+## Part 1 - Finding a Data Set
 
-1. 💻Incorporate the use of a class, generator or decorator in a meaningful way
-	* it should be something that's _useful_
-	* if you're creating a class, keep in mind that a class is likely unnecessary if you only have an `__init__` method and a single method 
-2. 📖Tackle pagination
-3. 💪Work with a medium-sized (or _larger_) data set (> 5,000 records)
-4. 📈 Incorporate at least two visualizations in your notebooks using `matplotlib`
+#### Find a data set to explore
 
-⚠️ Extra credit will only be counted if you:
-
-1. <span class="hl">add a `README.md`</span> file specifying the extra credit that you did and its location
-2. <span class="hl">add a markdown cell documenting your extra credit work</span> within your notebook
-
-## Part 1 - Selecting and Documenting a Data Set
-
-#### Find a data set that you'd like to work with
-
-Find a data set that's meaningful to you from a source that has some information regarding the provenance of the data (_where did it come from!?_). Check out some [sources here](../data-sets.html). Some guidelines:
+Find a a __new__ data set that's meaningful to you from sources that have some information regarding the provenance of the data (_where did it come from!?_). Check out some [sources here](../data-sets.html). Some guidelines:
 
 1. <span class="hl">don't use the dog bites data set</span> (or _really_, any other data set that we've used in class, because, uh... we already cleaned it 🙁)
 2. (for the next part) write <span class="hl">code that's different from the programs that we've done in class</span> (it's not adequate to simply use class sample code with a different data set 🙅)
 
 #### Write some documentation and start a notebook called `homework02a.ipynb`:
 
+Again, as with previous homeworks, describe the data set that you're working with.
+
 1. In a markdown cell, describe the data that you've selected
 	* link to any documentation about the data that you've found 
 	* discuss the origin of the data (what is it, who collected / generated it, how did they do it, etc.)
 	* describe why you are interested in it 
+
+## Part 2 - Selecting a Data Set
+
+* to do this, you'll take some time to find a data set that requires clean up and / transformation
 	* list a few (2 ~ 3)  questions that you think this data set may answer
 2. Using code, show a small part of the data
 	* you can download the data beforehand and read it from a file
@@ -113,7 +97,7 @@ Find a data set that's meaningful to you from a source that has some information
 	* assume that your goal is to clean up the data so that you can calculate some descriptive statistics about it
 	* ...and answer some of the questions that you've asked
 
-## Part 2 - Clean or Prepare the Data
+## Part 3 - Clean or Prepare the Data
 
 1. Using the documentation that you wrote earlier in your notebook, write code to clean up and/or prepare your data
 	* ⚠️ <span class="hl">if your data set is already clean, then make sure that you make significant transformations to the data</span>
@@ -123,27 +107,13 @@ Find a data set that's meaningful to you from a source that has some information
 4. Comment your code or add markdown cells as you proceed
 5. Periodically show rows / subsets of the data (keep these data samples short so as not to make the notebook unnecessarily long) as you work through your data
 
-## Part 3 - Stats and Answers
+## Part 4 - Stats 
 
 1. Use your newly clean data to calculate some descriptive statistics on some columns (outliers with min and max for a column, mean, median, etc.)
 2. In a mix of markdown cells and code, try to run some simple analysis to answer your questions that you came up with earlier in your notebook
 	* (it's ok if you can't answer your questions 😅 - just describe the challenges your encountered)
 
-## Part 4 - Export Your Data
+## Part 5 - Visualizations
 
-1. Export your data as a `csv` - you can use `pandas` or regular Python (with any built-in modules, even `csv`) to do this 
-2. Open the data in a spreadsheet
-	* use Excel, Open Office, Google Sheets, etc.
-3. Calculate the same descriptive statistics that you did in your code, but do so in your spreadsheet 
-	* for example `MEDIAN`, `COUNT`, `SUM`, etc.
-4. Compare your results with your calculate results in your notebook
-5. If they do not match...
-	* try to debug your code
-	* if you can't make the results match, describe the inconsistencies in a markdown cell
+## Part 6 - Answering Questions
 
-## Part 5 - Do it Again
-
-1. Repeat parts 2 and 3 in a notebook called `homework02b.ipynb`
-2. However, if you used `pandas` previously, use regular Python (or the other way around)
-3. If you find that this is not possible, keep your work intact, 
-4. In a markdown cell, describe the challenges that you encountered or compare and contrast your approach with the way that you did it previously
