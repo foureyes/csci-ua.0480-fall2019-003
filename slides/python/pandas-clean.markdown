@@ -253,6 +253,59 @@ df = df.replace(-1, 100)
 </section>
 
 <section markdown="block">
+## "Binning" Values
+
+__Perhaps you have _a lot_ of _continuous_ data. It may be useful to categorize that data into bins for easier reporting.__ &rarr;
+
+* {:.fragment} use `pd.cut(data, bins, labels=labels)`
+* {:.fragment} `bins` represents boundaries of bins as a list: 
+	* `[82, 86, 89, 92, 100]`
+	* the bins are pairs of each number, and the number next to it
+	* the first number in the pair is exclusive, the second is inclusive
+	* consequently, groups are: 83-86, 87-89, 90-92, 93-100
+* {:.fragment} `labels` can be used to specify text labels for each bin 
+* {:.fragment} the result of `pd.cut` is a categories object
+* {:.fragment} the values of a categories object can be counted by using:
+	* `pd.value_counts(category_object)`
+
+</section>
+
+<section markdown="block">
+## Binning Example
+
+__In this example, we'll map exam scores to letter grades__ &rarr;
+
+```
+scores = [83, 86, 87, 89, 90]
+bins = [82, 86, 89, 92, 100]
+labels = ['B', 'B+', 'A-', 'A']
+```
+
+```
+# use cut to bin the scores into bins
+# using labels as the text labels
+grades = pd.cut(scores, bins, labels=labels)
+```
+{:.fragment}
+
+```
+# now lets count the values that fall into each bin
+pd.value_counts(grades) 
+```
+{:.fragment}
+
+```
+# we get back the Series:
+B+    2
+B     2
+A-    1
+A     0
+dtype: int64
+```
+{:.fragment}
+
+</section>
+<section markdown="block">
 ## Renaming Columns and Rows
 
 __We've been dealing mostly with values / data in the DataFrame, but what about column and row names?__

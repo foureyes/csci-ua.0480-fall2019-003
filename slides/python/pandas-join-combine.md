@@ -54,6 +54,22 @@ Those familiar with SQL may notice that:
 </section>
 
 <section markdown="block">
+## Merge how? 🤔
+
+__`merge` has other possible values for `how`__ ... the full list of possible values is &rarr;
+
+* {:.fragment} `'left'`: include all keys from the first (left) DataFrame, even if they don't exist in second
+* {:.fragment} `'right'`: include all keys from the second (right) DataFrame, even if they don't exist in first
+* {:.fragment} `'outer'`: union of keys from both DataFrames
+* {:.fragment} `'inner'`: intersection of keys from both DataFrames (default)
+
+
+These can be found in the [official pandas docs for `merge`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html)
+{:.fragment}
+
+</section>
+
+<section markdown="block">
 ## "Stacking"
 
 __To stack DataFrames based on column name, `pd.concat` can be used__ &rarr;
