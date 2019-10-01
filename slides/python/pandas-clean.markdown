@@ -218,7 +218,7 @@ Finally, to assign back to original DataFrame as new columns:
 
 ```
 # just the domain
-df['domain']] = tmp[1]
+df['domain'] = tmp[1]
 
 # add both protocol and domain
 df[['protocol', 'domain']] = tmp

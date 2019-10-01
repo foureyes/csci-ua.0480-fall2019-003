@@ -202,39 +202,41 @@ __Instead of matching _literal_ characters, these metacharacters match a specifi
 __What are the results of these regular expressions?__ &rarr;
 
 ```
-re.findall('a\w', 'banana boat blog')
+re.findall('a\w', 'a banana boat')
 ```
 {:.fragment}
 
 ```
-['ba', 'bo', 'bl']
+['an', 'an', 'at']
 ```
 {:.fragment}
 
 ```
-re.findall('a.', 'banana boat blog')
+re.findall('a.', 'a banana boat')
 ```
 {:.fragment}
 
 ```
-['an', 'an', 'a ', 'at']
+# note that a's with space is included!
+['a ', 'an', 'an', 'a ', 'at']
 ```
 {:.fragment}
 
 ```
-re.findall('a[^n]', 'banana boat blog')
+# note that the character class contains a space
+re.findall('a[^n ]', 'a banana boat')
 ```
 {:.fragment}
 
 ```
-['a ', 'at']
+['at']
 ```
 {:.fragment}
 
 ```
 # note that findall doesn't allow overlapping matches
 # so it just finds the first, but ignores the second
-re.findall('.an', 'banana boat blog')
+re.findall('.an', 'a banana boat') # just ['ban']
 ```
 {:.fragment}
 
