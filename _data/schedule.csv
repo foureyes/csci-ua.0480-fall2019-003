@@ -317,24 +317,7 @@ HW 02:
 Using APIs
 
 * [Data Formats on the Web](slides/data/web-data.html)
-* [Making Requests](slides/data/api-request.html)
-
-<!--
-* [Pandas for reading files, About APIs, cleaning / preparing data (and pandas basics review)](notebooks/pandas/basics-review-cleaning-regex-api.ipynb) (notebook)
-
-
-
-
-  * TODO -  A little bit about the web, urllib, request vs actual library
-* Using an API 
-  * Pagination and Flattening
-  * .append method
-  * export to csv
-  * .reset_index
-* [Scraping, Using an API Class Notes](notebooks/web/data-from-the-web.ipynb) (notebook)
-  * note that you must manually fill in url for API example
-* pandas for writing files
--->","Data Science from Scratch
+* [Making Requests](slides/data/api-request.html)","Data Science from Scratch
  
  * Ch 9: Getting Data (Using APIs, Example: Using the Twitter APIs)
  
@@ -387,24 +370,39 @@ Using APIs
  Python for Data Analysis
  
  * Ch 8: Data Wrangling: Join, Combine and Reshape"
-y,,9,01-Oct,Tue,"Regular Expressions
+,,9,01-Oct,Tue,"Regular Expressions
 
-* TODO - regular expressions
+* [Basic Regular Expression Syntax](slides/python/regex.html)
 
-Curating Data
-
-* TODO - bad data?
 
 Screen Scraping
 
-* see above for scraping
-* [What happened to my F.R.I.E.N.D.S? (imdb scrape)](https://www.imdb.com/title/tt0108778/fullcredits?ref_=tt_cl_sm#cast)
+<!--
+Curating Data
+
+
+API and Screen Scraping
+* [Pandas for reading files, About APIs, cleaning / preparing data (and pandas basics review)](notebooks/pandas/basics-review-cleaning-regex-api.ipynb) (notebook)
+* Using an API 
+  * Pagination and Flattening
+  * .append method
+  * export to csv
+  * .reset_index
+
+* pandas for writing files
+-->
+
+* [Scraping, Using an API Class Notes](notebooks/web/data-from-the-web.ipynb) (notebook)
+  * note that you must manually fill in url for API example
+  * [What happened to my F.R.I.E.N.D.S? (imdb scrape)](https://www.imdb.com/title/tt0108778/fullcredits?ref_=tt_cl_sm#cast)
   * requests + beautiful soup
   * re.find, match object
 
+
+
 Join Combine and Reshape
 
-* TODO - join combine and reshape","Data Science from Scratch
+* [Cheatsheet for Combining DataFrames](slides/python/pandas-join-combine.html)","Data Science from Scratch
  
  * Ch 2: A Crash Course in Python (Regular Expressions)
  * Ch 9: Getting Data (Scraping the Web)

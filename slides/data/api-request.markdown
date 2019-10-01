@@ -95,12 +95,16 @@ __The general steps for using an API are__ &rarr;
 Let's try `urllib` with the [tumblr api](https://www.tumblr.com/docs/en/api/v2). Let's read the docs and figure out how we can get some cat 🐈 pics!
 
 <pre><code data-trim contenteditable>
-import urllib, json
+import urllib.request, json
 
-search_tag, post_type = 'cat', 'text'
-api_key = 'TODO: fill me in!'
-url = f'http://api.tumblr.com/v2/tagged?api_key={api_key}&tag={search_tag}'
-response = urllib.request.urlopen(url).read()
+# we're going to ask tumblr for some posts ...
+search_tag = 'cat'
+api_key = 'XBu4Lke6Cyh2UrLFIZW0jIo79sUT8EwtruJduMAknEUNhccNwY'
+post_type = 'text'
+url = 'http://api.tumblr.com/v2/tagged?api_key=' + api_key
+url = url + '&tag=' + search_tag
+
+response = urllib.request.urlopen(url).read().decode('utf-8')
 posts  = json.loads(response)['response']
 
 for post in posts:
