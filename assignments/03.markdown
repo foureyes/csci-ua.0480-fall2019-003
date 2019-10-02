@@ -240,6 +240,7 @@ In this part of the assignment, you'll work on parsing html with a library and r
 	* pay attention to patterns in data (what _makes_ a course number, what element is a course number usually in?)
 	* also helpful to print out elements themselves (without using `.text`) to see what element was actually selected 
 	* some example markup and parsing code:
+
 ~~~
 <section class='container'>
   <div class='row'>
