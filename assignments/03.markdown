@@ -89,7 +89,7 @@ This homework consists of three parts:
 
 ### Prep
 
-* Download [a csv of rolling sales data from Manhattan from Sep 2018 - Aug 2018](./hw03/rolling_sales.csv)
+* Download [a csv of rolling sales data from Manhattan from Sep 2018 - Aug 2018](./hw03/rollingsales_manhattan.csv)
 from September 2018 to August 2019".
 	* this data was sourced from [NYC Department of Finance’s Rolling Sales data for Manhattan](https://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page) 
 	* save the `csv` file into your repository
