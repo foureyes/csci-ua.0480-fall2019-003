@@ -307,6 +307,7 @@ re.findall('^a\w.', 'ana nab a banana')
 ```
 {:.fragment}
 </section>
+
 <section markdown="block">
 ## Some More Examples!
 
@@ -319,4 +320,107 @@ __A few more regular expressions... describe the following patterns__ &rarr;
 * {:.fragment} <code>^\w\d?\d?$</code> 
 	* {:.fragment} one letter at the beginning of a line followed by exactly 0, 1 or 2 digits
 </section>
+
+
+<section markdown="block">
+## Escaping Special Characters
+
+__If you want to match a literal character that's the same as a metacharacter, you have to escape it.__ &rarr;
+
+For example...
+{:.fragment}
+
+* {:.fragment} `.` means any character... 
+* {:.fragment} but maybe you _actually_ want to match for a `.` only
+* {:.fragment} escape it with a backslash: `\.`
+
+```
+re.findall('a\.', 'banana.')
+['a.']
+
+re.findall('a.', 'banana.')
+['an', 'an', 'a.']
+```
+{:.fragment}
+</section>
+
+<section markdown="block">
+## Grouping with Parentheses
+
+__Parentheses are actually special characters too. They specify grouping__ &rarr;
+
+* if you want to match actual parentheses, they must be escaped
+* surrounding with parentheses allows you to match sub-patterns
+* remember - this works with `match` and `search` as both functions return match objects
+
+```
+# matches a date
+# contains sub groups for month and day
+re.search('(\w{3}) (\d{2})', 'The date is Jan 23')
+```
+```
+# entire match
+m[0] # 'Jan 23'
+```
+{:.fragment}
+
+```
+# first subgroup
+m[1] 'Jan'
+```
+{:.fragment}
+
+```
+# second subgroup
+m[2] '23'
+```
+{:.fragment}
+
+</section>
+<section markdown="block">
+## pandas and Regex
+
+__Regular expressions can be used through the `str` accessor:__ &rarr;
+
+* `str.match(pattern)`
+	* gives back Series of booleans
+	* True if string in Series matches pattern
+	* False otherwise
+* `str.extract(pattern)`
+	* `pattern` __must__ contain subgroups
+	* will extract subgroup into new Series!
+	* _useful_ for pulling out a substring from another using a pattern
+
+</section>
+
+<section markdown="block">
+## Extract Example
+
+__The following code extracts a single letter followed by a period from each element in the Series below.__ &rarr;
+
+```
+s = pd.Series([
+			'aa.) yes', 
+			'bbb.) no', 
+			'c.) maybe'
+]);
+```
+
+Notice the subgroups used in the pattern with `extract`...
+{:.fragment}
+
+```
+s.str.extract('\w*(\w\.)\)')
+```
+{:.fragment}
+
+```
+	0
+0	a.
+1	b.
+2	c.
+```
+{:.fragment}
+</section>
+
 

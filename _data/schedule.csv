@@ -326,13 +326,7 @@ Using APIs
  * Ch 6: Data Loading, Storage, and File Formats
  * Focus on Scraping
  * Focus on APIs
- * Ch 7: Data Cleaning and Preparation","__Homework #03__ – due Fri 10/4 at 11pm
-
-Homework #03 to be posted
-
-<!--
-1. [Homework #03 Instructions](assignments/03.html)
--->","HW 03 
+ * Ch 7: Data Cleaning and Preparation",,"HW 03 
 * use an API
 * clean data
 * standalone analysis
@@ -409,7 +403,10 @@ Join Combine and Reshape
  
  Python for Data Analysis
  
- * Ch 8: Data Wrangling: Join, Combine and Reshape",,"MATERIAL:
+ * Ch 8: Data Wrangling: Join, Combine and Reshape","__Homework #03__ – due Tue 10/8 at 11pm
+
+1. [Homework #03 Instructions](assignments/03.html)
+","MATERIAL:
  TODO - slides for join, combine
  TODO - slides for regular expressions
  TODO - data set for joins?","Regular Expressions
