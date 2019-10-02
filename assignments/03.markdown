@@ -108,8 +108,8 @@ from September 2018 to August 2019".
 
 ### Instructions
 
-1. import `rollingsales_manhattan.xls` as a `DataFrame`
-	* bring in the excel file by using the [`read_excel` function ](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html); don't use any keyword arguments initially
+1. import `rollingsales_manhattan.csv` as a `DataFrame`
+	* bring in the excel file by using read_csv from pandas; don't use any keyword arguments initially
 	* compare the resulting `DataFrame` against opening the spreadsheet in Excel, LibreOffice or Google Sheets
 	* you _should_ immediately see an issue with the import
 	* use a keyword argument [from the docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html) to fix the issue
