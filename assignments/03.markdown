@@ -94,9 +94,6 @@ from September 2018 to August 2019".
 	* this data was sourced from [NYC Department of Finance’s Rolling Sales data for Manhattan](https://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page) 
 	* save the `csv` file into your repository
 	* read the [companion "Data Dictionary"](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) for information on the data stored in the columns
-* To work with excel files, you'll need `xlrd`
-	* if working with Anaconda `conda install xlrd` 
-	* otherwise, use `pip install xlrd` 
 
 ### Starting a Notebook and General Requirements
 
