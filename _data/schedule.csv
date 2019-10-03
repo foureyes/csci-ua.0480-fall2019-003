@@ -430,26 +430,36 @@ Join Combine and Reshape
  
  * Ch 10: Data Aggregation and Group Operations
  * Ch 11: Time Series"
-y,,10,03-Oct,Thu,"Data Aggregation
+,,10,03-Oct,Thu,"Revisit Data from the Web
 
+* (see previous class note / slides)
+
+Data Aggregation
+
+* [More About Indexes, Multi Index, Grouping](slides/python/pandas-hier-agg.html)
+
+<!--
 * TODO - data aggregation
 * Group By
 * Aggregations (sum, count, etc.)
+-->
 
+
+
+<!--
 Time Series
 
 * TODO - time series, top things you get wrong about times!
 * datetime
 * Time Zones
 * Time Series
-* Windowing","Python for Data Analysis
+* Windowing
+-->
+
+","Python for Data Analysis
  
  * Ch 10: Data Aggregation and Group Operations
- * Ch 11: Time Series","HW 04:
- * time based data analysis with aggregation using pandas
- * use joins
- 
- ","MATERIAL:
+ * Ch 11: Time Series",,"MATERIAL:
  TODO - Aggregation
  TODO - Time Series
  TODO - find data for aggregation and time series demo","Data Aggregation
@@ -476,27 +486,30 @@ Time Series
  * [creating tables](https://www.postgresql.org/docs/current/static/sql-createtable.html)
  * [INSERT](https://www.postgresql.org/docs/current/static/sql-insert.html)
  * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)"
-y,,11,8-Oct,Tue,"Relational Database Overview
+,,11,8-Oct,Tue,"Relational Database Overview
 
-* [Databases intro](slides/db/intro.html)
-* [Slides for all topics below (Postgres, SQL Basics)](slides/db/postgres.html)
+* [Databases Intro](slides/db/intro.html)
 
-
+<!--
 CREATE, INSERT, and SELECT
 
 * TODO - create, insert and select
+-->
 
+Commandline Client, SQL, and Single Table Queries
+
+* commandline vs graphical / datagrip
+* psql
+* [Postgres, SQL Basics](slides/db/postgres.html)
+
+<!--
 Single Table
 
 * TODO - single table querying
-
-Commandline Client, SQL, and Simple Queries
-
 * TODO - review previous slides
-* commandline vs graphical / datagrip
-* psql
 * Insert
-* Select","Practical SQL
+* Select
+-->","Practical SQL
  
  * Introduction
  * Ch 1: Creating Your First Database and Table
@@ -507,7 +520,12 @@ Commandline Client, SQL, and Simple Queries
  
  * [creating tables](https://www.postgresql.org/docs/current/static/sql-createtable.html)
  * [INSERT](https://www.postgresql.org/docs/current/static/sql-insert.html)
- * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)",,,"Relational Database Overview
+ * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)","<!--
+HW 04:
+ * time based data analysis with aggregation using pandas
+ * use joins
+ 
+ -->",,"Relational Database Overview
 
 * [Databases intro](slides/db/intro.html)
 * [Slides for all topics below (Postgres, SQL Basics)](slides/db/postgres.html)
