@@ -315,7 +315,7 @@ __A few more regular expressions... describe the following patterns__ &rarr;
 
 * {:.fragment} <code>\d\d\d</code> or <code>\d{3}</code> 
 	* {:.fragment} exactly 3 digits
-* {:.fragment} <code>h.\*$</code> 
+* {:.fragment} <code>h.*$</code> 
 	* {:.fragment} h followed by 0 or more of any character up to the end of the line
 * {:.fragment} <code>^\w\d?\d?$</code> 
 	* {:.fragment} one letter at the beginning of a line followed by exactly 0, 1 or 2 digits
