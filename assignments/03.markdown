@@ -392,8 +392,8 @@ Write code to achieve what you've written out above. The code should contain at 
 
 * 1 filling in missing values
 * 1 type conversion
-* 1 transform a row
-* 1 create a new calculated row
+* 1 transform a column
+* 1 create a new calculated column
 * 1 visualization
 * 1 calculate summary statistics
 * 1 calculate value counts
