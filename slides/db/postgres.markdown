@@ -60,7 +60,7 @@ __Installation installs both server and client:__
 * client can be commandline or graphical (rn only use commandline)
 	* `psql` - commandline client
 	* pgAdmin - graphical
-	* DataGrip - graphical, not gree
+	* DataGrip - graphical (free with educational license)
 * currently both server and client local (on same machine)
 * eventually, server on remote machine!
 
@@ -176,14 +176,15 @@ Use `\?` to show available `psql` commands
 <section markdown="block">
 ## Naming Conventions
 
-* quoted names are case sensitive
+* double quoted table names are case sensitive
 * unquoted normalizes to lowercase (maybe bad depending on your table names)
 * ...so make table names and column names:
-	* lowercase
-	* words separated by underscore
-	* very descriptive
-	* underscore id (foo_id) for foreign keys (more on this later)
-	* be consistent with pluralization (always either use singular or always use plural)
+	* {:.fragment} lowercase
+	* {:.fragment} avoid double quoting table names
+	* {:.fragment} words separated by underscore
+	* {:.fragment} descriptive
+	* {:.fragment} underscore id (foo_id) for foreign keys (more on this later)
+	* {:.fragment} be consistent with pluralization (always either use singular or always use plural)
 
 
 </section>
@@ -208,11 +209,11 @@ These are some high level categories where these types can fit in:
 
 __Check the docs on [numeric data types](https://www.postgresql.org/docs/current/static/datatype-numeric.html)__ &rarr;
 
-* `serial` (auto incrementing, pk if no "natural pk" apparent, called artificial / surrogate)
-* `integer` - typical choice for integer, 4 bytes
-* `smallint` - 2 bytes, signed
-* `bigint` - 8 bytes, signed
-* `decimal` / `numeric` - arbitrary precision numbers
+* {:.fragment} `serial` (auto incrementing, pk if no "natural pk" apparent, called artificial / surrogate)
+* {:.fragment} `integer` - typical choice for integer, 4 bytes
+* {:.fragment} `smallint` - 2 bytes, signed
+* {:.fragment} `bigint` - 8 bytes, signed
+* {:.fragment} `decimal` / `numeric` - arbitrary precision numbers
 
 </section>
 
@@ -221,8 +222,8 @@ __Check the docs on [numeric data types](https://www.postgresql.org/docs/current
 
 __See docs on [character data types](https://www.postgresql.org/docs/current/static/datatype-character.html)__ &rarr;
 
-* `text` - unlimited length
-* `varchar(n)` - where `n` is num of characters (character varying)
+* {:.fragment} `text` - unlimited length
+* {:.fragment} `varchar(n)` - where `n` is num of characters (character varying)
 
 ⚠️If casting to lesser length, string will be truncated to fit!
 
@@ -233,11 +234,11 @@ __See docs on [character data types](https://www.postgresql.org/docs/current/sta
 
 See [docs on Date/Time types](https://www.postgresql.org/docs/current/static/datatype-datetime.html)
 
-* `timestamptz` (timestamp __with timezon__, __use this__!)
-	* stored as UTC, queried, shown in local time zone
-* `timestamp` (no timezone)
-* `date`
-* `time`
+* {:.fragment} `timestamptz` (timestamp __with timezone__, __use this__!)
+	* {:.fragment} stored as UTC (universal coordinated time, sometimes GMT is synonym), queried, shown in local time zone
+* {:.fragment} `timestamp` (no timezone)
+* {:.fragment} `date`
+* {:.fragment} `time`
 
 
 </section>
@@ -298,18 +299,46 @@ __`NULL` means no value or missing value__
 
 __A database can have the following attributes__
 
-* character encoding
-* collation (sort order of characters)
-* clones template1 (also a template 0)
+* {:.fragment} character encoding
+	* default is based on locale
+	* (or how database is initialized)
+* {:.fragment} collation (sort order of characters)
+* {:.fragment} it can also have added features like languages (perl, Python, etc. for scripting), custom functions, etc.
 
-To create a table:
+When a database is created, it clones the template database `template1`. 
+{:.fragment}
+
+* {:.fragment} `template1` can be modified so you can have a customized template (for example, add objects like languages, functions,etc.). 
+* {:.fragment} (there's also `template0`, which is meant to be kept as an unmodified copy of `template1`'s initially configuration)
+
+
+</section>
+
+<section markdown="block">
+## CREATE Statement
+
+__To create a database based off of the template `template1`__ &rarr;
 
 <pre><code data-trim contenteditable>
-CREATE DATABASE someDatabaseName;
+CREATE DATABASE some_database_name;
 --uses same encoding and collation as template1
 </code></pre>
+{:.fragment}
+
+There are a bunch of options that you can set... for example:
+{:.fragment}
+
+<pre><code data-trim contenteditable>
+-- use utf8 as encoding, "copy" template0
+-- instead of template1
+CREATE DATABASE some_database_name
+    ENCODING 'UTF8';
+    TEMPLATE template0;
+</code></pre>
+{:.fragment}
 
 See [CREATE DATABASE](https://www.postgresql.org/docs/10/static/sql-createdatabase.html) docs
+{:.fragment}
 
 
 </section>
@@ -382,35 +411,82 @@ INSERT INTO student
 
 __Use a <span class="hl">SELECT</span> statement to _read_ data__ &rarr;
 
-* start with `SELECT`
-* followed by a comma separated list of columns or calculated values you'd like to see
-	* you can use `AS some_alias` to alias column names or name calculations
-	* `*` means all columns
-	* arithmetic operators and functions / expressions can be used here (see next slide)!
-* then keyword `FROM tablename` ...to specify which table to query
+1. {:.fragment} start with `SELECT`
+2. {:.fragment}  followed by a comma separated list of columns or calculated values you'd like to see (the `SELECT list`)
+	* {:.fragment} you can use `AS some_alias` to alias column names or name calculations
+	* {:.fragment} `*` means all columns
+	* {:.fragment} arithmetic operators and functions / expressions can be used here 
+	* {:.fragment} `DISTINCT` for only unique values
+* then, optionally, keyword `FROM tablename` ...to specify which table to query 
+* ...optionally `WHERE conditions` to specify how to filter rows
+* ...optionally `ORDER BY ordering` for sorting
+* ...optionally `LIMIT num` to restrict the number of rows returned
 
+</section>
+
+<section markdown="block">
+## An Example SELECT Query
+
+<pre><code data-trim contenteditable>
+-- give me col1, col2, and new_col only
+-- new_col is a calculated field
+-- this is the 'SELECT list'
+SELECT col1, col2, col3 * 2 as new_col    
+
+	-- from table, some_Table
+    FROM some_table
+
+	-- the value in col1 must be > 1
+	-- for the row to be returned
+	WHERE col1 > 1
+
+	-- sort by col2 ascending
+	ORDER BY col2
+
+	-- only give back, at most, 5 rows
+	LIMIT 5;
+</code></pre>
+
+</section>
+<section markdown="block">
+## SELECT Background
+
+(From [the official docs](https://www.postgresql.org/docs/12/sql-select.html)) __SELECT retrieves rows from <span class="hl">zero or more</span> tables.__ &rarr;
+
+Using the parts of a `SELECT` statement from the previous slide, what order might the parts of a `SELECT` query be processed in? 
+{:.fragment}
+
+1. {:.fragment} `FROM` to determine set of all possible rows to return!
+2. {:.fragment} `WHERE` to filter out rows that don't match criteria
+3. {:.fragment} `SELECT list` to determine the  actual values of the resulting rows by evaluating expressions, resolving column names, etc.
+4. {:.fragment} `DISTINCT` to eliminate duplicate rows in the output
+5. {:.fragment} `ORDER BY` to sort the output rows
+6. {:.fragment} `LIMIT` to restrict the output rows to a specific number
 </section>
 
 <section markdown="block">
 ## Operators and Functions
 
 __Operators__ &rarr;
+{:.fragment}
 
-* arithmetic: `+`, `-`, `*`, `/`
-* string concatenation: `||` (`'HI' || 'THERE'`)
-* logical operators: `AND`, `OR`, `NOT`
-* check for NULL: `IS NULL` and `IS NOT NULL`
-* pattern matching: `LIKE`
+* {:.fragment} arithmetic: `+`, `-`, `*`, `/`
+* {:.fragment} string concatenation: `||` (`'HI' || 'THERE'`)
+* {:.fragment} logical operators: `AND`, `OR`, `NOT`
+* {:.fragment} check for NULL: `IS NULL` and `IS NOT NULL`
+* {:.fragment} pattern matching, case sensitive and insensitive: `LIKE`, `ILIKE`
 
 __Functions__ &rarr;
+{:.fragment}
 
-* `NOW()` (current date / time), `ROUND(val)`, etc.
+* {:.fragment} `NOW()` (current date / time), `ROUND(val)`, etc.
 
 See [documentation on operators and functions](https://www.postgresql.org/docs/9.1/static/functions.html)
+{:.fragment}
 </section>
 
 <section markdown="block">
-## `SELECT` Examples
+## More `SELECT` Examples
 
 __Using the student table created earlier__ &rarr; 
 
@@ -438,7 +514,7 @@ Show the distinct first names of students:
 
 <pre><code data-trim contenteditable>
 SELECT DISTINCT first 
-	FROM STUDENT;
+	FROM student;
 </code></pre>
 
 </section>
@@ -451,7 +527,7 @@ __Optionally, add a `WHERE` clause to specify _conditions_ (think filtering)__ &
 
 * conditions can use operators like `=`, `<>` (not equal), `>`, `<`
 * you can also use `LIKE` and `ILIKE` with `%` representing _wildcards_ to match on substrings (`ILIKE` is case insensitive)
-* use `colName IS NULL` to check for a `NULL` value
+* use `col_name IS NULL` to check for a `NULL` value
 * multiple conditions can be put together with `AND`, `OR`, `NOT`
 * parentheses can be added to specify precedence
 </section>
@@ -471,6 +547,8 @@ SELECT * FROM student
 	WHERE midterm > 70	
 	AND midterm < 90;
 </code></pre>
+* {:.fragment} btw, also `BETWEEN 71 and 89`
+	* (inclusive)
 
 </section>
 
@@ -800,7 +878,7 @@ In both cases, the `.sql` file can contain any number of valid sql commands.
 ## A Sample .sql Script
 
 __In songs.sql__ &rarr;
-
+col_name
 <pre><code data-trim contenteditable>
 DROP TABLE IF EXISTS song;
 CREATE TABLE song (

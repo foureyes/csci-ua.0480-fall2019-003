@@ -12,15 +12,19 @@ title: "Databases Overview"
 </section>
 
 <section markdown="block">
-## ⚠️ Broad Generalizations Ahead
+## ⚠️ Mostly True, But Also Not
 
 __Just a warning: There are some generalizations about databases coming up ahead:__ &rarr;
 
-* {:.fragment} they're true for most of the databases you'll encounter
-* {:.fragment} however, it's a constantly evolving field with many technologies, so...
-	* {:.fragment} there are likely databases out there that are outside of these generalizations
-	* {:.fragment} existing databases typically have lesser known features that share the same functionality as other competing databases 
-	* {:.fragment} for example, although Postgres is well known as a relational database, you can use it as a _NoSQL_ - like document store to store JSON (really Binary JSON - _JSONB_) documents
+These generalizations hold true for _a lot_ of the databases you'll encounter, but:
+
+
+* {:.fragment} there are likely databases out there that are outside of these generalizations
+* {:.fragment} existing databases have lesser known features that share the same functionality as other competing databases 
+* {:.fragment} although Postgres is known as a relational database...
+	* {:.fragment} like MongoDB, you can use it to store JSON documents (really Binary JSON - _JSONB_) documents
+	* {:.fragment} like Redis, you can use it to store key/value pairs
+	* {:.fragment} (MongoDB and Redis have many other features that differentiate them from Postgres)
 </section>
 
 <section markdown="block">
@@ -43,35 +47,139 @@ __What are some downsides to storing data in `.csv`s, `.txt` files or even `.htm
 <section markdown="block">
 ## Storing Data
 
-__What are some _other_ options for storing data...__ &rarr;
+__OK, so no more storing files on the file system. What are some other options for storing data?__ &rarr;
 
-* {:.fragment} _in the cloud_ (S3, firebase, SalesForce)
-* {:.fragment} in a database
+* {:.fragment} obvs, in a <span class="hl">database</span>
+* {:.fragment} also, <span class="hl">in the cloud</span>
+	* PostgreSQL on Amazon RDS, MongoDB on MongoDB Atlas (basically, on demand database servers running on someone else's resources)
+	* firebase, s3, Google Cloud Storage (a mix of different types of "cloud native" data stores)
 
-__Enough `.csv` files... we'll be using a database now!__
+__Enough `.csv` files__ We'll be using a database now! <span class="fragment">__But wait!__ 🤚</span>
 {:.fragment}
 
-__But wait, what's a database? And where does _it_ store its files__ &rarr;
-{:.fragment}
+* {:.fragment} what's a database? 
+* {:.fragment} and where does _it_ store its data? 
+* {:.fragment} and what _environment_ does it live in?
 </section>
 
 <section markdown="block">
 ## A Database
 
-__A <span class="hl">database</span> is a repository or _organized_ collection of data__ &rarr;
+__A <span class="hl">database</span> is... <span class="fragment">a repository or _organized_ collection of data</span>__ &rarr;
 
-__However, it doesn't just store data, it also _manages_ data through a <span class="hl">database management system</span> (DBMS)__ &rarr;
+Uh. That could be _anything_. A bunch of post-it notes on my desk. Or directories and files on my laptop (not that different from csvs, amirite)? 🤔
 {:.fragment}
 
+However, the term <span class="hl">database</span> also typically refers to _how_ that data is accessed, manipulated or _managed_. &rarr;
+{:.fragment}
+
+* {:.fragment} when we think of a database, we typically think of an electronic system that... 
+* {:.fragment}<span class="hl">abstracts away how the data is physically stored on disk</span>
+* {:.fragment} as a database user, we don't have to worry about files; instead, we work with things like:
+	* {:.fragment} an interactive graphical representation of data
+	* {:.fragment} a query language with commands issued through an interactive shell
+
+</section>
+
+<section markdown="block">
+## DBMS
+
+__Access to data in a database is mediated by a <span class="hl">Database Management System</span> (DBMS).__ &rarr;
+
 * {:.fragment} a __DBMS__ is software that gives users and applications the ability to __define, create, query and administer a database__
+* {:.fragment} it translates requests for data manipulation between the clients and the database itself
+* {:.fragment} (it sits between the application accessing the data and the database)
 * {:.fragment} data is usually stored in a __DBMS specific format on the file system__ (though this could vary based on the DBMS... for example, in memory only)
 
 
 </section>
-<section markdown="block">
-## SO MANY DATABASES
 
-[Check out this ranking of databases on db-engines.com](https://db-engines.com/en/ranking)...
+<section markdown="block">
+## Database vs DBMS
+
+__Despite formal definitions, the term <span class="hl">database</span> (or database server) is often used to refer to both__ &rarr; 
+
+* {:.fragment} a database (an organized collection of data) or multiple databases 
+* {:.fragment} ...and the DBMS (software for managing / allowing access to _that_ collection of data).
+
+⚠️<span class="hl">This implies then that a DBMS can have __multiple databases__ (it can manage multiple collections of data)</span>
+{:.fragment}
+
+
+</section>
+
+<section markdown="block">
+## DBMS Functionality
+
+__A DBMS typically has the following features__ &rarr;
+
+1. {:.fragment} some mechanism for <span class="hl">creating a database</span> and providing structure to the database 
+2. {:.fragment} a way to __create__, __read__, __update__ and __delete__ data
+3. {:.fragment} <span class="hl">access control</span> (some method of managing access, such as authentication and/or authorization) 
+4. {:.fragment} <span class="hl">administration</span> (performance monitoring, logging, resource management, etc.)
+</section>
+
+<section markdown="block">
+## Client / Server
+
+__The databases that we'll discuss in this part of the course fit under the client/server model__ &rarr;
+
+* {:.fragment} access to the database is through a service
+* {:.fragment} the service is provided by a <span class="hl">server</span>:
+	1. {:.fragment} a single, centralized server
+	2. {:.fragment} a cluster of servers in the same physical location (and perhaps on the same computer)
+	3. {:.fragment} several distributed servers in different physical locations
+* {:.fragment} the computer requesting the provided services is called the <span class="hl">client</span>
+	* {:.fragment} the client and server can be on the same computer, which is how we'll mostly be working with databases: everything on the same machine
+
+</section>
+
+<section markdown="block">
+## Client / Server Continued
+
+__This client/server architecture implies that:__ &rarr;
+
+* the <span class="hl">server must be "on"</span> (for example, a long running process waiting for requests) in order for data to be accessed
+* different clients may exist for accessing the server
+	* {:.fragment} a commandline client
+	* {:.fragment} a graphical client
+	* {:.fragment} a client library used within some _other_ application
+
+</section>
+
+<section markdown="block">
+## Security
+
+
+__Database security encompasses the working with__ &rarr;
+
+
+1. {:.fragment} the facilities provided by the database for access control and encryption
+2. {:.fragment} the computer(s) that the database server runs on
+3. {:.fragment} the network(s) that the database server runs on
+
+We'll mostly consider first item, as the last two are large topics on their own (each with the potential of being a separate course)!
+{:.fragment}
+</section>
+
+<section markdown="block">
+## Regulated Environments, Handling Data
+
+__There are special security requirements when working within a regulated environment, such as health, finance, and education.  A few examples include__ &rarr;
+
+* {:.fragment} <span class="hl">PCI DSS</span> (Payment Card Industry Data Security Standard) 
+	* a security standard for handling credit card data and transactions 
+	* aimed at reducing credit card fraud
+* {:.fragment} <span class="hl">HIPAA</span> (Health Insurance Portability and Accountability Act)
+	* legislation that governs the handling of medical records and personally identifiable information
+	* ensures privacy of medical records
+* {:.fragment} <span class="hl">FERPA</span> Family Educational Rights and Privacy Act: 
+	* legislation that governs access to educational information
+</section>
+<section markdown="block">
+## BACK 2 DATABASES
+
+There are so many of them. [Check out this ranking of databases on db-engines.com](https://db-engines.com/en/ranking)...
 
 Sooo many databases! Literally 100's. __Let's see how wen categorize these databases__ &rarr;
 {:.fragment}
@@ -113,7 +221,7 @@ __Relational databases__ organize data in a collection of tables (relations).  _
 
 * {:.fragment} each table has named <span class="hl">columns</span>... with the actual data that populates the table in separate <span class="hl">rows</span>
 * {:.fragment} rows are sometimes referred to as <span class="hl">records</span> or <span class="hl">tuples</span>
-* {:.fragment} each table represents a kind or _type_ of data, with every row representing an _instance_ of that data
+* {:.fragment} each table represents a kind or _type_ of _record_ or _tuple_, with every row representing an _instance_ of that kind of record
 
 
 
@@ -144,14 +252,12 @@ __Because relational databases are usually used to model relationships between _
 * {:.fragment} columns and types of columns must be defined prior to inserting rows
 * {:.fragment} many relational database features deal with maintaining  _data integrity_ (such user defined data constraints, foreign keys, etc.)
 
-[This database consultant has a pretty good write-up on relational databases](http://r937.com/relational.html)
-{:.fragment}
 </section>
 
 <section markdown="block">
 ##  Transactions
 
-__A <span class="hl">Transaction</span> is a single logical operation or unit of work in a DBMS__ 
+__A <span class="hl">transaction</span> is a single logical operation or unit of work in a DBMS__ 
 {:.fragment}
 
 * {:.fragment} this unit of work can be composed of multiple create, read, update, and delete operations (CRUD)
@@ -208,7 +314,7 @@ __To query (read, update, etc.) and maintain a relational database, a domain spe
 <section markdown="block">
 ## Declarative Programming
 
-__Remember, <span class="hl">SQL is declartive</span>, so it describes what you want the outcome of your program to be, not how to get to the outcome__ &rarr;
+__Remember, <span class="hl">SQL is declarative</span>, so it describes what you want the outcome of your program to be, not how to get to the outcome__ &rarr;
 ```
 # we're describing _how_ in this Python code
 oldies = []
@@ -394,7 +500,7 @@ Examples: Google Spanner, Apache Ignite
 <section markdown="block">
 ## Postgres
 
-__We'll be using PostgreSQL (also called postgres, pgsql):__ &rarr;
+__We'll be using PostgreSQL (also called postgres):__ &rarr;
 
 * {:.fragment} it's a hybrid _object-relational_ database
 * {:.fragment} it's _open source_ 
