@@ -508,8 +508,8 @@ Commandline Client, SQL, and
  Single Table Queries
 
 * CREATE, INSERT, and SELECT
-* [Movies](sql/basics/movies.sql)
-* [Example SQL Session](sql/basics/basics-transcript.sql)
+* [Movies](sql/basics/movies.sql) (sql file for import)
+* [Transcript of SQL for SELECT, GROUP BY, etc.](sql/basics/basics-transcript.sql) (sql file)
 
 
 
@@ -525,6 +525,8 @@ Single Table
  * Introduction
  * Ch 1: Creating Your First Database and Table
  * Ch 2: Beginning Data Exploration with SELECT
+ * Ch 3: Understanding Data Types
+ * Ch 4: Importing and Exporting Data
  * Ch 5: Basic Math and Stats With SQL
  * Ch 16: Using Postgres from the Commandline
  
@@ -533,6 +535,14 @@ Single Table
  * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)
  * [creating tables](https://www.postgresql.org/docs/current/static/sql-createtable.html)
  * [INSERT](https://www.postgresql.org/docs/current/static/sql-insert.html)
+ 
+Postgrestutorial
+
+ * [SELECT](http://www.postgresqltutorial.com/postgresql-select/)
+ * [ORDER BY](http://www.postgresqltutorial.com/postgresql-order-by/)
+ * [DISTINCT](http://www.postgresqltutorial.com/postgresql-select-distinct/)
+ * [WHERE](http://www.postgresqltutorial.com/postgresql-where/)
+ * [LIMIT](http://www.postgresqltutorial.com/postgresql-limit/)
 ","<!--
 HW 04:
  * time based data analysis with aggregation using pandas
@@ -577,51 +587,64 @@ Commandline Client, SQL, and Simple Queries
  * [WHERE](http://www.postgresqltutorial.com/postgresql-where/)
  * [LIMIT](http://www.postgresqltutorial.com/postgresql-limit/)
  * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)"
-y,,12,10-Oct,Thu,"Basic Postgres Administration
-
-Files
-
-Importing Data
-
-* [2010 Census Data](https://www.census.gov/geo/maps-data/data/gazetteer2010.html)
-* [Transcript of SQL written in class](sql/basics/import-transcript.sql)
-* TODO - copy, etc.
+,,12,10-Oct,Thu,"Basic Postgres Administration
 
 Data Types
 
-* TODO - data types
-
 Basic Math and Stats
 
-* TODO - math and stats
+* review previous slides for all topics above
 
-Queries Continued
+Importing Data
 
-* TODO - queries continued","Practical SQL
+* [Importing Data](slides/db/import.html)
+* [2010 Census Data](https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2010.html) - School Districts – Unified
+* [Record Layout for 2010 School District Census Data](https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/gaz-record-layouts.html)
+
+Aggregation and Grouping
+
+* [Group By, Aggregation](slides/db/groupby.html)
+
+In-Class Demo
+
+* see previous class for movies data set and transcript
+* [Transcript of SQL for import](sql/basics/import-transcript.sql) (sql file)
+
+<!--
+* [sql HAVING and BETWEEN](slides/db/having-between.html)
+* [sql transcript for distinct, group by / having](sql/midterm-review/review.sql)
+-->
+
+
+
+
+","Practical SQL
  
  * Ch 3: Understanding Data Types
  * Ch 4: Importing and Exporting Data
-
+ * Ch 5: Basic Math and Stats With SQL
+ * Ch 8. Extracting Information by Grouping and Summarizing
  
  Postgres Documentation
  
  * [Data Types](https://www.postgresql.org/docs/10/static/datatype.html)
  * [COPY, Import](https://www.postgresql.org/docs/10/static/sql-copy.html)
+ * [GROUP BY](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-GROUPBY)
+ * [HAVING](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-HAVING)
  
  postgresqltutorial
- 
- * [SELECT](http://www.postgresqltutorial.com/postgresql-select/)
- * [ORDER BY](http://www.postgresqltutorial.com/postgresql-order-by/)
- * [DISTINCT](http://www.postgresqltutorial.com/postgresql-select-distinct/)
- * [WHERE](http://www.postgresqltutorial.com/postgresql-where/)
- * [LIMIT](http://www.postgresqltutorial.com/postgresql-limit/)
- * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","__Homework #05__ – due Thu 10/18 at 11pm
 
+ * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","__Homework #05__ – due Thu 10/17 at 11pm
+
+To be posted
+
+<!--
 1. [Homework #05 Instructions](assignments/05.html)
 
 * use earlier data set and import into database
 * calculate some basic stats
-* compare with python?",,"Basic Postgres Administration
+* compare with python?
+-->",,"Basic Postgres Administration
 
 Files
 
@@ -883,25 +906,18 @@ Implementation
  
  * [GROUP BY](http://www.postgresqltutorial.com/postgresql-group-by/)
  * [HAVING](http://www.postgresqltutorial.com/postgresql-having/)"
-y,,19,7-Nov,Thu,"Aggregation and Grouping
-
-* [sql transcript for distinct, group by / having](sql/midterm-review/review.sql)
-* [sql HAVING and BETWEEN questions](slides/db/having-between.html)
-
+y,,19,7-Nov,Thu,"
 Modifying data
 
 Transactions
 
 Dates and Times","Practical SQL
  
- * Ch 8. Extracting Information by Grouping and Summarizing
  * Ch 9: Inspecting and Modifying Data
  * Ch 11: Working With Dates and Times
  
  Postgres Documentation
  
- * [GROUP BY](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-GROUPBY)
- * [HAVING](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-HAVING)
  * [UPDATE](https://www.postgresql.org/docs/current/static/sql-update.html) and [DELETE](https://www.postgresql.org/docs/current/static/sql-delete.html)
  * [ALTER TABLE](https://www.postgresql.org/docs/10/static/sql-altertable.html)
  

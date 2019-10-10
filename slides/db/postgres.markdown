@@ -125,13 +125,13 @@ Or... when connected to any database through `psql`:
 
 __Commandline client: `psql` (should be installed when postgres is installed)__ &rarr;
 
-Usage `psql dbName`: where `dbName` is name of database to connect to.
+Usage `psql db_name`: where `dbName` is name of database to connect to.
 
 Optional flags include:
 
 * `-U`  / `--username`
 * `-W` / `--password`  prompt for password
-* no dbName uses user name as db name
+* no `db_name` uses user name as db name
 
 
 
@@ -213,9 +213,40 @@ __Check the docs on [numeric data types](https://www.postgresql.org/docs/current
 * {:.fragment} `integer` - typical choice for integer, 4 bytes
 * {:.fragment} `smallint` - 2 bytes, signed
 * {:.fragment} `bigint` - 8 bytes, signed
-* {:.fragment} `decimal` / `numeric` - arbitrary precision numbers
+* {:.fragment} `decimal` / `numeric` - user specified precision numbers
+* {:.fragment} `real` / `double precision` - variable-precision numbers
 
 </section>
+
+<section markdown="block">
+## Precision and Scale of Numeric / Decimal
+
+__`numeric` and `decimal` types can be used to store values that contain a _very large number_ of digits.__ &rarr; 
+
+* {:.fragment} calculations (such as addition, subtraction and multiplication) with these types <span class="hl">give back exact results</span>, but slower than using floating point types! 
+* {:.fragment} the __precision__ and __scale__ of these types can be set
+	* {:.fragment} __precision__: total count of significant digits
+	* {:.fragment} __scale__: the number of decimal digits
+	* {:.fragment} specified when declaring type: `numeric(4, 2)`
+	* {:.fragment} precision first, then scale (alternatively, only precision)
+	* {:.fragment} without precision or scale, precision and scale only limited by current implementation
+
+</section>
+
+
+<section markdown="block">
+## Floating Point Numbers
+
+__`real` and `double precision` are floating point types__ &rarr;
+
+* {:.fragment} these types are <span class="hl">inexact</span>
+* {:.fragment} you may be familiar with this already ... try this with regular floating point or number types in Python, Java or JavaScript:
+	* {:.fragment} `0.1 + 0.2` 
+	* {:.fragment} yields `0.30000000000000004`
+* {:.fragment} if exact storage and calculations is necessary, use numeric 
+
+</section>
+
 
 <section markdown="block">
 ## Strings
@@ -226,6 +257,7 @@ __See docs on [character data types](https://www.postgresql.org/docs/current/sta
 * {:.fragment} `varchar(n)` - where `n` is num of characters (character varying)
 
 ⚠️If casting to lesser length, string will be truncated to fit!
+{:.fragment}
 
 </section>
 
@@ -240,6 +272,11 @@ See [docs on Date/Time types](https://www.postgresql.org/docs/current/static/dat
 * {:.fragment} `date`
 * {:.fragment} `time`
 
+It's sometimes useful to store date or time date in a regular `integer` field. For example, year can be represented by:
+{:.fragment}
+
+* {:.fragment} a `timestamptz` or `date` but with consistent values for month, day etc.
+* {:.fragment} ...as an `integer` (or even `smallint`) 
 
 </section>
 
@@ -251,9 +288,33 @@ __Check out this [table of all data types](https://www.postgresql.org/docs/10/st
 * {:.fragment} currency (`money` 💰)
 	* will use the currency based on os-level localization settings
 	* will format appropriately (commas, currency symbol, dots, etc.)
+	* internally stores as `int` (think: cents)
 * {:.fragment} shapes (`circle`, `polygon`)
 * {:.fragment} documents (`xml`, `json` / `jsonb`)
 * {:.fragment} networking (`inet` for ipv4 and ipv6, `cidr` for ip ranges)
+
+
+</section>
+
+<section markdown="block">
+## Aside on Storing Money
+
+__Some considerations when storing currency:__  &rarr;
+
+* __exactness__ and rounding
+* multi-currency support
+* performance
+{:.fragment}
+
+Options:
+{:.fragment}
+
+* `numeric` - exact, but slow... (choose `scale` carefully; 2 may not be adequate!)
+* `money` - stores as cents, so exact for addition, subtraction, multiplication... but converts to floating point type for division 
+	* handles input in different formats, but does not deal with conversion / multi-currency
+	* _fast_ (basically int operations since dealing with cents)
+* any rounding, conversion logic for either should be handled by application code
+{:.fragment}
 
 
 </section>
@@ -715,70 +776,6 @@ ALTER TABLE student
 See [full documentation on `ALTER TABLE`](https://www.postgresql.org/docs/10/static/sql-altertable.html)
 </section>
 
-<section markdown="block">
-## `GROUP BY` and Aggregate Functions
-
-__Adding a `GROUP BY` clause allows you to group together rows and run aggregate functions on those groups__ &rarr;
-
-* the `GROUP BY` clause goes after `FROM` and `WHERE`
-* a column must be specified after `GROUP BY`
-
-Additionally, and Aggregate function can be included in the column list in `SELECT`:
-
-* `AVG`
-* `SUM`
-* `MAX`
-* `MIN`
-* `COUNT`
-
-See the [documentation for `GROUP BY`](https://www.postgresql.org/docs/10/static/sql-select.html#SQL-GROUPBY)
-</section>
-
-<section markdown="block">
-## `GROUP BY` Examples
-
-__Group by first name, show counts for each group (for example, 5 students named alice, 3 students named bob, etc.)__ &rarr;
-
-<pre class="fragment"><code data-trim contenteditable>
-SELECT FIRST, COUNT(*) FROM student GROUP BY first;
-</code></pre>
-
-Note that it doesn't matter what column name is passed to count (and `*` works too), since we're simply counting
-{:.fragment}
-
-__Again, group by first name, but this time show the midterm average for students with same first name__ &rarr;
-{:.fragment}
-
-<pre class="fragment"><code data-trim contenteditable>
-SELECT FIRST, AVG(midterm) FROM student GROUP BY first;
-</code></pre>
-
-In this case, the `midterm` column is the argument used for `AVG`
-{:.fragment}
-</section>
-
-
-<section markdown="block">
-## Filtering Groups
-
-__Add a `HAVING` clause after `GROUP BY` to eliminate groups that do not satisfy a condtion__ &rarr;
-
-From the [documentation on `HAVING`](https://www.postgresql.org/docs/10/static/sql-select.html#SQL-HAVING):
-
-* "`HAVING` is different from `WHERE`:" 
-* "`WHERE` filters individual rows before the application of `GROUP BY`
-* "while `HAVING` filters group rows created by `GROUP BY`
-
-<pre><code data-trim contenteditable>
-SELECT FIRST, AVG(midterm) 
-	FROM student 
-	GROUP BY first
-	HAVING AVG(midterm) > 70;
-</code></pre>
-
-</section>
-
-<section markdown="block">
 
 ## Casting
 
@@ -834,174 +831,6 @@ Notes on usage:
 * use `IF EXISTS` to suppress errors if the table you are dropping doesn't exist
 	* DROP TABLE IF EXISTS table_name;
 
-</section>
-<!--
-
-<section markdown="block">
-## update with another field
-
-```
-update movie set roi=(gross - budget)/budget;
-```
-
-</section>
--->
-
-<section markdown="block">
-## Importing Data
-
-__Issuing a series of manual `INSERT` statements to bring in data can be quite tedious!__ &rarr;
-
-Fortunately, <span class="hl">data can also be imported by running .sql scripts or importing files</span> (csv, tab delimited).
-
-The typical workflow for imports is to:
-
-1. create a table based on the data that you'll import
-2. potentially clean the data so that the import works well
-3. import a file with a `COPY` query or generate `INSERT` statements in a `.sql` file
-</section>
-
-<section markdown="block">
-## Running SQL Scripts
-
-__Two ways to run `.sql` scripts:__ &rarr;
-
-* in the `psql` client, use the `\i` command:
-	* `\i /path/to/stuff-to-import.sql`
-* when starting psql, a file that contains sql commands can be redirected to the client so that statements within it are run:
-	* `psql someDatabaseName < /path/to/stuff-to-import.sql`
-
-In both cases, the `.sql` file can contain any number of valid sql commands.
-</section>
-
-<section markdown="block">
-## A Sample .sql Script
-
-__In songs.sql__ &rarr;
-col_name
-<pre><code data-trim contenteditable>
-DROP TABLE IF EXISTS song;
-CREATE TABLE song (
-	id serial PRIMARY KEY,
-	title varchar(100),
-	artist varchar(100),
-	danceability numeric
-);
-
-INSERT INTO song (title, artist, danceability)
-	VALUES
-		('Heartbeats', 'Jose Gonzalez', 0.01),
-		('Heartbeats', 'The Knife', 0.9),
-		('Lucid Dreams', 'Juice WRLD', 0.9);
-</code></pre>
-
-</section>
-<section markdown="block">
-## Running Sample SQL Script
-
-__Before running psql:__ &rarr;
-
-<pre><code data-trim contenteditable>
-psql class11 < songs.sql
-</code></pre>
-
-__Or, while in psql:__ &rarr;
-
-<pre><code data-trim contenteditable>
-\i songs.sql
-</code></pre>
-</section>
-<section markdown="block">
-## `COPY` from csv
-
-__`COPY` can be used to import data from a csv__ &rarr;
-
-(note that `COPY` is not standard SQL)
-
-<pre><code data-trim contenteditable>
-COPY table_name 
-    FROM filename
-    options
-</code></pre>
-
-A list of specific columns can be added after `table_name` in parentheses (for example: `song (title, artist, danceability)`)
-
-`options` can be replaced by some combination of additional options that control how file should be imported (see next slide).
-
-The [`COPY` documentation shows more details on usage](https://www.postgresql.org/docs/current/static/sql-copy.html)
-</section>
-
-<section markdown="block">
-## `COPY` options
-
-__Options can be__ &rarr;
-
-* format of file: `text`, `csv` or `binary` 
-* `DELIMITER AS 'some char'` - specify delimiter (default is comma for csv)
-* `NULL AS 'null_string'` - determines what string to treat as null (default for csv is empty string)
-* `HEADER` - presence specifies that header is included in file
-* `QUOTE AS 'quote_character'` - specify quote character
-
-</section>
-
-<section markdown="block">
-## Example csv File for `COPY`
-
-__Here's an example csv - note that there's no whitespace before or after the delimiter (otherwise, it'll be included in value!)__ &rarr;
-
-<pre><code data-trim contenteditable>
-title,artist,danceability
-Heartbeats,Jose Gonzalez,0.01
-Heartbeats,The Knife,0.9
-Lucid Dreams,Juice WRLD,0.9
-Happy Birthday,N/A,0.9
-</code></pre>
-
-</section>
-
-<section markdown="block">
-## `COPY` Examples
-
-__Assuming that a table exist with appropriate types__ &rarr;
-
-<pre><code data-trim contenteditable>
-id serial PRIMARY KEY,
-title varchar(100),
-artist varchar(100),
-danceability numeric
-</code></pre>
-
-* a file with a comma delimiter can be imported 
-* the fields to be filled are `title`, `artist`, `danceability`
-* this allows a `serial` primary key to not have to be specified in the csv (id will be generated!)
-
-<pre><code data-trim contenteditable>
--- 4 columns, but only 3 in csv
-COPY song (title, artist, danceability) 
-	FROM '/tmp/songs.csv' 
-	csv HEADER NULL AS 'N/A';
-</code></pre>
-
-</section>
-
-<section markdown="block">
-## Another Example, w/ Tabs
-
-__Assuming a tab delimited file that contains all the columns needed (for example, primary key is not artifical, but a _natural_ key instead)__ &rarr;
-
-<pre><code data-trim contenteditable>
-COPY student 
-	FROM '/tmp/students.txt' 
-	csv HEADER DELIMITER AS E'\t';
-</code></pre>
-
-In this case: 
-
-* every column in table exist in csv
-* the delimiter is specified as `E'\t'` ... 
-* E means use backslash to escape (and, consequently, specifies tab as the delimiter)
-
-</section>
 
 {% comment %}
 <section markdown="block">

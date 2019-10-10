@@ -301,7 +301,7 @@ See [the ACID article on wikipedia](https://en.wikipedia.org/wiki/ACID) for more
 
 __To query (read, update, etc.) and maintain a relational database, a domain specific language called <span class="hl">SQL</span> is used.__ &rarr;
 
-* {:.fragment} it's <span class="hl">declarative programming language </span>
+* {:.fragment} it's a <span class="hl">declarative programming language </span>
 	* your program describes _what_ you want
 	* rather than _how_ you want to achieve it
 	* (describe the outcome rather than the algorithm)

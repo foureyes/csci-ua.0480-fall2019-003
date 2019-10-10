@@ -373,7 +373,7 @@ class11=# select title, budget, gross, round(((gross - budget) / budget)::numeri
  Blade Runner                             |  $28,000,000.00 |  $33,800,000.00 |  0.21
  Dune                                     |  $40,000,000.00 |  $30,900,000.00 | -0.23
 
-class11=# -- note that an aliased column cannot be used in order by
+class11=# -- note that an aliased column cannot be used in where clause... wat
 class11=# select title, budget, gross, round(((gross - budget) / budget)::numeric, 2) as roi from movie where roi < 0 order by roi desc;
 ERROR:  column "roi" does not exist
 LINE 1: ...t) / budget)::numeric, 2) as roi from movie where roi < 0 or...
