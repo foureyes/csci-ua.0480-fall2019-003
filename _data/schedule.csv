@@ -598,17 +598,20 @@ Basic Math and Stats
 Importing Data
 
 * [Importing Data](slides/db/import.html)
-* [2010 Census Data](https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2010.html) - School Districts – Unified
+* [2010 Census Data](https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2010.html) - School Districts – Unified (Note that encoding is LATIN1, so import in transcript specifies this)
 * [Record Layout for 2010 School District Census Data](https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/gaz-record-layouts.html)
+* [Transcript of SQL for import](sql/basics/import-transcript.sql) (sql file)
 
 Aggregation and Grouping
 
 * [Group By, Aggregation](slides/db/groupby.html)
-
-In-Class Demo
-
 * see previous class for movies data set and transcript
-* [Transcript of SQL for import](sql/basics/import-transcript.sql) (sql file)
+
+
+
+
+
+
 
 <!--
 * [sql HAVING and BETWEEN](slides/db/having-between.html)
