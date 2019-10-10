@@ -11,30 +11,32 @@
 
 
 -- SELECT
--- import a file containing sql statements
--- list all tables
--- describe the movie table
--- show all movies
--- only show title, director and gross
--- order rows by gross ascending
--- order rows by gross descending
--- use both director and gross to order rows
--- query all movies again...
--- now only show unique genres
--- only show rows that have a genre of Science Fiction
--- only show rows that have a genre that's not Science Fiction
--- only show rows that have a genre has thriller in it (ignore case)
--- use and to put together two conditions: thriller not directed by katherine bigelow
--- query all movies again, this time show only budget and gross
--- calculate return on investment (include expression in list of columns)
--- calculate return on investment (include expression in list of columns), give it an actual name, tho (roi)
--- order by a calculated column (which we've named roi)
--- try to round roi to two places (round(val, places))
--- what types is this thing (pg_typeof())
--- an aside, let's try casting to numeric (we actually have a float
--- using round (two argument version of round only works on numeric values)
--- let's try to use our aliased column in where clause (y does this happen???)
--- so, reuse calculation in where clause (sad face)
+-- X import a file containing sql statements
+-- X list all tables
+-- X describe the movie table
+-- X show all movies
+-- X only show title, director and gross
+-- X order rows by gross ascending
+-- X order rows by gross descending
+-- X use both director and gross to order rows
+-- X query all movies again...
+-- X now only show unique genres
+-- X only show rows that have a genre of Science Fiction
+-- X only show rows that have a genre that's not Science Fiction
+-- X only show rows that have a genre has thriller in it (ignore case)
+-- X use and to put together two conditions: thriller not directed by katherine bigelow
+-- (gross - budget / budget) ... return on investment
+-- X query all movies again, this time show only budget and gross
+-- X calculate return on investment (include expression in list of columns)
+-- X calculate return on investment (include expression in list of columns), give it an actual name, tho (roi)
+-- X round w 2 args: round(numeric, number_of_places)
+-- X order by a calculated column (which we've named roi)
+-- X try to round roi to two places (round(val, places))
+-- X what types is this thing (pg_typeof())
+-- X an aside, let's try casting to numeric (we actually have a float
+-- X using round (two argument version of round only works on numeric values)
+-- X let's try to use our aliased column in where clause (y does this happen???)
+-- X so, reuse calculation in where clause (sad face)
 
 -- UPDATE, ALTER TABLE
 -- add an roi column to movie so we can permanently have that field (is this good idea or bad idea or 🤷)

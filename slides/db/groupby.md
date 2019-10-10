@@ -122,7 +122,7 @@ __It's possible to specify multiple columns to group by.__
 	<pre class="fragment"><code data-trim contenteditable>
 SELECT first, midterm, COUNT(*) FROM student GROUP BY first, midterm;
 </code></pre>
-</section>
+
 * output may look something like (two people named alice scored a 90 on their midterm):
 	<pre><code data-trim contenteditable>
  Alice | 90 | 2
