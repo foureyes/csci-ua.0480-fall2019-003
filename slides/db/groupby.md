@@ -154,6 +154,7 @@ Knowing this, it's possible to to run query that applies an aggregate function o
 <pre><code data-trim contenteditable>
 SELECT MAX(score) FROM student;
 </code></pre>
+{:.fragment}
 
 
 </section>
@@ -171,7 +172,7 @@ From the [documentation on `HAVING`](https://www.postgresql.org/docs/10/static/s
 * {:.fragment} "while `HAVING` filters group rows created by `GROUP BY`
 * {:.fragment} "Each column referenced in condition must unambiguously reference a grouping column"
 
-The following query only includes groups that have an average score greater than 70
+Only include groups that have an average score greater than 70:
 {:.fragment}
 
 <pre><code data-trim contenteditable>
