@@ -1,19 +1,23 @@
-CREATE TABLE school_district (
-	state varchar(255),
-	geoid varchar(100),
-	name varchar(255),
-	low_grade varchar(10),
-	high_grade varchar(10),
-	population real,
-	housing_units real,
-	land_area_meters real,
-	water_area_meters real,
-	land_area_miles real, 
-	water_area_miles real,
-	lat numeric,
-	lon numeric
-);
-
+--CREATE TABLE first, then copy....
+--CREATE TABLE school_district (
+--	state varchar(255),
+--	geoid varchar(100),
+--	name varchar(255),
+--	low_grade varchar(10),
+--	high_grade varchar(10),
+--	population real,
+--	housing_units real,
+--	land_area_meters real,
+--	water_area_meters real,
+--	land_area_miles real, 
+--	water_area_miles real,
+--	lat numeric,
+--	lon numeric
+--);
+--
+--COPY school_district
+--FROM '/tmp/Gaz_unsd_national.txt'
+--csv HEADER DELIMITER AS E'\t' ENCODING 'LATIN1';
 
 class12=# select distinct low_grade from school_district ;
  low_grade

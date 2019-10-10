@@ -20,11 +20,18 @@ __Adding a `GROUP BY` clause allows the grouping of rows and the application of 
 
 * {:.fragment} the `GROUP BY` clause goes after `FROM` and `WHERE`, and must be followed by the column name(s) to form groups with
 * {:.fragment} it's used to group the rows __after__ rows are filtered out by `WHERE`
-* {:.fragment} an aggregate function (`COUNT`, `SUM`, `MAX`, `MIN`, `AVG`) may be applied to each group
+* {:.fragment} an aggregate function be applied to each group
 * {:.fragment} not the same as `DISTINCT` (which only gives back unique values, no aggregation)
 
-An aggregate function can be be applied to each group (in other parts of the query such as the `SELECT` list or `ORDER BY` clause)
+
+See the [documentation for `GROUP BY`](https://www.postgresql.org/docs/10/static/sql-select.html#SQL-GROUPBY)
 {:.fragment}
+</section>
+
+<section markdown="block">
+## Aggregate Functions
+
+__When grouping rows with `GROUP BY`, an aggregate function can be be applied to each group (in other parts of the query such as the `SELECT` list or `ORDER BY` clause)__ &rarr;
 
 * {:.fragment} `AVG`
 * {:.fragment} `SUM`
@@ -32,8 +39,6 @@ An aggregate function can be be applied to each group (in other parts of the que
 * {:.fragment} `MIN`
 * {:.fragment} `COUNT`
 
-See the [documentation for `GROUP BY`](https://www.postgresql.org/docs/10/static/sql-select.html#SQL-GROUPBY)
-{:.fragment}
 </section>
 
 <section markdown="block">

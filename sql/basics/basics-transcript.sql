@@ -353,6 +353,7 @@ class11=# select title, budget, gross, ((gross - budget) / budget)::numeric as r
  Dune                                     |  $40,000,000.00 |  $30,900,000.00 |           -0.2275
 
 class11=# -- using round (two argument version of round only works on numeric values)
+class11=# -- btw, pg_typeof returns type of column
 class11=# select title, budget, gross, round(((gross - budget) / budget)::numeric, 2) as roi from movie order by roi desc;
                   title                   |     budget      |      gross      |  roi
 ------------------------------------------+-----------------+-----------------+-------
@@ -378,7 +379,7 @@ class11=# select title, budget, gross, round(((gross - budget) / budget)::numeri
 ERROR:  column "roi" does not exist
 LINE 1: ...t) / budget)::numeric, 2) as roi from movie where roi < 0 or...
                                                              ^
-class11=# -- so, use calculation to order by
+class11=# -- so, use calculation in where clause
 class11=# select title, budget, gross, round(((gross - budget) / budget)::numeric, 2) as roi from movie where round(((gross - budget) / budget)::numeric, 2) < 0 order by roi desc;
     title     |     budget     |     gross      |  roi
 --------------+----------------+----------------+-------
