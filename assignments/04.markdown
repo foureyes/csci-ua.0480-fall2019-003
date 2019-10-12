@@ -50,7 +50,7 @@ function onClick(evt) {
 }
 </script>
 
-# Assignment #4 - Single Table, Importing Data, SQL - Due Thursday, Oct 18th  at 11pm
+# Assignment #4 - Single Table, Importing Data, SQL - Due Friday, Oct 18th  at 11pm
 
 In this homework, you'll:
 
@@ -62,15 +62,15 @@ In this homework, you'll:
 5. __write about the results of your queries (`report.md`)__
 
 
-## Generate a csv File
+## Reuse or generate a csv File
 
-1. use your previous homework to generate a _clean_ csv file from the data set that you chose for that homework
-	* the name of the file should describe the data contained within it (`students.csv`, `dog_bites.csv`) 
-	* this work should be pretty much done already if you completed homework 3
-	* the csv should be contain your data set with all of your previous transformations and data scrubbing applied
+1. copy over your data set from homework 2
+	* if your data did not come in a csv or if you'd like to do some preprocessing before you import it into a database, it's ok to use `pandas` (for example [to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html)) to do so
+	* save any script or notebook that you used to do this within your repository as `convert.py` or `convert.ipynb`
+	* save the result (the new csv) of running your script or notebook in your repository - choose a descriptive name for the resulting `.csv (`students.csv`, `dog_bites.csv`) 
+	* the csv should be contain your original data set or a cleaned/transformed data set
 	* if the resulting csv is over 100mb, use a subset of the data
-2. copy your csv over to the root directory of your homework repository
-3. __in your `report.md`, under a heading called `# Overview`, once again, site the source of the data and write up what is contained in it__
+3. __in your `report.md`, under a heading called `# Overview`, once again, copy over your documentation citing the source of the data and what it contains based on the previous homeworks (columns, expected types, etc.)__
 
 ## Design and Create a Table
 
@@ -96,12 +96,13 @@ In this homework, you'll:
 	* but you can only do this (^^^^)  as long as you __add notes about your refinements under `# Import`__
 	* ...and as long as all the other related files are updated 
 	* (for example `create_table.sql` should contain the new `CREATE` statement if you had to change the way your table was made... or if you needed to clean up the csv a little more, you'd have to drop in the new csv)
+	* best would be to commit to your repo after each modification
 3. add the command that you used to do the import into the `import_csv.sql` file
 
 
 ## Run Some Simple Queries
 
-Run commands and queries on your newly imported data
+Run commands and queries on your newly imported data. For the assignments, you can test out your work in any client that you like, but for the purposes of recording what you've done please run (or re-run) everything in the commandline client.
 
 ### First, run some commands to see what's in your table
 
@@ -141,9 +142,10 @@ Write queries to do / show the following:
 6. show only the unique (non duplicates) of a column of your choice
 7. group rows together by a column value (your choice) and use an aggregate function to calculate _something_ about that group (count of all members of the group, the average of a column of the members of the group)
 	* show the column that is used for grouping AND the result of the aggregate function (so, 2 columns minimum on output)
-8. now, using the same grouping query or creating another one, find a way to filter the query results based on the values for the groups (for example, show all genres that have more than 2 movies in it and only show the genre and the number of movies for that genre)
+8. now, using the same grouping query or creating another one, find a way to filter the query results based on the values for the groups (for example, show all genres that have more than 2 movies in it and only show the genre and the number of movies for that genre).
+	* you'll use a `HAVING` clause to do this (covered in the slides on group by)
 
-Finally, add another 4 queries of your own that helps you gain some insight on your data
+Finally, add another 4 queries of your own that helps you gain some insight on your data (ok to reproduce the work that you did previously for homework 1 or 2... but using sql instead of python)
 
 __Document each query (9 - 12) in your `report.md` and `queries.sql` file__
 

@@ -637,17 +637,10 @@ Aggregation and Grouping
  
  postgresqltutorial
 
- * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","__Homework #05__ – due Thu 10/17 at 11pm
+ * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","__Homework #05__ – due Fri 10/18 at 11pm
 
-To be posted
-
-<!--
-1. [Homework #05 Instructions](assignments/05.html)
-
-* use earlier data set and import into database
-* calculate some basic stats
-* compare with python?
--->",,"Basic Postgres Administration
+* [Homework #05 Instructions](assignments/05.html)
+",,"Basic Postgres Administration
 
 Files
 
