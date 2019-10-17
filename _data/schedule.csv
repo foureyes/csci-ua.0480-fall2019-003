@@ -668,9 +668,13 @@ Queries Continued
  
  * Ch 6: Joining Tables in a Relational Database
  * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)"
-y,,13,17-Oct,Thu,"Review First Part of the Semester
+,,13,17-Oct,Thu,"Review First Part of the Semester
 
-* [midterm review notebook](notebooks/midterm-review/review.ipynb)
+* [Sample Questions and Solution](resources/handouts/midterm/midterm_sample_questions.pdf)
+* More questions to be posted
+* The reference is still a draft
+* [Notes from class re: exam topics / format](slides/midterm.html)
+* [Midterm Review Notebook from 2018](notebooks/midterm-review/review.ipynb) (notebook)
 ",,,,"Review First Part of the Semester
 
 * [midterm review notebook](notebooks/midterm-review/review.ipynb)

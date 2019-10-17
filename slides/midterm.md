@@ -7,13 +7,12 @@ title: "Exam Topics / Format"
 <section markdown="block">
 ## midterm exam
 
-* review wed
 * check course page for sample questions
 	* reference is draft
 	* not indicative of length or difficulty
 * following slides show potential topics
 	* may have missed some topics here and there
-	* but basically _in class_ 1 - 12
+	* but basically _in class_ 1 - 12/13
 	* ...and hw 1 - 4
 * (and format)
 
@@ -49,8 +48,13 @@ title: "Exam Topics / Format"
 <section markdown="block">
 ## numpy
 
+(prob mostly in the context of pandas, tho)
+
+* numpy arrays!
+* basic indexing
+* vectorized operations
 * np.nan <-- a missing value in data frames
-* ideas of broadcasting / vectorized 
+* idea of broadcasting
 
 </section>
 
@@ -58,16 +62,26 @@ title: "Exam Topics / Format"
 ## pandas
 
 * creating Series and DataFrames
+* selections 
+	* indexing w/ square brackets
+	* comparison operators
+	* finding missing values
 * simple transformations
 	* reindexing
 	* calculations
 	* map / applymap
-* selections 
-	* indexing w/ square brackets
-	* comparison operators
+* basic grouping aggregations
 
 </section>
 
+<section markdown="block">
+## Other
+
+* summary statistics
+* basic regex
+* basic css selectors
+
+</section>
 <section markdown="block">
 ## postgres / sql
 
@@ -93,7 +107,7 @@ title: "Exam Topics / Format"
 ## format:
 
 1. short answer q <--- could be conceptual... name 3 non relational database categories
-2. what's the output
+2. what's the output?
 3. fill in the blank
 4. coding questions
 	* offer some choice ... 3 / 4 coding questions
