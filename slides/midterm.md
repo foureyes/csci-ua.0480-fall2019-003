@@ -12,9 +12,17 @@ title: "Exam Topics / Format"
 	* not indicative of length or difficulty
 * following slides show potential topics
 	* may have missed some topics here and there
-	* but basically _in class_ 1 - 12/13
 	* ...and hw 1 - 4
-* (and format)
+	* but basically everything _in classes_ 1 through 13
+</section>
+
+<section markdown="block">
+## priorities
+
+1. know what you did in homework!
+2. sample questions
+3. slides
+4. readings (to reinforce 1 and 2)
 
 </section>
 
