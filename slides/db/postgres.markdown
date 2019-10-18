@@ -777,6 +777,7 @@ See [full documentation on `ALTER TABLE`](https://www.postgresql.org/docs/10/sta
 </section>
 
 
+<section markdown="block">
 ## Casting
 
 __To cast a value from one type to another in a SQL statement, use either of the two expressions__ &rarr;
