@@ -193,3 +193,13 @@ WHERE a.movie_id < b.movie_id
 ORDER BY a.year, a.movie_id, b.movie_id;
 </code></pre>
 </section>
+
+<section markdown="block">
+## Table Relationships
+
+1. 1 to many
+2. many to many
+3. 1 to 1
+
+__Where would the ids go to implement all of these relationships?__ &rarr;
+</section>

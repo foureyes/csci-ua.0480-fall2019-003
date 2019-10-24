@@ -693,27 +693,20 @@ y,exam,14,22-Oct,Tue,Exam #1,,,,Exam #1,"Relational Database Design and Implemen
  * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
  * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
  * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)"
-y,,15,24-Oct,Thu,"Constraints
+,,15,24-Oct,Thu,"Constraints and Naming Conventions
 
-* TODO - Constraints
+* [Constraints and Naming Conventions](slides/db/constraints-conventions.html)
 
-Naming Conventions
-
-* TODO - Naming conventions
 
 Multiple Tables (Joins)
 
-* TODO - Preview multiple tables - discuss fk
-
-Sample Questions for Midterm and About Exam
-
-* [Sample Questions and Solution](resources/handouts/midterm/midterm_sample_questions.pdf)
-* The reference is still a draft!
-* [Notes from class re: exam topics / format](slides/midterm.html)
+* [Joins](slides/db/joins.html)
+* [Movies Revisited](sql/joins/movies.sql)
+* Foreign Key (REFERENCES table (col))
 ","Practical SQL
  
  * Ch 6: Joining Tables in a Relational Database
- * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)",,"ADD QUIZ FOR THESE TOPICS!
+ * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)`",,"ADD QUIZ FOR THESE TOPICS!
 
 MATERIAL:
 
@@ -739,9 +732,7 @@ Sample Questions for Midterm and About Exam
 y,,16,29-Oct,Tue,"Multiple Tables (Joins) Continued
 
 
-* [Movies Revisited](sql/joins/movies.sql)
-* Foreign Key (REFERENCES table (col))
-* [Joins](slides/db/joins.html)
+
 
 Database Design
 
