@@ -729,7 +729,7 @@ Sample Questions for Midterm and About Exam
 * The reference is still a draft!
 * [Notes from class re: exam topics / format](slides/midterm.html)
 ",
-y,,16,29-Oct,Tue,"Multiple Tables (Joins) Continued
+,,16,29-Oct,Tue,"Multiple Tables (Joins) Continued
 
 
 
@@ -763,14 +763,7 @@ Diagrams","Relational Database Design and Implementation
  * [Inner join](http://www.postgresqltutorial.com/postgresql-inner-join/)
  * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
  * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
- * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)","
-HW 06:
-
-
-* joins!
-* multi table
-* ER Diagram
-",,"Multiple Tables (Joins) Continued
+ * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)",,,"Multiple Tables (Joins) Continued
 
 
 * [Movies Revisited](sql/joins/movies.sql)
