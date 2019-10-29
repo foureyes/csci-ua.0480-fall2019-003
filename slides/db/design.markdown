@@ -43,46 +43,159 @@ The database design process may look something like:
 1. {:.fragment} requirements analysis - specify the problem, work with _domain experts_, explore existing data, etc. ... to: 
 	* {:.fragment} determine what data needs to be stored 
 	* {:.fragment} how the data is related to each other?
-2. {:.fragment} conceptual design
+2. {:.fragment} __conceptual design__ - just entities, attributes and relationships
 	* {:.fragment} use requirements to formally describe the data, relationships and constraints
-	* {:.fragment} says nothing about _actual_ implementation (no details on  platform, physical storage, etc.)	
-3. {:.fragment} translate conceptual design to actual _objects_ in specific DBMS / db platform
+	* {:.fragment} says nothing about _actual_ implementation (no details on platform, physical storage, etc.)	
+	* {:.fragment} most simple model
 
 </section>
 
+<section markdown="block">
+## Continued...
 
+__After conceptual design...__ &rarr;
+
+3. {:.fragment} translate conceptual design to __logical design__ - no database creation yet, but add types, unique identifiers... more complex than conceptual design
+4. {:.fragment} translate logical design to actual _objects_ in specific DBMS / db platform
+
+</section>
 <section markdown="block">
 ## Design Rules
 
-* ability to solve problem
+What should your database design accomplish? &rarr;
+
+* {:.fragment} ability to solve problem
 	* understand problem
 	* fulfill _business_ requirements
 		* reporting and data analysis
-*  can store required data
+* {:.fragment} can store required data
 	* structure can satisfy required queries
 	* correct fields and types of fields
-*  models relationships
+* {:.fragment}  models relationships
 
 </section>
 
 <section markdown="block">
 ## Design Rules Continued 
 
-*  data integrity
+* {:.fragment}  as we saw previously... data integrity
 	* data is correct
 	* relationships are correct
-*  flexibility to handle future changes
-*  performance, efficiency
+	* ... avoid anomalies, inconsistency, and redundancy
+*  {:.fragment} flexibility to handle future changes
+*  {:.fragment} performance, efficiency
 	* indexes, modify queries, etc.
 	* typically done after-the-fact
 	* design should be influenced by this if efficiency is the first requirement, but typically this leads to compromises in other parts of the design
 
 </section>
 
+<section markdown="block">
+## Jargon Again
+
+* {:.fragment} __data model__ - specifies the data and relationships to a DBMS; The actual implementation may vary based on the DBMS, so the data model is independent from the DBMS that is being used.
+* {:.fragment} __entity__ - some _thing_ that we store data about, like a student, a dog bite incident, a pizza order, etc (essentially, a table)
+* {:.fragment} an __attribute__ is the data that describes an entity, like netid, breed of dog, or type of crust (think: columns)
+* {:.fragment} __entity identifier__ - an attribute or attributes that uniquely identify an instance of an entity (u no, like, primary 🔑)
+* {:.fragment} an __instance__ of an entity is the actual attribute data of an entity (like a row in a table)
+</section>
+
+
+<section markdown="block">
+## Attribute Values
+
+An attribute can contain a single value... but also, you could imagine an attribute potentially having multiple values... &rarr;
+
+* {:.fragment} a student may have an attribute called contact information which contains phone number, multiple email addresses, and or twitter handle (uh? wat?) 
+* {:.fragment} it may look like this... 555-555-5555,abc123@nyu.edu,sql.is.my.life@nyu.edu,@sqlXallXday
+* {:.fragment} this is a __multi value attribute__ <span class="fragment">and it's a baaad thing. Why?</span>
+	* {:.fragment} searching on that particular attribute slower (no longer exact match, but sub)
+	* {:.fragment} choosing only that piece of information is more difficult
+	* {:.fragment} better to movie out into its own entity
+</section>
+
+<section markdown="block">
+## Attribute Domains
+
+__An attribute's value can be restricted to a set of possible values__ &rarr;
+
+* {:.fragment} this is an attribute's domain
+* {:.fragment} for example, a student's gpa should be a floating point number, a pie can be one of: small, medium, large, or [record breaking](https://imgur.com/gallery/YLFomNd)
+* {:.fragment} it's essentially _type_
+
+</section>
+
+<section markdown="block">
+## Entities Can be Related
+
+__Entities can be related to each other. What are these relationship types agian?__ &rarr;
+
+* {:.fragment} one to one
+* {:.fragment} one to many
+* {:.fragment} many to many
+* {:.fragment} it's possible that either side can be zero too... unless
+	* {:.fragment} a student can exist without a related course
+	* {:.fragment} a course can exist without a related student
+</section>
+
+<section markdown="block">
+## Weak Entities
+
+A __weak entity__ is an entity that must be related to another entity, otherwise, it cannot exist.
+
+* {:.fragment} for example a pizza order cannot exist with a customer
+* {:.fragment} an exam can't exist without a course
+* {:.fragment} int this case, these cases, the relationships are mandatory for one of the entities... and the other side can't be 0
+* {:.fragment} think: foreign key, not null
+
+</section>
+
+<section markdown="block">
+## Composite Entities
+
+A __composite entity__ models the relationship between other entities.
+
+* {:.fragment} for example... the relationship between a student and a course could be an _enrollment_
+* {:.fragment} it's essentially the _join_ table in a many-to-many
+
+</section>
+
+<section markdown="block">
+## Documentation, ER diagrams 
+
+We can use an __Entity Relationship Diagram__ to show entities, their attributes and their relationships.
+
+Some are picky about what's a true ER diagram, but for our purposes, it could refer to any style of ER diagram
+
+* [wikipedia has a list of 'em](https://en.wikipedia.org/wiki/Entity–relationship_model)
+* however, we'll stick to either:
+	1. Chen
+	2. _crow's feet_
+
+</section>
 
 
 
 <section markdown="block">
+## Demo
+
+Please [see the book](https://learning-oreilly-com.proxy.library.nyu.edu/library/view/relational-database-design/9780123747303/B9780123747303000048.xhtml) for a more complete guide on ER diagrams. Here's we'll demo using:
+
+1. Chen
+2. Crow's Feet
+
+To model...
+
+* entities
+* attributes
+* relationships
+* join tables
+
+
+</section>
+
+<section markdown="block">
+
 ## Normalization
 
 __Normalization__ is the process of structuring a relational database to to:
@@ -115,7 +228,7 @@ This process was proposed by Edgar F Codd, in a paper called ["A Relational Mode
 
 __As both relational databases and the process of normalization have evolved, some concepts are actively being debated__ &rarr;
 
-* {:.fragment} for example, _atomicity_ is sited in the original work, but its meaning is actually up for interpretation 
+* {:.fragment} for example, _atomicity_ is cited in the original work, but its meaning is actually up for interpretation 
 	* {:.fragment} a string 'hello', can be decomposed into individual characters, but _should it?_
 	* {:.fragment} ... a timestamp can be decomposed into year, month, day, hours, minutes and seconds)
 * {:.fragment} does `null` violate a rule of only having a set data type for a column or is it accepted as a special _marker_ for denoting missing values

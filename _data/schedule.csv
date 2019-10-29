@@ -731,30 +731,25 @@ Sample Questions for Midterm and About Exam
 ",
 ,,16,29-Oct,Tue,"Multiple Tables (Joins) Continued
 
-
-
-
-Database Design
-
-* [Database Design](slides/db/design.html) 
 * See previous slides on Joins
 
-Entities and Relationships
+Database Design, Entities and Relationships, The Relational Data Model and Diagrams
 
+* [Design Motivation, Anomalies](slides/db/design-motivation.html) 
+* [Database Design and Normalization](slides/db/design.html) 
+  *  ER Diagrams
 * [Sample Databases for Postgres](https://wiki.postgresql.org/wiki/Sample_Databases)
 * [pgmodeler for Data Modeling and Reverse Engineering](https://pgmodeler.io/)
-* ER Diagrams
 
-The Relational Data Model
 
-* Relational Model / Relational Algebra
-* Normalization
 
-Diagrams","Relational Database Design and Implementation
+
+
+","Relational Database Design and Implementation
  
- Ch 3: Why Good Design Matters
- Ch 4: Entities and Relationships
- Ch 5: The Relational Data Model
+* Ch 3: Why Good Design Matters
+* Ch 4: Entities and Relationships
+* Ch 5: The Relational Data Model
  
  Online Resources
  
@@ -826,9 +821,7 @@ Manipulating Text
  * Ch 6. Normalization
  * Ch 8. Codd's Rules for Relational Database Design
  * Ch 9. Using SQL to Implement a Relational Design"
-y,,18,05-Nov,Tue,"TODO - move subqueries and / or CTE's up
-
-Normalization
+y,,18,05-Nov,Tue,"Normalization
 
 * TODO - normalization slides
 
