@@ -271,10 +271,21 @@ A __natural key__ is an existing column that is used as a primary key
 	* {:.fragment} the existing column must be unique
 	* {:.fragment} the key should probably be mostly _stable_ (that is, it shouldn't change!)
 * {:.fragment} example: course number and section columns
-* {:.fragment} can you think of other examples of _naturally_ occurring keys in other domains?
-	* {:.fragment} netid, isbn, ssn, etc.
+* {:.fragment} can you think of other examples of _naturally_ potential occurring keys in other domains?
+	* {:.fragment} netid, isbn, ssn (but _should_ you use this?), etc.
 
 
+</section>
+
+<section markdown="block">
+## Primary Keys for People
+
+__Values like ssn, license number, or even email address may seem like good primary keys at first... but they do introduce some problems__ &rarr;
+
+* {:.fragment} these values can _actually_ change
+* {:.fragment} some of this data, like ssn, is sensitive information, and should not be used as an id
+	* that id will be seen by those that have access to the database (even if not intentional)
+* {:.fragment} an artificial key is _likely_ the best solution for a unique identifier for a person
 </section>
 
 <section markdown="block">

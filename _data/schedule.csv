@@ -736,10 +736,10 @@ Sample Questions for Midterm and About Exam
 Database Design, Entities and Relationships, The Relational Data Model and Diagrams
 
 * [Design Motivation, Anomalies](slides/db/design-motivation.html) 
-* [Database Design and Normalization](slides/db/design.html) 
-  *  ER Diagrams
+* [Database Design](slides/db/design.html) 
+  *  ER Diagram Demo
 * [Sample Databases for Postgres](https://wiki.postgresql.org/wiki/Sample_Databases)
-* [pgmodeler for Data Modeling and Reverse Engineering](https://pgmodeler.io/)
+
 
 
 
@@ -785,24 +785,31 @@ Diagrams","Practical SQL
  
  * Ch 12. Advanced Query Techniques
  * Ch 13: Mining Text to Find Meaningful Data"
-y,,17,31-Oct,Thu,"Subqueries
+,,17,31-Oct,Thu,"
 
-* TODO - subqueries
+Normalization
 
-Common Table Expressions
+*  [Normalization](slides/db/normalization.html) 
 
-* TODO - cte
+Relational Database Design Rules / Tips
 
-Conditionals
-
-* TODO - conditionals
-
-Manipulating Text
-
-* TODO - text manipulation","Practical SQL
+* Database Design Demo with ER Diagram (Online Food Ordering Site?)
+* [pgmodeler for Data Modeling and Reverse Engineering](https://pgmodeler.io/)
+","Relational Database Design and Implementation
  
- * Ch 12. Advanced Query Techniques
- * Ch 13: Mining Text to Find Meaningful Data",,,"Subqueries
+ * Ch 6. Normalization
+ * Ch 8. Codd's Rules for Relational Database Design
+ * Ch 9. Using SQL to Implement a Relational Design
+","__Homework #05__ – due Thursday 11/5 at 11pm
+
+
+* Homework #05 to be posted
+
+<!--
+* [Homework #04](assignments/04.html)
+-->
+
+",,"Subqueries
 
 * TODO - subqueries
 
@@ -821,28 +828,35 @@ Manipulating Text
  * Ch 6. Normalization
  * Ch 8. Codd's Rules for Relational Database Design
  * Ch 9. Using SQL to Implement a Relational Design"
-y,,18,05-Nov,Tue,"Normalization
+y,,18,05-Nov,Tue,"Subqueries
 
-* TODO - normalization slides
+* TODO - subqueries
 
-Relational Database Design Rules / Tips
+Common Table Expressions
 
-* Database Design Review (News Site?)
+* TODO - cte
+
+Conditionals
+
+* TODO - conditionals
+
+Manipulating Text
+
+* TODO - text manipulation
+
+Example: Normalization, Text Manipulation, Import
+
 * [IMDB Horror Movie Dataset](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset)
 * [In class](sql/design/class17-movies.sql)
-
-Implementation
-
 * (Again) [IMDB Horror Movie Dataset](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset)
 * [Database and Schema](sql/design/staging.sql)
 * [Tables](sql/design/movies-schema-draft-2.sql)
 * [Annotated / Complete](sql/design/movies.sql)
-
-","Relational Database Design and Implementation
+","Practical SQL
  
- * Ch 6. Normalization
- * Ch 8. Codd's Rules for Relational Database Design
- * Ch 9. Using SQL to Implement a Relational Design","
+ * Ch 12. Advanced Query Techniques
+ * Ch 13: Mining Text to Find Meaningful Data
+","
 HW 07:
 
 * Database Design - ER Diagram
