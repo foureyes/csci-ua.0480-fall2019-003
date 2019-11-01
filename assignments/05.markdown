@@ -50,7 +50,7 @@ function onClick(evt) {
 }
 </script>
 
-# Assignment #5 - Database Design, Joins - Due Monday, Nov 19  at 11pm
+# Assignment #5 - Database Design, Joins - Due Thursday, Nov 7th  at 11pm
 
 In this homework, you'll:
 
@@ -116,17 +116,22 @@ Because you're an SQL _expert_ 🤓, you decide to store all of this information
 
 ### Create an ER Diagram and write SQL to Make Tables
 
-1. ✏️ Based on the description above, create an ER Diagram (crow's foot / martin) to model the data
+1. ✏️ Based on the description above, create an ER Diagram (chen, crow's foot, or even uml) to model the data
 	* there are multiple ways to model the scenario described, and there are clearly __ambiguities__ in the description
-	* you can use any diagramming tool to create your diagram: [draw.io](https://www.draw.io/) (you can start with "Software" --&rarr; "Entity Relationship", the last diagram type), copy symbols from [Google Drawings](https://docs.google.com/drawings/d/1hcTNp5IlnJXxLWDx5f8mptMLYDKqnJLt5fKgP4aP8e8/edit) (which sourced its symbols from [ER Diagram Symbols](https://docs.google.com/drawings/d/1IIQ6ftgPqG082JRTW7-cBzXAi_BdxrBmEncQeQETzJk/edit)), Visio, [Dia](http://dia-installer.de/), or any other drawing application
-	* ⚠️⚠️⚠️ __see the next section, "Write Some SQL", as some of those queries may inform your design decisions__
-	* you can also use [pgmodeler](https://pgmodeler.io/), [MySQL Workbench](https://www.mysql.com/products/workbench/), etc. ... but:
-		* you have to write your own SQL for the creation scripts
-		* you must export to an image or pdf
-2. 🔑 __Use natural primary keys when possible__, but surrogate / artificial keys are ok too
-3. 👀 Avoid data redundancy and update / insert/ delete anomalies by making sure your data model is <s>minimally in 3rd normal form</s>, __minimally in 2nd normal form__
-
-4. 🤝 __maintain relational integrity and use constraints as needed__
+	* you can use any diagramming tool to create your diagram: 
+		* we used [pgmodeler](https://pgmodeler.io) in class, but you have to compile it if you want it for free (it's not the _easiest_ thing to do, but you can also get the paid version if you think you'll be using this software beyond this class)
+			* you have to write your own SQL for the creation scripts (but of course, you can check against this generated sql)
+		* although geared towards mysql, you can use [MySQL Workbench](https://www.mysql.com/products/workbench/)
+		* you can also use non-database specific tools like:
+			1. [draw.io](https://www.draw.io/) (you can start with "Software" --&rarr; "Entity Relationship", the last diagram type)
+			2. use google drawings and copy symbols from [this document](https://docs.google.com/drawings/d/1hcTNp5IlnJXxLWDx5f8mptMLYDKqnJLt5fKgP4aP8e8/edit) (which sourced its symbols from [ER Diagram Symbols](https://docs.google.com/drawings/d/1IIQ6ftgPqG082JRTW7-cBzXAi_BdxrBmEncQeQETzJk/edit))
+			3. Visio
+			4. [Dia](http://dia-installer.de/), or any other drawing application
+		* ⚠️⚠️⚠️ __see the next section, "Write Some SQL", as some of those queries may inform your design decisions__
+	* ⚠️ __regardless of what tool you use, you must export to an image or pdf__ 
+2. 🔑 __Use natural primary keys when possible__, but surrogate / artificial keys are ok too if the other natural keys may end up changing
+3. 👀 Avoid data redundancy and update / insert/ delete anomalies by making sure your data model is minimally in 3rd normal form
+4. 🤝 __maintain relational integrity and use constraints to enforce this__ 
 5. 🖼 Export this as an image (any format is ok) called `er-diagram.png` (change extension appropriately)
 6. Embed the image under a heading called `Scoot-Share` in your `README.md`
 7. __Below the image, describe:__ 
@@ -189,7 +194,7 @@ Under a heading called `Normalization`, add links to your:
 
 ## Conclusion
 
-At the end of the homework, your `README.md` should look like the following (with parts marked `TODO` as arease where you have to write content)
+At the end of the homework, your `README.md` should look like the following (with parts marked `TODO` replaced with your own written content)
 
 ```
 # Homework 05
