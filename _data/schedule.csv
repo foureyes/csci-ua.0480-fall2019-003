@@ -826,10 +826,27 @@ Manipulating Text
  * Ch 6. Normalization
  * Ch 8. Codd's Rules for Relational Database Design
  * Ch 9. Using SQL to Implement a Relational Design"
-y,,18,05-Nov,Tue,"Subqueries
+,,18,05-Nov,Tue,"
+Manipulating Text
 
-* TODO - subqueries
+* [Strings and Arrays](slides/db/strings.html)
 
+Subqueries
+
+* Demo
+
+Example: Normalization, Text Manipulation, Subqueries, Import
+
+* [Movie Country and Filming Location](sql/design/country_and_location.sql)
+
+
+<!--
+* [Annotated / Complete](sql/design/movies.sql)
+* [IMDB Horror Movie Dataset](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset)
+* [In class](sql/design/class17-movies.sql)
+* (Again) [IMDB Horror Movie Dataset](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset)
+* [Database and Schema](sql/design/staging.sql)
+* [Tables](sql/design/movies-schema-draft-2.sql)
 Common Table Expressions
 
 * TODO - cte
@@ -837,20 +854,7 @@ Common Table Expressions
 Conditionals
 
 * TODO - conditionals
-
-Manipulating Text
-
-* TODO - text manipulation
-
-Example: Normalization, Text Manipulation, Import
-
-* [IMDB Horror Movie Dataset](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset)
-* [In class](sql/design/class17-movies.sql)
-* (Again) [IMDB Horror Movie Dataset](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset)
-* [Database and Schema](sql/design/staging.sql)
-* [Tables](sql/design/movies-schema-draft-2.sql)
-* [Annotated / Complete](sql/design/movies.sql)
-","Practical SQL
+-->","Practical SQL
  
  * Ch 12. Advanced Query Techniques
  * Ch 13: Mining Text to Find Meaningful Data
