@@ -833,11 +833,12 @@ Manipulating Text
 
 Subqueries
 
-* Demo
+* Demo (see below)
 
 Example: Normalization, Text Manipulation, Subqueries, Import
 
-* [Movie Country and Filming Location](sql/design/country_and_location.sql)
+* [IMDB Horror Movie Dataset on Kaggle](https://www.kaggle.com/PromptCloudHQ/imdb-horror-movie-dataset) (data)
+* [Movie Country and Filming Location](sql/design/country_and_location.sql) (sql)
 
 
 <!--
@@ -902,10 +903,22 @@ Subqueries Continued
 
 * [Subqueries and Common Table Expressions](slides/db/subqueries.html)
 
+Dates and Times
+
+* [Working with Dates, Times](slides/db/datetime.html)
 
 
 
-","Postgres Documentation
+
+
+
+","
+Practical SQL
+
+* See readings above for subqueries
+* Ch 11: Working With Dates and Times
+
+Postgres Documentation
  
 * [Conditionals](https://www.postgresql.org/docs/current/functions-conditional.html)
 * [WITH Queries (CTEs)](https://www.postgresql.org/docs/current/queries-with.html)","
@@ -967,7 +980,6 @@ Modifying data
 
 Transactions
 
-Dates and Times
 
 Performance Tuning
 
@@ -988,7 +1000,7 @@ Triggers
 * Ch 7: Table Design That Works for You (Speeding Up Queries with Indexes)
 * Ch 9: Inspecting and Modifying Data
 * Ch 15: Saving Time with Views, Functions and Triggers
-* Ch 11: Working With Dates and Times
+
  
 Postgres Documentation
  

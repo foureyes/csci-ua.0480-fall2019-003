@@ -3,6 +3,10 @@ layout: slides
 title: "Conditional Expressions"
 ---
 
+<script src="../../resources/js/table.js"></script>
+<link rel="stylesheet" href="../../resources/css/data-table.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+
 <section markdown="block" class="intro-slide">
 # {{ page.title }}
 
@@ -43,11 +47,12 @@ select * from caers_event order by patient_age;
 {:.fragment}
 
 Easy enough! __But wait... a closer look at age shows us there are two age related columns__ &rarr;
+{:.fragment}
 
 
 * {:.header} Patient Age, Age Units
 * 15, year(s)
-* , 
+* null, null 
 * 72, year(s)
 * 16, month(s)
 {:.fragment}
@@ -94,6 +99,7 @@ __As mentioned in the previous slide, we can simply normalize to a unit:__ &rarr
 * {:.fragment} if the column is `day(s)`, divide `patient_age` by 365
 
 However, to do this, we'll need to perform a calculation conditionally based on the value of another field. __SQL supports conditional expressions to achieve this__ ...
+{:.fragment}
 </section>
 
 <section markdown="block">
@@ -119,6 +125,8 @@ END
 <section markdown="block">
 ## Order By Normalized Age
 
+__And now for our _actual query_.__ &rarr;
+
 <pre><code data-trim contenteditable>
 select product, terms, CASE
     WHEN age_units like 'year%' THEN patient_age
@@ -130,6 +138,7 @@ FROM caers_event
 WHERE patient_age is not null
 ORDER BY age DESC;
 </code></pre>
+{:.fragment}
 
 </section>
 
@@ -143,6 +152,7 @@ __There are two dates associated with our event data...__ (from the CAERS readme
 first experienced the adverse event.
 
 We can see that `created_date` is always present, while only just under 40% of events recorded have an _actual_ `event_date`: 
+{:.fragment}
 
 <pre><code data-trim contenteditable>
 -- (without subqueries)
@@ -152,6 +162,7 @@ select count(*) from caers_event where created_date is not null;
 select count(*) from caers_event where event_date is null;
 select count(*) from caers_event where event_date is not null;
 </code></pre>
+{:.fragment}
 </section>
 
 <section markdown="block">
@@ -193,6 +204,7 @@ If we want to use either date, we have to __choose the first one that's not null
 {:.fragment}
 
 In our case we could use `COALESCE` to use `event_date`, but fall back to `created_date`:
+{:.fragment}
 
 <pre><code data-trim contenteditable>
 select 
@@ -200,18 +212,59 @@ select
 	coalesce(event_date, created_date) as created_or_event 
 from caers_event;
 </code></pre>
+{:.fragment}
 </section>
 
 <section markdown="block">
+## An Aside on Ordering
+
+__Let's try ordering by `patient_age` descending__ &rarr;
+
+<pre><code data-trim contenteditable>
+select patient_age, age_units from caers_event order by patient_age desc;
+</code></pre>
+{:.fragment}
+
+Uh... it looks like it orders `null` values first!? 😐
+{:.fragment}
+
+* {:.fragment}`null` values are sorted last when ascending
+* {:.fragment}`null` values are sorted first when descending
+
+</section>
+
+<section markdown="block">
+## Two Ways to Solve This
+
+__If you want `null` values sorted last even when order by is descending...__ &rarr;
+
+* {:.fragment} `NULLS LAST`
+	<pre><code data-trim contenteditable>
+select patient_age, age_units from caers_event order by patient_age desc nulls last;
+</code></pre>
+* {:.fragment} use `COALESCE`
+	<pre><code data-trim contenteditable>
+select patient_age, age_units from caers_event order by coalesce(patient_age, 0) desc;
+</code></pre>
+	* this is particularly useful if you want to assign a specific value to what otherwise would have been `null` for the purposes of ordering
+
+</section>
+<section markdown="block">
 ## `NULLIF`
 
-`NULLIF` can take two values as arguments...
+`NULLIF` is a function that...
 
-* it gives back `null` if two values are equal
-* otherwise, it returns only the first value
-* `select nullif(1, 1)` &rarr; `null`
-* `select nullif(1, 0)` &rarr; `1`
+* {:.fragment} can take two values as arguments...
+* {:.fragment} it gives back `null` if two values are equal
+* {:.fragment} otherwise, it returns only the first value
+* {:.fragment} `select nullif(1, 1)` &rarr; `null`
+* {:.fragment} `select nullif(1, 0)` &rarr; `1`
 
+But y tho? 🤔
+{:.fragment}
+
+* {:.fragment} useful to mark a value as missing (`null`) if it has some _other_ value that _should_ be treated as null
+* {:.fragment} treat the string, `N/A`, as `null`: `nullif(col_name, 'N/A')`
 
 
 </section>

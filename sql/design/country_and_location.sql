@@ -92,6 +92,7 @@ select
 -- 1. check out the filming locations from staging
 select distinct filming_locations from staging_movie;
 
+
 -- 2. create a filming_location table
 drop table if exists filming_location;
 create table filming_location (
@@ -130,11 +131,12 @@ from (select string_to_array(filming_locations, ',') as loc from staging_movie) 
 -- the last part as the country, and everything before it as a "location"
 
 select array_to_string(loc[1:array_length(loc, 1) - 1], ',') as loc_name,
-       trim(loc[array_length(loc, 1)]) as countr_name
+       trim(loc[array_length(loc, 1)]) as country_name
 from
     (select string_to_array(filming_locations, ',') as loc from staging_movie) as location;
 
--- 5. use a common table expression (CTE) / SELECT in WITH ... to save
+-- 5. let's see if we have any country matches with our country
+-- table; use a common table expression (CTE) / SELECT in WITH ... to save
 -- the previous query as a one-time use "temporary table"
 -- trim the values to remove white space surrounding string
 -- cte can be self referencing, subqueries cannot ... let's try one out
@@ -164,7 +166,7 @@ select distinct country_name
 from loc_temp left outer join country on country.name = loc_temp.country_name
 where country_id is null
 and country_name is not null
-and initcap(country_name) = country_name;
+and initcap(country_name) <> country_name;
 
 -- 7. finally insert locations
 with loc_temp as (
@@ -189,3 +191,58 @@ select filming_location.name, country.name
 from filming_location
 inner join country
     on country.country_id = filming_location.country_id;
+
+
+
+-----------------------------------------------------
+-- person (from actors)
+-----------------------------------------------------
+-- 1. create a person table
+-- what's the longest possible name?
+select max(char_length(movie_cast)) from  staging_movie;
+
+create table person (
+  person_id serial,
+  given varchar(255),
+  surname varchar(255),
+  unique (given, surname),
+  primary key(person_id)
+);
+--drop function parse_name(varchar);
+
+-- 2. create a parse name function...
+create or replace function parse_name(
+    s varchar
+  )
+  returns varchar[] as $$
+declare
+  result varchar[];
+begin
+  select
+         array[trim(array_to_string(parts[1:array_length(parts, 1) - 1], ' '))::varchar,
+         trim(parts[array_length(parts, 1)])::varchar]
+  into result
+  from (select string_to_array(s, ' ') as parts) as name_parts;
+  return result;
+end;
+$$ language 'plpgsql';
+select * from staging_movie;
+select parse_name('Ray Lovelock');
+select parse_name('Anna Maria Rizzoli');
+
+
+-- 3. insert into person table ...
+insert into person (given, surname)
+select parts[1] as given, parts[2] as surname
+-- split actor name into last name (part after comma) and given name
+from (select parse_name(full_name) as parts
+  -- split cast field into individual actors' names
+  -- note that we're assuming that actors with the same name are the same person
+  -- the data set does not offer anyway of differentiating between people with the
+  -- same name, sooo for the sake of having a separate person table, we'll assume
+  -- (this is a bad assumption, of course), that actors with the same name are the
+  -- same person
+  from (select distinct regexp_split_to_table(movie_cast, E'\\|') as full_name from staging_movie) as person) as name_parts;
+-- 3. run some checks; these two selects should be the same!
+select count(*) from person;
+
