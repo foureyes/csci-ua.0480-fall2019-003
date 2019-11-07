@@ -18,7 +18,7 @@ title: "Strings and Arrays"
 <section markdown="block">
 ## Data Source for Examples
 
-_Adverse_ food events data: [CAERS](https://www.fda.gov/food/compliance-enforcement-food/cfsan-adverse-event-reporting-system-caers)
+Again, we'll use the _adverse_ food events data: [CAERS](https://www.fda.gov/food/compliance-enforcement-food/cfsan-adverse-event-reporting-system-caers)
 
 1. slides use 2014-2019 reports
 2. [documentation of fields](https://www.fda.gov/media/97035/download)
@@ -262,5 +262,9 @@ btw ... to join an array: `array_to_string`
 {:.fragment}
 </section>
 
-
+{% comment %}
+* no index out of bounds error
+* `array_to_string`
+* more about creating arrays / dealing with arrays in the context of strings?
+{% endcomment %}
 

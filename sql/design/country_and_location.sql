@@ -53,6 +53,9 @@ select distinct release_country from staging_movie;
 -- subquery returns table! value from table inserted...
 insert into country (name)
     (select distinct release_country from staging_movie);
+-- subquery can result in:
+-- 1. multiple rows (like another table)
+-- 2. a scalar value (a single value)
 
 -- 5. let's check our results... do we have any countries?
 select * from country limit 15;
