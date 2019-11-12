@@ -50,6 +50,11 @@ function onClick(evt) {
 }
 </script>
 
+# Assignment #6 - Due Tuesday, November 19th at 11pm
+
+## To be posted
+
+{% comment %}
 # Assignment #6 - SQL Alchemy, MongoDB - Due Friday, Dec 7 at 11pm
 
 In this homework, you'll:
@@ -364,3 +369,4 @@ Export part of the data from the `homework06` postgres database into json. Use t
 	5. write a query that uses `$or`
 		* in `mongodb-output.md`, document this query in the same manner that you did for query #1
 
+{% endcomment %}

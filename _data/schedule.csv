@@ -968,7 +968,13 @@ Index Online Resources
 * [Tour of PostgreSQL Index Types](https://www.citusdata.com/blog/2017/10/17/tour-of-postgres-index-types/)
 * [Principles and Applications of the Index Types Supported by PostgreSQL
 ](https://medium.com/@Alibaba_Cloud/principles-and-applications-of-the-index-types-supported-by-postgresql-481f59bab67d)"
-y,,20,12-Nov,Tue,"Indexes, Query Planner
+,,20,12-Nov,Tue,"Views, Functions, and Triggers
+
+<!--
+* [Views, Functions and Triggers](slides/db/views-functions-triggers.html)
+-->
+
+Indexes, Query Planner
 
 * [EXPLAIN / ANALYZE](slides/db/indexes.html)
 * [Popular Names from Social Security Administration (First Names)](https://www.ssa.gov/cgi-bin/popularnames.cgi)
@@ -976,40 +982,18 @@ y,,20,12-Nov,Tue,"Indexes, Query Planner
 * [names.txt](sql/names.txt)
 * [domains.txt](sql/domains.txt)
 
+<!--
+
 Modifying data
 
 Transactions
 
-
 Performance Tuning
 
-* TODO - performance
-
-Views
-
-* TODO - views
-
-Functions
-
-* TODO - functions
-
-Triggers
-
-* TODO - triggers","Practical SQL
+-->
+","Practical SQL
  
-* Ch 7: Table Design That Works for You (Speeding Up Queries with Indexes)
-* Ch 9: Inspecting and Modifying Data
 * Ch 15: Saving Time with Views, Functions and Triggers
-
- 
-Postgres Documentation
- 
-* [UPDATE](https://www.postgresql.org/docs/current/static/sql-update.html) and [DELETE](https://www.postgresql.org/docs/current/static/sql-delete.html)
-* [ALTER TABLE](https://www.postgresql.org/docs/10/static/sql-altertable.html)
- 
- Relational Database Design and Implementation
- 
- * Ch 7: Database Structure and Performance Tuning
 
 
 Functions, Variables Online Resources
@@ -1028,14 +1012,34 @@ Index Online Resources
 * [Index-Only Scans from PostgreSQL Docs](https://www.postgresql.org/docs/current/indexes-index-only-scans.html)
 * [Tour of PostgreSQL Index Types](https://www.citusdata.com/blog/2017/10/17/tour-of-postgres-index-types/)
 * [Principles and Applications of the Index Types Supported by PostgreSQL
-](https://medium.com/@Alibaba_Cloud/principles-and-applications-of-the-index-types-supported-by-postgresql-481f59bab67d)","__Homework #07__ – due Mon 11/19 at 11pm
+](https://medium.com/@Alibaba_Cloud/principles-and-applications-of-the-index-types-supported-by-postgresql-481f59bab67d)
 
-1. [Homework #08 Instructions](assignments/05.html)
+<!--
 
+Postgres Documentation
+ 
+* [UPDATE](https://www.postgresql.org/docs/current/static/sql-update.html) and [DELETE](https://www.postgresql.org/docs/current/static/sql-delete.html)
+* [ALTER TABLE](https://www.postgresql.org/docs/10/static/sql-altertable.html) 
+
+
+ Relational Database Design and Implementation
+ 
+ * Ch 7: Database Structure and Performance Tuning
+
+
+Practical SQL
+
+* Ch 7: Table Design That Works for You (Speeding Up Queries with Indexes)
+* Ch 9: Inspecting and Modifying Data
+-->","__Homework #06__ – due Tue 11/19 at 11pm
+
+1. [Homework #06 Instructions](assignments/06.html)
+
+<!--
 * create view
 * cli inventory app maybe???
 * aggregates, time series, etc. on data set with multiple tables
-
+-->
 ","
 
 MATERIAL:
@@ -1168,15 +1172,15 @@ y,,23,21-Nov,Thu,NoSQL (mongodb) Continued,Same as Previous,,,NoSQL (mongodb) Co
 y,,24,26-Nov,Tue,"Geo-spatial Data (GIS with pandas, postgres, mongodb)","Practical SQL
  
  Ch 14: Analyzing Spatial Data with PostGIS",,,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
-y,holiday,,28-Nov,Thu,Cloud Storage,https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data),,,Cloud Storage,
-y,,25,3-Dec,Tue,Thanksgiving Recess: No classes scheduled,,,,Thanksgiving Recess: No classes scheduled,"https://bost.ocks.org/mike/bar/
+y,holiday,,28-Nov,Thu,Thanksgiving Recess: No classes scheduled,,,,Cloud Storage,
+y,,25,3-Dec,Tue,Cloud Storage,https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data),,,Thanksgiving Recess: No classes scheduled,"https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
  https://bost.ocks.org/mike/bar/3/"
-y,,26,5-Dec,Thu,"Web Based Visualization (D3) ...or
+y,,26,5-Dec,Thu,"Web Based Visualization (D3)
 
 * [svg + d3](d3/overview.html)
 
-Processing Large Data Sets (Spark or Hadoop)
+ ...or Preview Processing Large Data Sets (Spark or Hadoop)
 ","https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
  https://bost.ocks.org/mike/bar/3/
