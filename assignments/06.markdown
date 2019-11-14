@@ -76,7 +76,13 @@ In this homework, you'll:
 * create tables
 * specify action on delete (cascade for example)
 * do you _really_ need a separate table for each patient
-
+* trim is really useful
+* consider immediately giving an id on initial import
+* you should be able to reconsitute the original table with a view
+	* but no more insert, update, and delete anomalies
+	* possible to query into something like terms
+* union, except, intersect
+* there are some unexpected issues with the data in terms of uniqueness
 
 
 
