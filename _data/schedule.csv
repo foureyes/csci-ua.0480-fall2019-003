@@ -1077,7 +1077,9 @@ Triggers
 Documentation
 
 * [psycopg2 example usage from official documentation](http://initd.org/psycopg/docs/usage.html)"
-y,,21,14-Nov,Thu,"Security
+,,21,14-Nov,Thu,"
+<!--
+Security
 
 * TODO - Security
 
@@ -1086,6 +1088,7 @@ Maintenance
 * TODO - Maintenance
 * TODO - [Backups / Replication, Vacuum](backups.html)
 
+-->
 
 Postgres and Python
 
@@ -1099,12 +1102,15 @@ Postgres and Python
 * cur.execute()
 * cur.fetchone()
 * cur.fetchall()
+
+<!--
 * [MOMA Collection GitHub Page](https://github.com/MuseumofModernArt/collection)
   * [git lfs install](https://help.github.com/articles/installing-git-large-file-storage/) (can also be done through [homebrew](https://brew.sh/))
   * use `git pull` or `git lfs pull` to download csvs
 * [moma-create.sql](sql/py/moma-create.sql)
 * [moma-import.sql](sql/py/moma-import.sql)
-* [moma-queries.sql](sql/py/moma-queries.sql)","Relational Database Design and Implementation
+* [moma-queries.sql](sql/py/moma-queries.sql)
+-->","Relational Database Design and Implementation
  
  * Ch 15: Security
  

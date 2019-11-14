@@ -52,33 +52,26 @@ function onClick(evt) {
 
 # Assignment #6 - Due Tuesday, November 19th at 11pm
 
+## To be posted
+
+{% comment %}
+# Assignment #6 - SQL Alchemy, MongoDB - Due Friday, Dec 7 at 11pm
+
 In this homework, you'll:
 
-1. Bring csv data into postgresql 
-2. Normalize the data using only SQL
+1. Work with SQLAlchemy's ORM to:
+	1. Create classes that represent tables in your database
+	2. Create _actual_ tables in the database (without writing any SQL!)
+	3. Insert rows into the tables that you created (without writing any SQL!)
+	4. Read some data from the tables (without writing any SQL!)
+2. Practice joins by writing SQL queries against the data that you created
+3. Try out MongoDB
+	1. Export Postgres data to a json file
+	2. Install MongoDB
+	3. Import the json file into MongoDB
+	4. Run a few queries on the resulting dataset through MongoDB
 
-## Part 1: Import
-
-1. Download and read documentation about the .csvs linked to from [the FDA CAERS website](https://www.fda.gov/food/compliance-enforcement-food/cfsan-adverse-event-reporting-system-caers):
-	* Download the following files to the root of your project directory
-		* [2004 - 2013](https://www.fda.gov/media/128561/download)
-		* [2014 - 2019](https://www.fda.gov/media/128562/download)
-	* Read the [documentation about the fields contained in these files](https://www.fda.gov/media/97035/download)
-2. Write a short `.sql` script to create a temporary staging table called `staging_caers_events` to store the data from both .csvs
-	* in `part-1-create-staging.sql`...
-	* write a `DROP TABLE IF EXISTS staging_caers_events` statement
-	* then write a `CREATE TABLE staging_caers_events` with appropriate columns
-		* the types can be loose... for example, using `text` rather than `varchar`; you can fix these later
-		* if you want a quick solution to this, you can grab the create statement from the slides on strings and arrays (just make sure the table name being created is prefixed with `staging_`
-
-
-* create tables
-* specify action on delete (cascade for example)
-* do you _really_ need a separate table for each patient
-
-
-
-
+## Part 1: SQLAlchemy
 
 Your _Scoot Share_ business is still running along, but you're tired of using SQL to keep track of your inventory. You're more of a Python person (dare I say... a _pythonista_ or a _pythoneer_?), so you decide to use SQLAlchemy to manage your scooter inventory. 
 
@@ -376,3 +369,4 @@ Export part of the data from the `homework06` postgres database into json. Use t
 	5. write a query that uses `$or`
 		* in `mongodb-output.md`, document this query in the same manner that you did for query #1
 
+{% endcomment %}

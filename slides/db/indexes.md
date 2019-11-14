@@ -383,5 +383,4 @@ __What are some drawbacks to using indexes?__ &rarr;
 * {:.fragment} operations that change data may take longer (insert, update, delete)
 * {:.fragment} query planner might not actually use it (????)
 	* {:.fragment} if your queries return large result sets, then sequential scan is actually more efficient
-	* {:.fragment} (less io)
 ter
