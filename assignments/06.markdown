@@ -81,9 +81,26 @@ In this homework, you'll:
 * you should be able to reconsitute the original table with a view
 	* but no more insert, update, and delete anomalies
 	* possible to query into something like terms
+* unnest may be helpful to create a table
+* trim on a table works!?
 * union, except, intersect
 * there are some unexpected issues with the data in terms of uniqueness
 
+* duplicate terms in same cell
+* casing and spacing issues
+* some products have same name, but different product code
+
+
+queries
+* show the date of an event, the name of the product, the poduct code, the product description and the number of symptoms associated with it for the event had the most symptoms (unique)
+* show the top 3 products with the most events associated
+* number of events by month?
+* most common symptom
+* incident associated with the younngest pesron
+* how many unique products are in the database? in a comment, describe your interpretation of what a product _is_ (that is, how you came up with what constitutes a unique product)
+
+* create a view to reconstitute the original table
+* create at least one function
 
 
 
