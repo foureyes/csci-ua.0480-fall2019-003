@@ -35,6 +35,44 @@ Some fields, such as `MedDRA`, contain comma separated lists.
 
 </section>
 
+<section markdown="block">
+## CREATE
+
+<pre><code data-trim contenteditable>
+drop table if exists staging_caers_event;
+create table staging_caers_event (
+	-- artificial primary key
+    caers_event_id serial primary key,
+	-- note that there are dup report_id's
+    report_id varchar(255),
+    created_date date,
+    event_date date,
+    product_type text,
+    product text,
+    product_code text,
+    description text,
+    patient_age integer,
+    age_units varchar(255),
+    sex varchar(255),
+    terms text,
+    outcomes text);
+</code></pre>
+
+</section>
+
+<section markdown="block">
+## Import
+
+<pre><code data-trim contenteditable>
+copy staging_caers_event (
+	report_id, created_date, event_date,
+	product_type, product, product_code,
+	description, patient_age, age_units,
+	sex, terms, outcomes)
+    from '/path/to/CAERSASCII 2014-20190331.csv'
+    (format csv, header, encoding 'LATIN1');
+</code></pre>
+</section>
 
 <section markdown="block">
 ## A Closer Look at Patient Age
