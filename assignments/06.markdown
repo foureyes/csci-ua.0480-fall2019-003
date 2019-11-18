@@ -200,7 +200,7 @@ You may want to come back to this part after you've warmed up with some queries.
 
 ### General Queries
 
-⚠️ __Do 6 out of 9 of these in order__. Any additional queries will be counted as extra credit towards homework.
+⚠️ __Do 5 out of 8 of these in order__. Any additional queries will be counted as extra credit towards homework.
 
 1. __How afraid should you be of yogurt?__ 🙀
 	* list the product name and patient age of all incidents that involved yogurt
@@ -225,18 +225,20 @@ You may want to come back to this part after you've warmed up with some queries.
 4. __Create a list of event dates, report ids and product, regardless of whether or not there's a product name__ ☑️
 	* sort by the report id ascending
 	* for all events in september of 2013
-5. __Find only the date of most recently entered event(s)__ 📅
-6. __Now display the report id, product name, and the date of the most recently entered event(s); there may be more than 1__ 📅📈
+5. __The date of most recently entered event(s)__ 📅 
+	* this is actually two queries:
+		1. find the date of the most recently entered event(s) (there can be more than 1)
+    	2. then display the report id, product name, and the date of the most recently entered event(s)
 	* do not hardcode a limit
-	* hint: a subquery may be useful for this
-7. __Find the event that had the most symptoms (there could be a tie)__ 🤒
+	* hint: a subquery may be useful for the second query
+6. __Find the event that had the most symptoms (there could be a tie)__ 🤒
 	* show the primary key for the event, the created date, event date, product, description, patient_age, sex, and all symptom terms, along with the count of symptoms
 	* do this for all non exempt products (`EXEMPT 4`)
-8. __What are the 3 most common symptom__ 🤮 
+7. __What are the 3 most common symptom__ 🤮 
 	* include the name of the symptom and the count 
 	* sorted by the count from greatest to least
 	* as secondary sort order, sort in alphabetical order of the name of the sumptom
-9. __Find the incident reported that dealt with the youngest patient__ 👶
+8. __Find the incident reported that dealt with the youngest patient__ 👶
 	* show the report id, age, product and product code (associated with the youngest person)
 	* create a function to help do this
 	* normalize dates as we did in class / in the slides
