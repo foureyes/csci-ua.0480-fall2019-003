@@ -31,7 +31,7 @@ An __Object Relational Mapper__ translates tables and their relationships into o
 __SQLAlchemy__ features an __ORM__ that:
 {:.fragment}
 
-1. {:.fragment} associates _user-defined_ user-defined Python classes with tables
+1. {:.fragment} associates _user-defined_ defined Python classes with tables
 2. {:.fragment} ... and instances correspond to _actual_ rows in the associated table 
 3. {:.fragment} it also includes mechanisms to:
     * {:.fragment} to __synchronizes changes__ between objects and their related rows
@@ -59,6 +59,7 @@ Another way to __view these two approaches is...__ &rarr;
 1. {:.fragment} use the __ORM__ to:
    * {:.fragment} model the problem domain through classes and relationships (for example: composition, aggregation, etc.)
    * {:.fragment} ...persist instances through _some_ mechanism, such as a relational database
+   * {:.fragment} ORM DON'T CARE what your backend is 🤷
 2. {:.fragment} use the __Expression language__ to: 
    * {:.fragment} construct literal representations of database tables and SQL
    * {:.fragment} which are then issued to the database directly
