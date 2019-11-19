@@ -52,6 +52,7 @@ function onClick(evt) {
 
 # Assignment #6 - Due Monday, November 25th at 11pm
 
+
 In this homework, you'll:
 
 1. Bring csv data into postgresql and create a normalized data model representing the data
@@ -110,7 +111,7 @@ YOUR QUERY UNDERNEATH;
 | BAR | 6520 |
 | BAZ | 5837 |
 ```
-		* Of course, using psql, you can simply copy and paste from the commandline into a markdown code black (fence with 3 backticks)
+		* Of course, if using psql, you can simply copy and paste from the commandline into a markdown code black (fence with 3 backticks)
 	* Write a sentence interpreting the results of your queries underneath the pasted output (in `report.md`)
 
 ### Normalization, ER Diagram 
@@ -127,7 +128,7 @@ The ER digaram can be created in any tool that you'd like.
 
 * Export it to an image (`png`, `jpg`, etc.)
 * Add the image to your repository
-* Underneath a header `## Logical Model`, show the image in your `report.md` using markdown
+* Underneath a header `## Database Design`, show the image in your `report.md` using markdown
 * Underneath the image, add an unordered list in markdown that describes some of your design decisions
 
 ## Part 2: Creating New Tables and Populating Them
@@ -234,10 +235,10 @@ You may want to come back to this part after you've warmed up with some queries.
 6. __Find the event that had the most symptoms (there could be a tie)__ 🤒
 	* show the primary key for the event, the created date, event date, product, description, patient_age, sex, and all symptom terms, along with the count of symptoms
 	* do this for all non exempt products (`EXEMPT 4`)
-7. __What are the 3 most common symptom__ 🤮 
+7. __What are the 3 most common symptoms__ 🤮 
 	* include the name of the symptom and the count 
 	* sorted by the count from greatest to least
-	* as secondary sort order, sort in alphabetical order of the name of the sumptom
+	* as secondary sort order, sort in alphabetical order of the name of the symptom
 8. __Find the incident reported that dealt with the youngest patient__ 👶
 	* show the report id, age, product and product code (associated with the youngest person)
 	* create a function to help do this

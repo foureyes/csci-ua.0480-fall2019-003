@@ -922,9 +922,12 @@ Postgres Documentation
  
 * [Conditionals](https://www.postgresql.org/docs/current/functions-conditional.html)
 * [WITH Queries (CTEs)](https://www.postgresql.org/docs/current/queries-with.html)","
-Homework #6 to be Posted
+
 
 <!--
+
+Homework #6 to be Posted
+
 * More normalization practice
 * using only queries (moma data set)
 * Database Design - ER Diagram
@@ -1031,7 +1034,7 @@ Practical SQL
 
 * Ch 7: Table Design That Works for You (Speeding Up Queries with Indexes)
 * Ch 9: Inspecting and Modifying Data
--->","__Homework #06__ – due Mopnday 11/25 at 11pm
+-->","__Homework #06__ – due Monday 11/25 at 11pm
 
 1. [Homework #06 Instructions](assignments/06.html)
 
@@ -1150,7 +1153,7 @@ Postgres and Python
 * [moma-queries.sql](sql/py/moma-queries.sql)","* [MongoDB Data Model Design](https://docs.mongodb.com/manual/core/data-model-design/)
  * [MongoDB Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
  * (see all sections under Model Relationships Between Documents)"
-y,,22,19-Nov,Tue,"NoSQL (mongodb)
+,,22,19-Nov,Tue,"NoSQL (mongodb)
 
 * [MongoDB Intro](slides/mongo/intro.html)
  * [books.csv](mongo/books.csv)
@@ -1160,10 +1163,13 @@ y,,22,19-Nov,Tue,"NoSQL (mongodb)
 
 ","* [MongoDB Data Model Design](https://docs.mongodb.com/manual/core/data-model-design/)
  * [MongoDB Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
- * (see all sections under Model Relationships Between Documents)","HW 09:
+ * (see all sections under Model Relationships Between Documents)","<!--
+
+HW 09:
  
 * Python and postgres
-* MongoDB Assignment or Lab?",,"NoSQL (mongodb)
+* MongoDB Assignment or Lab?
+-->",,"NoSQL (mongodb)
 
 * [MongoDB Intro](slides/mongo/intro.html)
  * [books.csv](mongo/books.csv)
@@ -1195,5 +1201,7 @@ Reading TBD",,,"Web Based Visualization (D3)
 
 * [svg + d3](d3/overview.html)
 ",Reading TBD
-y,,27,10-Dec,Tue,Review First Part of the Semester  * [midterm review notebook](notebooks/midterm-review/review.ipynb) ,,,,Processing Large Data Sets (Spark or Hadoop),
+y,,27,10-Dec,Tue,"Review Second Part of the Semester 
+
+ * [midterm review notebook](notebooks/midterm-review/review.ipynb) ",,,,Processing Large Data Sets (Spark or Hadoop),
 y,exam,28,12-Dec,Thu,Exam #2,,,,Exam #2,
