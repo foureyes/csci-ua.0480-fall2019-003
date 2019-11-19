@@ -301,14 +301,3 @@ select * from staging.movie;
 select parse_name('Ray Lovelock');
 select parse_name('Anna Maria Rizzoli');
 
-
-
-
-select area_rect(3, 6)
-
-CREATE FUNCTION sales_tax(subtotal real) RETURNS real AS $$
-BEGIN
-    RETURN subtotal * 0.06;
-END;
-$$ LANGUAGE plpgsql;
-
