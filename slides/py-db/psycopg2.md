@@ -216,7 +216,7 @@ __Lastly, you can close the connection to the database by calling `close` on the
 
 * {:.fragment} `conn.close()`
 * {:.fragment} `cur.close()` is available as well to close a cursor, but not connection 
-* {:.fragment} note that once close, a `cursor` or `connection` can no longer be used
+* {:.fragment} note that once closed, a `cursor` or `connection` can no longer be used
 </section>
 
 <section markdown="block">

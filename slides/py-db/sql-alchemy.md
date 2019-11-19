@@ -13,12 +13,28 @@ title: "SQLAlchemy"
 <section markdown="block">
 ## SQLAlchemy
 
-Another library for interacting with a relational database is [SQLAlchemy](https://www.sqlalchemy.org/). __It offers multiple ways of working with your database.__ &rarr;
+Another library for interacting with a relational database (note that it's comis [SQLAlchemy](https://www.sqlalchemy.org/). __It offers multiple ways of working with your database.__ &rarr;
 
 * {:.fragment} it can be used to issue __raw SQL queries__
 * {:.fragment} its __expression language__ allows you to skip SQL entirely and use equivalent Python methods
 * {:.fragment} it also offers a full-feature __object-relational mapper__ (ORM)  that maps table rows to _actual_ instances of Python objects
 * {:.fragment} install with `pip` or `conda`
+
+</section>
+
+<section markdown="block">
+## SQLAlchemy Support
+
+👀 __SQLAlchemy supports multiple databases, not just postgres__ &rarr;
+
+* {:.fragment} SQLite
+* {:.fragment} MySQL
+* {:.fragment} Oracle
+* {:.fragment} MS-SQL
+* {:.fragment} Postgresql, of course ... and others
+
+Also, check out [this page](https://www.sqlalchemy.org/features.html) for more details on features!
+{:.fragment}
 
 </section>
 <section markdown="block">
@@ -29,6 +45,11 @@ __SQLAlchemy is pretty large library and it can be a bit daunting to learn__ &ra
 * we'll check out a quick survey of how it works
 * ... in order of increasing abstraction
 * (low level SQL queries first... up to using an object-relational mapper)
+* [see the diagram in the documentation to get a high-level view of the components that make up SQLAlchemy](https://docs.sqlalchemy.org/en/13/intro.html)... we're mostly interested in:
+	* {:.fragment} Engine
+	* {:.fragment} Expression Language
+	* {:.fragment} Object relational mapper
+
 </section>
 
 <section markdown="block">
@@ -59,8 +80,8 @@ for a in artworks:
 `create_engine` can be called with:
 
 * {:.fragment} ...a database connection string as the first argument:
-    * {:.fragment} this connection string is sometimes revered to as a __DSN__ (data source name)
-    * {:.fragment} it constist of a protocol, username, password, host and database name:
+    * {:.fragment} this connection string is sometimes referred to as a __DSN__ (data source name)
+    * {:.fragment} it consists of a protocol, username, password, host and database name:
 	* {:.fragment} `postgres://username:password@hostname/databasename`
 * {:.fragment} and a keyword argument `echo=True` if you'd like to see the SQL it generates
 
@@ -417,7 +438,33 @@ session.commit()
 
 __Uh... so many ways to get data from the database. Which one should we use and why?__ &rarr;
 
-* {:.fragment} want exact control over how your query is created? raw sql
-* {:.fragment} vaguely know sql, but can read python documentation well? expression language or orm
-* {:.fragment} don't want random sql sprinkled throughout your app? orm
+* {:.fragment} want exact control over how your query is created? __raw sql__ using engine directly
+* {:.fragment} vaguely know sql, but can read python documentation well? __expression language__ or __orm__
+	* {:.fragment} (that's kind of only _half true_, as expression language uses `select`, `where`, etc.)
+* {:.fragment} don't want random sql sprinkled throughout your app? __orm__
+	* {:.fragment} also great if not so comfortable with sql
+	* {:.fragment} potentially have portable (in terms of db backend) code
+	* {:.fragment} most orms prevent common mistakes that lead to security issues (like sql injection)
+
+</section>
+
+<section markdown="block">
+## Er Maybe NOT Use?
+
+__What's challenging about using an ORM__  😓 &rarr;
+
+* {:.fragment} what sql is it actually generating? 🤔
+* {:.fragment} is the sql efficient? ⏩
+* {:.fragment} still "another language" (well, api) 
+* {:.fragment} kind of confusing if you already know sql 🤷
+* {:.fragment} in the case of SQLAlchemy... many different ways to do the same thing
+* {:.fragment} for many ORMs, a lot of boilerplate code / code generation is necessary for mapping
+
+__No ORM, now what?__ &rarr;
+{:.fragment}
+
+* {:.fragment} have _some_ sort of abstraction between database and app
+* {:.fragment} can be as simple as a library of functions 
+* {:.fragment} no raw sql!
+
 </section>
