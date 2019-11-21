@@ -225,7 +225,7 @@ Session = sessionmaker(engine)
 __This resulting `Session` class allows us to construct database sessions__ &rarr;
 
 * {:.fragment} a `Session` is "a workspace for your objects, local to a particular database connection" ([see "Creating a Session"](https://docs.sqlalchemy.org/en/latest/orm/tutorial.html#creating-a-session))
-* {:.fragment} sessions operate by beginning a transaction, which is the either committed or rolled back
+* {:.fragment} sessions operate by beginning a transaction, which is then either committed or rolled back
 * {:.fragment} a session can be reused for a new transaction
 * {:.fragment} alternatively, a session can be closed at the same time the transaction ends (which removes the complexity of dealing with separate session and transaction scopes)
 * {:.fragment} you can call `commit` and `rollback` on a session object
@@ -259,6 +259,19 @@ session.commit()
 </section>
 
 <section markdown="block">
+## Default Values, Primary Key
+
+__When creating instances, you may notice some values are missing!__ 😮 &rarr;
+
+* {:.fragment} `primary key`
+* {:.fragment} `default` values for some properties
+
+These are filled in when the transaction is committed.
+{:.fragment}
+
+</section>
+
+<section markdown="block">
 ## Retrieving Data
 
 __A `Query` object represents a `SELECT` statement__ &rarr;
@@ -271,6 +284,18 @@ __A `Query` object represents a `SELECT` statement__ &rarr;
 result = session.query(Foo).filter(Foo.bar == 'qux')
 </code></pre>
 {:.fragment}
+
+</section>
+
+<section markdown="block">
+## Query Object
+
+`session.query` returns a query object. __Some methods that you can call on it include__ &rarr;
+
+* {:.fragment} `filter(expression)` - only return objects that meet criteria, expression
+* {:.fragment} `get(primary_key)` - retrieve one object by unique identifier
+* {:.fragment} `first()`, `one()` and `one_or_none()` - retrieve only the first element of many, one element from result set of one... or one or none!
+* {:.fragment} `limit(num)` - constrain number of objects to num
 
 </section>
 
@@ -403,7 +428,7 @@ class Note(Base):
     note_text = Column('note_text', String)
     note_date = Column('note_date', 
                        DateTime(timezone=True), 
-                       default=datetime.now())
+                       default=datetime.utcnow)
     
     # match this up with primary key in parent table
     rental_id = Column(Integer, ForeignKey('rental.rental_id'))
@@ -429,7 +454,7 @@ class Rental(Base):
     scooter_number = Column('scooter_number', Integer)
     rental_date = Column('rental_date', 
                          DateTime(timezone=True), 
-                         default=datetime.now())
+                         default=datetime.utcnow)
     return_date = Column('return_date', DateTime(timezone=True))
     
     notes = relationship(Note) # match w/ Note for one-to-many 

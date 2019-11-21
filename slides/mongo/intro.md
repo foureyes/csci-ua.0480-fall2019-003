@@ -36,7 +36,7 @@ So, some _stereotypes_ for NoSQL Databases, such as __key-value__ and __document
 {:.fragment}
 
 
-* {:.fragment} more sometimes more simple in design and architecture
+* {:.fragment} sometimes more simple in design and architecture
 * {:.fragment} are less rigid / more flexible than relational databases
 * {:.fragment} easier to scale "horizontally" (add more machines)
 * {:.fragment} not necessarily normalized
@@ -51,8 +51,8 @@ __Sounds good 👍 ... why didn't we start using these in the first place?__ &ra
 
 Some compromises that a NoSQL database may have to make:
 
-* {:.fragment} not usually ACID compliance
-* {:.fragment} simple datastructures and architecture moves constraints and referential integrity to application layer
+* {:.fragment} not usually ACID compliant
+* {:.fragment} simple data structures and architecture moves constraints and referential integrity to application layer
 * {:.fragment} lack of standard (or at least mostly standard) language like SQL
 * {:.fragment} some NoSQL systems even exhibit lost writes or data loss (because not ACID compliant)
 
@@ -380,7 +380,7 @@ __A quick examination:__ &rarr;
 
 * {:.fragment} __what if we want to see exactly two books?__
 	* {:.fragment} `db.books.find().pretty().limit(2)`
-* {:.fragment} __how many there exactly?__ we could count. ugh. no.
+* {:.fragment} __how many there exactly?__ 
 	* {:.fragment} `db.books.find().count()`
 	* {:.fragment} `db.books.count()`
 * {:.fragment} __can we show only books by the author of Pride and Prejudice?__
@@ -403,7 +403,7 @@ __A quick examination:__ &rarr;
 * {:.fragment} __can we supress edition, but include title?__
 	* {:.fragment} nah, nope, blah ... not this way:
 	* {:.fragment} <s>`db.books.find( {"AUTHOR":"Austen, Jane"},{"EDITION":0,"TITLE":1,"YEAR_WRITTEN":1})`</s>
-	* {:.fragment} can't mix inclusions and exclusions... can only mix in supressing id
+	* {:.fragment} can't mix inclusions and exclusions; can only supress id
 	* {:.fragment} instead: `db.books.find( {},{_id:0,"AUTHOR":1,"TITLE":1,"YEAR_WRITTEN":1})`
 </section>
 
@@ -503,6 +503,17 @@ db.books.aggregate(
 )
 </code></pre>
 
+<section markdown="block">
+## Group
+
+What was that??? [Let's see the docs on grouping](https://docs.mongodb.com/manual/reference/operator/aggregation/group/)...
+
+* `_id` is expression to group by... here we just use `$fieldname` to group by a field
+* `field` ...then an arbitrary number of fields that accumulate values using operators such as `$push` or `$avg`
+* [some examples of accumulator operators](https://docs.mongodb.com/manual/reference/operator/aggregation/group/#accumulators-group)
+
+
+</section>
 </section>
 
 <section markdown="block">
