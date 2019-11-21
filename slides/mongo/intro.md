@@ -509,9 +509,9 @@ db.books.aggregate(
 
 What was that??? [Let's see the docs on grouping](https://docs.mongodb.com/manual/reference/operator/aggregation/group/)...
 
-* `_id` is expression to group by... here we just use `$fieldname` to group by a field
-* `field` ...then an arbitrary number of fields that accumulate values using operators such as `$push` or `$avg`
-* [some examples of accumulator operators](https://docs.mongodb.com/manual/reference/operator/aggregation/group/#accumulators-group)
+* {:.fragment} `_id` is expression to group by... here we just use `$fieldname` to group by a field
+* {:.fragment} `field` ...then an arbitrary number of fields that accumulate values using operators such as `$push` or `$avg`
+* {:.fragment} [some examples of accumulator operators](https://docs.mongodb.com/manual/reference/operator/aggregation/group/#accumulators-group)
 
 
 </section>
@@ -520,6 +520,8 @@ What was that??? [Let's see the docs on grouping](https://docs.mongodb.com/manua
 ## Practice
 
 __Exploring wifi3.json__ &rarr;
+
+First, import with: `mongoimport --db test --collection wifi --file /tmp/wifi3.json`
 
 * {:.fragment} __how do we show databses?__
 * {:.fragment} __how about switch databases?__ 
