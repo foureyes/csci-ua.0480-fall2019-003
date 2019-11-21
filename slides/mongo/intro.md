@@ -502,6 +502,7 @@ db.books.aggregate(
 	}}]
 )
 </code></pre>
+</section>
 
 <section markdown="block">
 ## Group
@@ -513,7 +514,6 @@ What was that??? [Let's see the docs on grouping](https://docs.mongodb.com/manua
 * [some examples of accumulator operators](https://docs.mongodb.com/manual/reference/operator/aggregation/group/#accumulators-group)
 
 
-</section>
 </section>
 
 <section markdown="block">
