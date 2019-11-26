@@ -11,6 +11,17 @@ title: "Data Modeling in MongoDB"
 <p><small></small></p>
 </section>
 
+{% comment %}
+<section markdown="block">
+## Aggregation
+
+Like `GROUP BY` in relational databases and the `groupby` method in pandas, MongoDB also supports performing aggregation functions on groups of data (documents instead of rows, of course!).
+
+
+
+</section>
+{% endcomment %}
+
 <section markdown="block">
 ## Defining Relationships / Data Models
 
