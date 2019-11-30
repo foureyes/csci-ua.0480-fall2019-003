@@ -1187,10 +1187,17 @@ TODO: Geo-spatial Data (GIS with pandas, postgres, mongodb)
 Practical SQL
  
  Ch 14: Analyzing Spatial Data with PostGIS
--->","__Lab #01 / Homework #07__ – due in class 11/26
+-->","__Lab #01 / Homework #07__  due in class 11/26
 
-1. [Lab #01 / Homework #07 Instructions](assignments/lab-01-mongo.html)
-",,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
+* [Lab #01 / Homework #07 Instructions](assignments/lab-01-mongo.html)
+
+<!--
+
+__Mini Project due Monday Dec 9th at 11pm__
+
+* [Instructions for Free-form Homework Assignment](assignments/mini-project.html)
+
+-->",,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
 y,holiday,,28-Nov,Thu,Thanksgiving Recess: No classes scheduled,,,,Cloud Storage,
 y,,25,3-Dec,Tue,Cloud Storage,https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data),,,Thanksgiving Recess: No classes scheduled,"https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
