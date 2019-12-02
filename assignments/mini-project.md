@@ -22,67 +22,93 @@ img {
 For your last assignment, you'll have a free-form, mini-project! You can create __anything__ you want for your project, as long as it meets the technical requirements below. If you have a personal project that you've been looking to start (and is relevant to the material, of course) or if you just want something for your portfolio, This your chance to work on it!
 
 
-## Requirements
+⚠️ __Please "scope" your project accordingly; it should result in about one week of work (similar to a homework assignment)__
 
-* no group projects allowed!
-* must work with a database
-
-### OPTION 1 - Relational Database or NoSQL Database
+* it can be as challenging (or easy) as you like
+* scoring is transparent; 👀 see the grading rubric below
 
 
-* 20% - Documentation
-* 20% - Create an ER Diagram or sample documents and collections
-* 20% - Create scripts to import, collect, or generate data
-	* These can be in pure sql or Python (any library is ok - `pandas`, `SQLAlchemy`, etc.)
-	* Add comments in `.sql` or `Python` file
-	* Data source can be:
-		* directory from text files (`csv`, `tsv`, etc.)
-		* an API
-		* created (manually by using the `random` module or by using a module, like `faker`)
-* 20% - Perform some analysis
-	* If using SQL, must use two of any of the following (repetition is ok):
+## Base Requirements
+
+1. Individual work only (no group projects)
+2. Project must involve the use of a relational database or NoSQL database
+
+## Grading Rubric
+
+
+### __20%__ - Documentation
+
+* (5 pts) In `README.md`, briefly describe your project
+* (10 pts) Choose one:
+	1. If working with existing data:
+		* Document the source of the data
+		* Describe the fields / columns and their types
+	2. If generating new data
+		* Describe how this data will be used and how data will _eventually_ be generated
+		* Describe the fields / columns and their types
+* (5 pts) ⚠️ Add instructions for the grader
+	* Specify what scripts to run (if any)
+	* Or link to a file showing the output of your analysis
+
+
+### __20%__ - Create an ER Diagram or sample documents and collections
+
+* ⚠️ If using an image, make sure to embed the image into `README.md`
+* ...otherwise, you can simply use a fenced called block (three backticks at the beginning and end of the code) to format a MongoDB document
+
+### __20%__ - Create scripts to import, collect, or generate data
+
+* These can be in pure sql or Python (any library is ok - [`pandas`](https://www.youtube.com/watch?v=eVGu5xMoncM), [`SQLAlchemy`](https://www.sqlalchemy.org/), [`pymongo`](https://docs.mongodb.com/ecosystem/drivers/pymongo/), etc.)
+* Add comments in `.sql` or `Python` files
+* Data source can be:
+	* text files (`csv`, `tsv`, etc.) included in the repository (size permitting)
+	* colected via an API
+	* created or generated (manually by using the `random` module, using a module, like [`faker`](https://github.com/joke2k/faker))
+* (5 pts) Describe any clean up or pre-processing necessary to import or create data
+* (15 pts) ⚠️  Link to the actual import scripts in `README.md`
+
+
+
+### 25% - Perform some analysis
+
+* (2 pts) In `README.md` Describe the goals of your analysis
+* (8 pts) Choose one:
+	1. If using SQL, must use two of any of the following (repetition is ok):
 		* view
 		* function
 		* CTE
-	* If using NoSQL must use two of any of the following (repetition is ok):
+	2. If using NoSQL must use two of any of the following (repetition is ok):
 		* aggregation functions
-	* IF using pure Python, must use two of any of the following (repetition is ok):
+	3. If using pure Python, must use two of any of the following (repetition is ok):
 		* list comprehension
-		* hof
-* 20% - Research some technology not covered in class
-	* This technology can be used in any previous part or additional part (for example, if you want to implement web visualization)
-	* Some examples of postgres functionality that we have not used in class:
-		* `cross tab`
-	* Some examples of Python modules that we have not used in class:
-		* `nltk`
+		* your own higher order functions
+		* your own class
+* (15 pts) ⚠️  Link to the actual analysis scripts in `README.md`
 
 
-Examples
+### 15% - Research some technology not covered in class
+
+* This technology can be used in any previous part or additional part (for example, if you want to implement web visualization)
+* Some examples of postgres functionality that we have not used in class:
+	* [cross tab](https://www.postgresql.org/docs/current/tablefunc.html)
+	* [PostGIS](https://postgis.net/)
+* Some examples of Python modules that we have not used in class, but you may be interested in:
+	* [`faker`](https://github.com/joke2k/faker)	
+	* [seaborn](https://seaborn.pydata.org/)
+	* or other more ambitious libraries outside the scope of what we've learned:
+		* [`nltk`](https://www.nltk.org/)
+		* [`skilearn` / sciekit-learn](https://scikit-learn.org/stable/)
+		* [`torch` / pytorch](https://pytorch.org/)
+* (15 pts) ⚠️  In `README.md`, link to the lines in your repository where you use this library and describe what you've used it for
+
+
+## Examples / Ideas
+
+Similar to what we've done in class:
+
+* visualization of data in database (data in postgres or mongodb, visualization in notebook using matplotlib, seaborn, etc.) 
+
+More ambitious: 
 
 * small gui / cli desktop application backed by a relational database
 * small web application using mongodb as the backend
-* visualization of database using Python and advanced matplotlib (or other visualization library)
-#### Details
-
-
-### Ideas
-
-You're free to do whatever project you want, as long as it meets the technical requirements. You will not be graded on visual design, user experience or novelty. However, your project should be something that's _interesting_ for you to work on, and usually that means putting in some creative effort!
-
-* an interactive story / web application
-    * store high scores in a database or csv file
-    * using flask to serve everything up
-* data visualization
-    * download data using requests
-    * use csv module or beautiful soup to extract data
-    * visualize data using turtle 
-* creating a flask-like web framework
-    * like we did in class / for hw
-* instagram style site
-    * using pil (the filters that you created form hw)
-    * using requests to download an image from another iste
-    * using flask to serve everything up
-* use pygame to create a "platform" game
-* digital instrument
-    * digital signal processing
-    * turtle or tkinter to create interface
