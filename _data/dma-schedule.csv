@@ -1159,7 +1159,7 @@ Postgres and Python
  * [books.csv](mongo/books.csv)
  * [books_fields.txt](mongo/books_fields.txt)
  * [wifi3.json](mongo/wifi3.json)
-* [MongoDB Database Design](slides/mongo/design.html)
+
 
 ","* [MongoDB Data Model Design](https://docs.mongodb.com/manual/core/data-model-design/)
  * [MongoDB Data Model Examples and Patterns](https://docs.mongodb.com/manual/applications/data-models/)
@@ -1199,13 +1199,17 @@ __Mini Project due Monday Dec 9th at 11pm__
 * [Instructions for Free-form Homework Assignment](assignments/mini-project.html)
 ",,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
 y,holiday,,28-Nov,Thu,Thanksgiving Recess: No classes scheduled,,,,Cloud Storage,
-,,25,3-Dec,Tue,"Cloud Storage
+,,25,3-Dec,Tue,"* Discuss Mini Project
+* Review MongoDB Queries
+* [MongoDB Database Design](slides/mongo/design.html)
+* [Aggregation](slides/mongo/aggregation.html)
+* Evaluation
 
-* NoSQL Grouping
-* NoSQL Design Review
-* Cloud Document Store","[Firestore Docs](https://firebase.google.com/docs/firestore/) 
-
-<!--(Introduction to Secure and Validate Data) -->",,,Thanksgiving Recess: No classes scheduled,"https://bost.ocks.org/mike/bar/
+<!-- 
+Cloud Storage 
+* Cloud Document Store
+-->
+",,,,Thanksgiving Recess: No classes scheduled,"https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
  https://bost.ocks.org/mike/bar/3/"
 y,,26,5-Dec,Thu,"Web Based Visualization (D3)
@@ -1216,6 +1220,10 @@ y,,26,5-Dec,Thu,"Web Based Visualization (D3)
 ","https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
  https://bost.ocks.org/mike/bar/3/
+
+[Firestore Docs](https://firebase.google.com/docs/firestore/) 
+
+<!--(Introduction to Secure and Validate Data) →
 
 Reading TBD",,,"Web Based Visualization (D3)
 
