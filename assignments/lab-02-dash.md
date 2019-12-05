@@ -56,7 +56,7 @@ function onClick(evt) {
 }
 </script>
 
-# Lab #02 / Homework #07 - Dash, PyMongo, MongoDB Atlas - Due In-Class, November 26th at End of Class
+# Lab #02 / Homework #07 - Dash, PyMongo, MongoDB Atlas - Due In-Class
 
 
 
@@ -96,7 +96,7 @@ __Submission__
 
 ### Load Sample Data
 
-1. Download the September 2019 New York City `.csv` (not the `.gz` version!) from [insideairbnb](http://insideairbnb.com/get-the-data.html)
+1. Download the September 2019 New York City `listings.csv.gz` from [insideairbnb](http://insideairbnb.com/get-the-data.html)
 2. In MongoDB Atlas (the admin site for your MongoDB Atlast), click on ellipses the `...` underneath Cluster and choose `Commandline Tools`
 3. Click on `Copy` underneath Data Import (it should start with `mongoimport`
 4. Paste the command in terminal/cmd/powershell... modify the parts with angle brackets and add `--headline` at the end
