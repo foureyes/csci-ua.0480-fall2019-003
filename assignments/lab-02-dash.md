@@ -97,11 +97,13 @@ __Submission__
 ### Load Sample Data
 
 1. Download the September 2019 New York City `listings.csv.gz` from [insideairbnb](http://insideairbnb.com/get-the-data.html)
+	*
 2. In MongoDB Atlas (the admin site for your MongoDB Atlast), click on ellipses the `...` underneath Cluster and choose `Commandline Tools`
 3. Click on `Copy` underneath Data Import (it should start with `mongoimport`
-4. Paste the command in terminal/cmd/powershell... modify the parts with angle brackets and add `--headline` at the end
+4. Paste the command in terminal/cmd/powershell... replace the parts with angle brackets with appropriate values (make sure there are no angle brackets left-over) and add `--headerline` at the end
 	* use `lab02` as the database name
 	* use `listings` as the name of the collection
+	* if you're using windows, you may have to go into the `bin` folder of your mongodb install to run `mongoimport.exe`
 
 ### Query Sample Data
 
@@ -115,6 +117,7 @@ __Submission__
 	3. find all the unique `host_name` ([see the docs](https://docs.mongodb.com/manual/reference/method/db.collection.distinct/))
 	4. find all of the places that have more than 2 `beds` in `city` Brooklyn, ordered by `review_scores_rating` descending
 		* only show the `name`, `beds`, `city`, `review_scores_rating`, and `price`
+		* if you run out of memory for this query, try filtering `review_scores_rating` that aren't empty (`$ne`)... and lastly, if there's still an issue, you can set beds to exactly 2
 	5. show the number of listings per host
 	6. in `city`, New York, find the average `review_scores_rating` per `neighbourhood`, and only show the ones above a 95... sorted in descending order of rating ([see the docs](https://docs.mongodb.com/manual/reference/operator/aggregation/sort/))
 
@@ -163,7 +166,7 @@ app.layout = html.Div(children=[
 if __name__ == '__main__':
     app.run_server(debug=True)
 </code></pre>
-2. (this is kind of tricky!) ... use pymongo to show the top 10 most expensive neighbourhoods based on average price ... in a bar chart
+2. (this is kind of tricky!) ... use pymongo to show the top 10 most expensive neighbourhoods based on average price of listings with 2 bedrooms... in a bar chart
 	* you'll likely have to use the following operators:
 		* [$project](https://docs.mongodb.com/manual/reference/operator/aggregation/project/) to select or calculate fields
 		* [$reduce](https://docs.mongodb.com/manual/reference/operator/aggregation/reduce/), [$split](https://docs.mongodb.com/manual/reference/operator/aggregation/split/), and [$concat](https://docs.mongodb.com/manual/reference/operator/aggregation/concat/) to remove commas by splitting and joining again with concat
