@@ -1212,12 +1212,22 @@ Cloud Storage
 ",,,,Thanksgiving Recess: No classes scheduled,"https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
  https://bost.ocks.org/mike/bar/3/"
-y,,26,5-Dec,Thu,"Web Based Visualization (D3)
+,,26,5-Dec,Thu,"Web Based Visualization and / or Cloud Databases
 
+<!--
 * [svg + d3](d3/overview.html)
 
  ...or Preview Processing Large Data Sets (Spark or Hadoop)
-","https://bost.ocks.org/mike/bar/
+-->
+",,"__Lab #02 / Homework #07__  due in class 12/5
+
+* [Lab #02 / Homework #07 Instructions](assignments/lab-02-dash.html)",,"Web Based Visualization (D3)
+
+* [svg + d3](d3/overview.html)
+",Reading TBD
+y,,27,10-Dec,Tue,"Review Second Part of the Semester 
+
+ * [midterm review notebook](notebooks/midterm-review/review.ipynb) ","https://bost.ocks.org/mike/bar/
  https://bost.ocks.org/mike/bar/2/
  https://bost.ocks.org/mike/bar/3/
 
@@ -1225,11 +1235,5 @@ y,,26,5-Dec,Thu,"Web Based Visualization (D3)
 
 <!--(Introduction to Secure and Validate Data) →
 
-Reading TBD",,,"Web Based Visualization (D3)
-
-* [svg + d3](d3/overview.html)
-",Reading TBD
-y,,27,10-Dec,Tue,"Review Second Part of the Semester 
-
- * [midterm review notebook](notebooks/midterm-review/review.ipynb) ",,,,Processing Large Data Sets (Spark or Hadoop),
+Reading TBD",,,Processing Large Data Sets (Spark or Hadoop),
 y,exam,28,12-Dec,Thu,Exam #2,,,,Exam #2,
