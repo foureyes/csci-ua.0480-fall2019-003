@@ -32,6 +32,10 @@ For your last assignment, you'll have a free-form, mini-project! You can create 
 
 1. Individual work only (no group projects)
 2. Project must involve the use of a relational database or NoSQL database
+3. ⚠️ __DO NOT INCLUDE PASSWORDS IN YOUR REPOSITORY__
+	* read your database credentials from a configuration file that you place into `.gitignore`
+	* or simply leave the credentials blank and add instructions in the `README.md` to fill them in for the grader
+
 
 ## Grading Rubric
 
